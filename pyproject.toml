@@ -1,0 +1,9 @@
+[project]
+name = "eve-documentation"
+version = "0.1.0"
+description = "eve documentation served via mkdocs"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "mkdocs-material>=9.7.0",
+]
