@@ -21,10 +21,10 @@ plugins:
         - name: backend
           import_url: 'https://github.com/eve-esa/backend.git?branch=staging'
           imports: [
-            docs/index.md, 
-            docs/routers-auth.md, 
-            docs/routers-collection.md, 
-            docs/routers-conversation.md, 
+            docs/index.md,
+            docs/routers-auth.md,
+            docs/routers-collection.md,
+            docs/routers-conversation.md,
             docs/routers-document.md,
             docs/routers-forgot_password.md,
             docs/routers-health_check.md,
@@ -32,25 +32,39 @@ plugins:
             docs/routers-user.md,
             docs/types.md
           ]
+        - name: evalkit
+          import_url: 'https://github.com/eve-esa/evalkit.git?branch=task-refactoring'
+          imports: [
+            docs/index.md,
+            docs/getting_started.md,
+            docs/evalkit.md,
+            docs/eo_tasks.md
+          ]
+
 
   - mkdocstrings:
       handlers:
         python:
-            paths: ["../eve-backend/src"]
+            paths: ["../eve-backend/src", "../eve-evaluation"]
 
 nav:
   - Home: index.md
-  - Backend: 
+  - Backend:
       - Home: backend/docs/index.md
-      - Auth: backend/docs/routers-auth.md 
-      - Collection: backend/docs/routers-collection.md 
-      - Conversation: backend/docs/routers-conversation.md 
+      - Auth: backend/docs/routers-auth.md
+      - Collection: backend/docs/routers-collection.md
+      - Conversation: backend/docs/routers-conversation.md
       - Document: backend/docs/routers-document.md
       - Forget Password: backend/docs/routers-forgot_password.md
       - Health Check: backend/docs/routers-health_check.md
       - Message: backend/docs/routers-message.md
       - User: backend/docs/routers-user.md
       - Types: backend/docs/types.md
+  - Evalkit:
+      - Home: evalkit/docs/index.md
+      - Getting Started: evalkit/docs/getting_started.md
+      - Evalkit: evalkit/docs/evalkit.md
+      - EO Tasks: evalkit/docs/eo_tasks.md
 
 extra:
   social:
