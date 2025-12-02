@@ -1,1 +1,68 @@
-site_name: My Docs
+site_name: EVE GUIDE
+site_url: https://example.com
+theme:
+  font:
+    text: Arial
+    code: The Sans
+  name: material
+  custom_dir: overrides
+  logo: assets/esa_logo.svg
+  favicon: assets/esa_favicon.ico
+  palette:
+      primary: custom
+extra_css:
+  - stylesheets/extra.css
+plugins:
+  - search
+
+  - multirepo:
+      cleanup: false
+      nav_repos:
+        - name: backend
+          import_url: 'https://github.com/eve-esa/backend.git?branch=staging'
+          imports: [
+            docs/index.md, 
+            docs/routers-auth.md, 
+            docs/routers-collection.md, 
+            docs/routers-conversation.md, 
+            docs/routers-document.md,
+            docs/routers-forgot_password.md,
+            docs/routers-health_check.md,
+            docs/routers-message.md,
+            docs/routers-user.md,
+            docs/types.md
+          ]
+
+  - mkdocstrings:
+      handlers:
+        python:
+            paths: ["../eve-backend/src"]
+
+nav:
+  - Home: index.md
+  - Backend: 
+      - Home: backend/docs/index.md
+      - Auth: backend/docs/routers-auth.md 
+      - Collection: backend/docs/routers-collection.md 
+      - Conversation: backend/docs/routers-conversation.md 
+      - Document: backend/docs/routers-document.md
+      - Forget Password: backend/docs/routers-forgot_password.md
+      - Health Check: backend/docs/routers-health_check.md
+      - Message: backend/docs/routers-message.md
+      - User: backend/docs/routers-user.md
+      - Types: backend/docs/types.md
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://eve.philab.esa.int/
+      name: Project Page
+    - icon: fontawesome/brands/github
+      link: https://github.com/eve-esa/eve-evaluation
+      name: GitHub
+    - icon: custom/huggingface
+      link: https://huggingface.co/eve-esa
+      name: Hugging Face
+  generator: false
+
+copyright: Implemented by <a href="https://picampus-school.com/" target="_blank">Pi School</a>, <a href="https://www.imperative.space/" target="_blank">Imperative Space</a>
