@@ -46,7 +46,9 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-            paths: ["../eve-backend/src", "../evalkit",]
+          paths:
+            - eve-backend/src
+            - evalkit
 
 nav:
   - Home: index.md
