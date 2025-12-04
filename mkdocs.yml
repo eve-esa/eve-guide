@@ -47,6 +47,7 @@ plugins:
             docs/examples.md,
             docs/getting_stared.md,
             docs/scrapers.md,
+            docs/model.md,
             docs/index.md
           ]
 
@@ -55,10 +56,9 @@ plugins:
       handlers:
         python:
           paths:
+            - data-scraping
             - eve-backend/src
             - evalkit
-            - data-scraping
-            - data-processing
 
 nav:
   - Home: index.md
