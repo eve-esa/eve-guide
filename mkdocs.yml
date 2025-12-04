@@ -44,7 +44,10 @@ plugins:
         - name: data-scraping
           import_url: 'https://github.com/eve-esa/data-scraping.git?branch=docs'
           imports: [
-            docs/*
+            docs/examples.md,
+            docs/getting_stared.md,
+            docs/scrapers.md
+            docs/index.md
           ]
 
 
