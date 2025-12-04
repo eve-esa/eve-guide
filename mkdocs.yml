@@ -57,7 +57,7 @@ plugins:
           paths:
             - eve-backend/src
             - evalkit
-            - data-scraping
+            - data-scraping/scraper
 
 nav:
   - Home: index.md
