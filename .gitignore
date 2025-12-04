@@ -1,3 +1,5 @@
 .venv/
 site/
+.idea/
+.gitignore
 temp_dir/

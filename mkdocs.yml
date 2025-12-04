@@ -41,6 +41,11 @@ plugins:
             docs/eo_tasks.md,
             docs/examples.md
           ]
+        - name: data-scraping
+          import_url: 'https://github.com/eve-esa/data-scraping.git?branch=docs'
+          imports: [
+            docs/*
+          ]
 
 
   - mkdocstrings:
@@ -49,6 +54,10 @@ plugins:
           paths:
             - eve-backend/src
             - evalkit
+            - data-scraping
+            - ../eve-backend/src
+            - ../eve-evaluation
+            - ../data-scraping
 
 nav:
   - Home: index.md
@@ -69,6 +78,11 @@ nav:
       - Evalkit: evalkit/docs/evalkit.md
       - EO Tasks: evalkit/docs/eo_tasks.md
       - Examples: evalkit/docs/examples.md
+  - Data Scraping:
+      - Home: data-scraping/docs/index.md
+      - Getting Started: data-scraping/docs/getting_started.md
+      - Scrapers: data-scraping/docs/scrapers.md
+      - Examples: data-scraping/docs/examples.md
 
 extra:
   social:
