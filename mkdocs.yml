@@ -46,7 +46,7 @@ plugins:
           imports: [
             docs/examples.md,
             docs/getting_stared.md,
-            docs/scrapers.md
+            docs/scrapers.md,
             docs/index.md
           ]
 
@@ -57,7 +57,8 @@ plugins:
           paths:
             - eve-backend/src
             - evalkit
-            - data-scraping/scraper
+            - data-scraping
+            - data-processing
 
 nav:
   - Home: index.md
