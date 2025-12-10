@@ -15,12 +15,22 @@ jobs:
         with:
           repository: eve-esa/backend
           ref: staging
-          path: eve-backend
+          path: backend
       - uses: actions/checkout@v4           # evalkit
         with:
           repository: eve-esa/evalkit
           ref: task-refactoring
           path: evalkit
+      - uses: actions/checkout@v4           # data-scrapping
+        with:
+          repository: eve-esa/data-scraping
+          ref: docs
+          path: data-scraping
+      - uses: actions/checkout@v4           # data-process
+        with:
+          repository: eve-esa/data-processing
+          ref: main
+          path: data-processing
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]

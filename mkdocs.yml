@@ -38,7 +38,7 @@ plugins:
             docs/index.md,
             docs/getting_started.md,
             docs/evalkit.md,
-            docs/eo_task.md,
+            docs/eo_tasks.md,
             docs/examples.md
           ]
         - name: data-scraping
@@ -79,17 +79,17 @@ plugins:
         python:
           paths:
             - data-scraping
-            - eve-backend/src
+            - backend/src
             - eve-evaluation
             - evalkit
-            - eve-data-scraping
-            - ../data-scraping
-            - ../eve-backend/src
-            - ../eve-evaluation
             - data-processing
+            - ../data-scraping
+            - ../backend/src
+            - ../eve-evaluation
+            - ../evalkit
+            - ../data-processing
             - ../*
             - ./*
-            - ../data-processing
 
 nav:
   - Home: index.md
@@ -108,7 +108,7 @@ nav:
       - Home: evalkit/docs/index.md
       - Getting Started: evalkit/docs/getting_started.md
       - Evalkit: evalkit/docs/evalkit.md
-      - EO Tasks: evalkit/docs/eo_task.md
+      - EO Tasks: evalkit/docs/eo_tasks.md
       - Examples: evalkit/docs/examples.md
   - Data Scraping:
       - Home: data-scraping/docs/index.md
