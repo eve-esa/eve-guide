@@ -38,17 +38,39 @@ plugins:
             docs/index.md,
             docs/getting_started.md,
             docs/evalkit.md,
-            docs/eo_tasks.md,
+            docs/eo_task.md,
             docs/examples.md
           ]
         - name: data-scraping
           import_url: 'https://github.com/eve-esa/data-scraping.git?branch=docs'
           imports: [
             docs/examples.md,
-            docs/getting_stared.md,
+            docs/getting_started.md,
             docs/scrapers.md,
             docs/model.md,
             docs/index.md
+          ]
+        - name: data-processing
+          import_url: 'https://github.com/eve-esa/data-processing.git?branch=main'
+          imports: [
+            docs/index.md,
+            docs/getting-started/installation.md,
+            docs/getting-started/quick-start.md,
+            docs/getting-started/configuration.md,
+            docs/pipeline-stages/extraction.md,
+            docs/pipeline-stages/deduplication.md,
+            docs/pipeline-stages/cleaning.md,
+            docs/pipeline-stages/filters.md,
+            docs/pipeline-stages/chunking.md,
+            docs/pipeline-stages/pii-removal.md,
+            docs/pipeline-stages/metadata-extraction.md,
+            docs/pipeline-stages/export.md,
+            docs/pipeline-stages/qdrant.md,
+            docs/api/core.md,
+            docs/api/stages.md,
+            docs/api/utilities.md,
+            docs/api/models.md,
+            docs/examples/basic-usage.md
           ]
 
 
@@ -58,7 +80,16 @@ plugins:
           paths:
             - data-scraping
             - eve-backend/src
+            - eve-evaluation
             - evalkit
+            - eve-data-scraping
+            - ../data-scraping
+            - ../eve-backend/src
+            - ../eve-evaluation
+            - data-processing
+            - ../*
+            - ./*
+            - ../data-processing
 
 nav:
   - Home: index.md
@@ -77,13 +108,36 @@ nav:
       - Home: evalkit/docs/index.md
       - Getting Started: evalkit/docs/getting_started.md
       - Evalkit: evalkit/docs/evalkit.md
-      - EO Tasks: evalkit/docs/eo_tasks.md
+      - EO Tasks: evalkit/docs/eo_task.md
       - Examples: evalkit/docs/examples.md
   - Data Scraping:
       - Home: data-scraping/docs/index.md
       - Getting Started: data-scraping/docs/getting_started.md
       - Scrapers: data-scraping/docs/scrapers.md
       - Examples: data-scraping/docs/examples.md
+  - Data Processing:
+      - Home: data-processing/docs/index.md
+      - Getting Started:
+          - Installation: data-processing/docs/getting-started/installation.md
+          - Quick Start: data-processing/docs/getting-started/quick-start.md
+          - Configuration: data-processing/docs/getting-started/configuration.md
+      - Pipeline Stages:
+          - Extraction: data-processing/docs/pipeline-stages/extraction.md
+          - Deduplication: data-processing/docs/pipeline-stages/deduplication.md
+          - Cleaning: data-processing/docs/pipeline-stages/cleaning.md
+          - Filters: data-processing/docs/pipeline-stages/filters.md
+          - Chunking: data-processing/docs/pipeline-stages/chunking.md
+          - PII Removal: data-processing/docs/pipeline-stages/pii-removal.md
+          - Metadata Extraction: data-processing/docs/pipeline-stages/metadata-extraction.md
+          - Export: data-processing/docs/pipeline-stages/export.md
+          - QDrant: data-processing/docs/pipeline-stages/qdrant.md
+      - API Reference:
+          - Core Components: data-processing/docs/api/core.md
+          - Pipeline Stages: data-processing/docs/api/stages.md
+          - Utilities: data-processing/docs/api/utilities.md
+          - Models: data-processing/docs/api/models.md
+      - Examples:
+          - Basic Usage: data-processing/docs/examples/basic-usage.md
 
 extra:
   social:
