@@ -18,6 +18,23 @@ plugins:
   - multirepo:
       cleanup: false
       nav_repos:
+        - name: frontend
+          import_url: 'https://github.com/eve-esa/frontend.git?branch=staging'
+          imports: [ 
+            docs/index.md, 
+            docs/getting_started.md,
+            docs/features/chat.md,
+            docs/features/control_panel.md,
+            docs/features/private_collection.md,
+            docs/features/profile.md,
+            docs/features/shared_collection.md
+            docs/assets/chat_1.png,
+            docs/assets/chat_2.png,
+            docs/assets/control_panel.png,
+            docs/assets/private_collection.png,
+            docs/assets/private_collection_1.png,
+            docs/assets/shared_collection.png
+          ]
         - name: backend
           import_url: 'https://github.com/eve-esa/backend.git?branch=staging'
           imports: [
@@ -94,6 +111,14 @@ plugins:
 
 nav:
   - Home: index.md
+  - Frontend:
+      - Home: frontend/docs/index.md
+      - Features:
+        - Chat: frontend/docs/features/chat.md
+        - Control Panel: frontend/docs/features/control_panel.md
+        - Private Collection: frontend/docs/features/private_collection.md
+        - Shared Collection: frontend/docs/features/shared_collection.md
+        - Profile: frontend/docs/features/profile.md
   - Backend:
       - Home: backend/docs/index.md
       - Getting Started: backend/docs/getting_started.md
