@@ -806,6 +806,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#main-and-fallback-model-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main and Fallback Model URLs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#deepinfra-api-token" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2548,6 +2559,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#main-and-fallback-model-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main and Fallback Model URLs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#deepinfra-api-token" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2772,9 +2794,15 @@ docker compose version
 QDRANT_URL=
 QDRANT_API_KEY=
 
-# API Keys
-MISTRAL_API_KEY=
-RUNPOD_API_KEY=
+# LLM Model URLs (OpenAI-compatible format)
+MAIN_MODEL_URL=
+FALLBACK_MODEL_URL=
+# Optional: Override model names (defaults from config.yaml)
+MAIN_MODEL_NAME=
+FALLBACK_MODEL_NAME=
+
+MAIN_MODEL_API_KEY=
+FALLBACK_MODEL_API_KEY=
 
 # MongoDB Configuration
 MONGO_HOST=localhost
@@ -2848,14 +2876,34 @@ IS_PROD=false
 <td>API key for the Satcom-specific Qdrant instance that is used when SatcomLLM is selected on staging.</td>
 </tr>
 <tr>
-<td><code>MISTRAL_API_KEY</code></td>
+<td><code>MAIN_MODEL_URL</code></td>
 <td>Yes</td>
-<td>API key for Mistral models that is used as a fallback for the main Runpod model.</td>
+<td>OpenAI-compatible URL for the main LLM model (e.g., <code>https://api.runpod.ai/v2/{endpoint_id}/openai/v1</code> or <code>http://localhost:8000/v1</code>).</td>
 </tr>
 <tr>
-<td><code>RUNPOD_API_KEY</code></td>
+<td><code>FALLBACK_MODEL_URL</code></td>
 <td>Yes</td>
-<td>API key for the main Runpod LLM.</td>
+<td>OpenAI-compatible URL for the fallback LLM model (e.g., <code>https://api.mistral.ai/v1</code> or any OpenAI-compatible endpoint).</td>
+</tr>
+<tr>
+<td><code>MAIN_MODEL_NAME</code></td>
+<td>No</td>
+<td>Model name for the main model (defaults to value in config.yaml).</td>
+</tr>
+<tr>
+<td><code>FALLBACK_MODEL_NAME</code></td>
+<td>No</td>
+<td>Model name for the fallback model (defaults to value in config.yaml).</td>
+</tr>
+<tr>
+<td><code>MAIN_MODEL_API_KEY</code></td>
+<td>No</td>
+<td>API key for the main model (falls back to <code>RUNPOD_API_KEY</code> if not set).</td>
+</tr>
+<tr>
+<td><code>FALLBACK_MODEL_API_KEY</code></td>
+<td>No</td>
+<td>API key for the fallback model (falls back to <code>MISTRAL_API_KEY</code> if not set).</td>
 </tr>
 <tr>
 <td><code>DEEPINFRA_API_TOKEN</code></td>
@@ -3040,6 +3088,22 @@ print(secrets.token_urlsafe(32))
 <li>Copy the key and use it as <code>MISTRAL_API_KEY</code></li>
 </ol>
 <p><strong>Reference:</strong> <a href="https://docs.mistral.ai/">Mistral AI API Documentation</a></p>
+<h4 id="main-and-fallback-model-urls">Main and Fallback Model URLs</h4>
+<p>The system uses two LLM models: <strong>MAIN</strong> (primary) and <strong>FALLBACK</strong> (backup). Both must be configured with OpenAI-compatible API endpoints.</p>
+<p><strong>For RunPod endpoints:</strong></p>
+<pre><code>MAIN_MODEL_URL=https://api.runpod.ai/v2/{endpoint_id}/openai/v1
+</code></pre>
+<p>Replace <code>{endpoint_id}</code> with your RunPod endpoint ID (e.g., <code>2f9o93xc90871m</code>).</p>
+<p><strong>For localhost/self-hosted models:</strong></p>
+<pre><code>MAIN_MODEL_URL=http://localhost:8000/v1
+</code></pre>
+<p>Use the base URL of your OpenAI-compatible API endpoint.</p>
+<p><strong>For Mistral (fallback):</strong></p>
+<pre><code>FALLBACK_MODEL_URL=https://api.mistral.ai/v1
+</code></pre>
+<p><strong>For other OpenAI-compatible services:</strong>
+Simply use the base URL of the service's OpenAI-compatible endpoint.</p>
+<p><strong>Note:</strong> Both URLs must be in OpenAI-compatible format. The model names can be optionally overridden using <code>MAIN_MODEL_NAME</code> and <code>FALLBACK_MODEL_NAME</code> environment variables, otherwise they default to values in <code>config.yaml</code>.</p>
 <h4 id="deepinfra-api-token">DeepInfra API Token</h4>
 <ol>
 <li>Sign up for an account at <a href="https://deepinfra.com/">DeepInfra</a></li>

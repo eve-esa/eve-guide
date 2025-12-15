@@ -5491,9 +5491,7 @@
 <span class="normal">1215</span>
 <span class="normal">1216</span>
 <span class="normal">1217</span>
-<span class="normal">1218</span>
-<span class="normal">1219</span>
-<span class="normal">1220</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+<span class="normal">1218</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="s2">&quot;/conversations/</span><span class="si">{conversation_id}</span><span class="s2">/messages/</span><span class="si">{message_id}</span><span class="s2">/stream-hallucination&quot;</span><span class="p">,</span>
     <span class="n">response_class</span><span class="o">=</span><span class="n">StreamingResponse</span><span class="p">,</span>
 <span class="p">)</span>
@@ -5674,9 +5672,7 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">astream</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">astream</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
                 <span class="c1"># Enforce first token timeout similar to generate_answer</span>
-                <span class="n">llm_instruct_timeout</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">detector</span><span class="o">.</span><span class="n">llm_manager</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get_instruct_llm_timeout</span><span class="p">()</span>
-                <span class="p">)</span>
+                <span class="n">llm_instruct_timeout</span> <span class="o">=</span> <span class="n">MODEL_TIMEOUT</span>
                 <span class="k">async</span> <span class="k">with</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">timeout</span><span class="p">(</span><span class="n">llm_instruct_timeout</span><span class="p">):</span>
                     <span class="n">first</span> <span class="o">=</span> <span class="k">await</span> <span class="n">astream</span><span class="o">.</span><span class="fm">__anext__</span><span class="p">()</span>
                     <span class="n">first_text</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
