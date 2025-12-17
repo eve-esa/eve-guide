@@ -34,8 +34,9 @@ You can navigate through the different sections of this documentation using the 
 Other than these components, the EVE project also includes several repositories of experiments containing hands-on notebooks that have been included in the components above.
 These experiments repositories are not part of the main documentation since they do not contain production-ready code, however they are a useful entry point for those who want a hands-on experience exploring the EVE project.
 Here below the list of experiments repositories:
- - [EVE-RAG](https://github.com/eve-esa/eve-rag): A collection of notebooks demonstrating how to build Retrieval-Augmented Generation (RAG) systems and how to benchmark it.
- - [EVE-Hallucination](https://github.com/eve-esa/eve-hallucination): repository containing experiments and analysis on the hallucination pipeline implemented in EVE
+
+  - [EVE-RAG](https://github.com/eve-esa/eve-rag): A collection of notebooks demonstrating how to build Retrieval-Augmented Generation (RAG) systems and how to benchmark it.
+  - [EVE-Hallucination](https://github.com/eve-esa/eve-hallucination): repository containing experiments and analysis on the hallucination pipeline implemented in EVE
 
 
 
