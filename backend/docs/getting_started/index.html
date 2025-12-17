@@ -2708,10 +2708,12 @@ sudo apt install python3.12 python3.12-venv python3-pip
 # Verify installation
 python3.12 --version
 </code></pre>
-<p><strong>Windows:</strong>
-1. Download Python 3.12+ from the <a href="https://www.python.org/downloads/">official Python website</a>
-2. Run the installer and check "Add Python to PATH"
-3. Verify installation:</p>
+<p><strong>Windows:</strong></p>
+<ol>
+<li>Download Python 3.12+ from the <a href="https://www.python.org/downloads/">official Python website</a></li>
+<li>Run the installer and check "Add Python to PATH"</li>
+<li>Verify installation:</li>
+</ol>
 <pre><code class="language-cmd">python --version
 </code></pre>
 <p><strong>Reference:</strong> <a href="https://www.python.org/downloads/">Python Installation Guide</a></p>
@@ -2731,10 +2733,12 @@ sudo apt install -y mongodb-org
 sudo systemctl start mongod
 sudo systemctl enable mongod
 </code></pre>
-<p><strong>Windows:</strong>
-1. Download MongoDB Community Server from the <a href="https://www.mongodb.com/try/download/community">official MongoDB website</a>
-2. Run the installer and follow the setup wizard
-3. MongoDB will be installed as a Windows service and start automatically</p>
+<p><strong>Windows:</strong></p>
+<ol>
+<li>Download MongoDB Community Server from the <a href="https://www.mongodb.com/try/download/community">official MongoDB website</a></li>
+<li>Run the installer and follow the setup wizard</li>
+<li>MongoDB will be installed as a Windows service and start automatically</li>
+</ol>
 <p><strong>Reference:</strong> 
 - <a href="https://www.mongodb.com/docs/manual/installation/">MongoDB Installation Guide - Ubuntu</a>
 - <a href="https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/">MongoDB Installation Guide - Windows</a></p>
@@ -2768,12 +2772,14 @@ sudo usermod -aG docker $USER
 docker --version
 docker compose version
 </code></pre>
-<p><strong>Windows:</strong>
-1. Download Docker Desktop from the <a href="https://www.docker.com/products/docker-desktop/">official Docker website</a>
-2. Run the installer and follow the setup wizard
-3. Restart your computer if prompted
-4. Docker Desktop includes both Docker and Docker Compose
-5. Verify installation:</p>
+<p><strong>Windows:</strong></p>
+<ol>
+<li>Download Docker Desktop from the <a href="https://www.docker.com/products/docker-desktop/">official Docker website</a></li>
+<li>Run the installer and follow the setup wizard</li>
+<li>Restart your computer if prompted</li>
+<li>Docker Desktop includes both Docker and Docker Compose</li>
+<li>Verify installation:</li>
+</ol>
 <pre><code class="language-cmd">docker --version
 docker compose version
 </code></pre>
@@ -3044,15 +3050,19 @@ IS_PROD=false
 </table>
 <h3 id="21-obtaining-api-keys-and-tokens">2.1. Obtaining API Keys and Tokens</h3>
 <h4 id="qdrant-url-and-api-key">Qdrant URL and API Key</h4>
-<p><strong>Qdrant Cloud (Recommended):</strong>
-1. Sign up for a free account at <a href="https://cloud.qdrant.io/">Qdrant Cloud</a>
-2. Create a new cluster
-3. Copy the cluster URL (e.g., <code>https://xxxxx-xxxxx-xxxxx.qdrant.io</code>)
-4. Navigate to API Keys section and create a new API key
-5. Use the cluster URL as <code>QDRANT_URL</code> and the API key as <code>QDRANT_API_KEY</code></p>
-<p><strong>Self-hosted Qdrant:</strong>
-- If running Qdrant locally, use <code>http://localhost:6333</code> as <code>QDRANT_URL</code>
-- For self-hosted instances, API key may not be required (leave empty or check your Qdrant configuration)</p>
+<p><strong>Qdrant Cloud (Recommended):</strong></p>
+<ol>
+<li>Sign up for a free account at <a href="https://cloud.qdrant.io/">Qdrant Cloud</a></li>
+<li>Create a new cluster</li>
+<li>Copy the cluster URL (e.g., <code>https://xxxxx-xxxxx-xxxxx.qdrant.io</code>)</li>
+<li>Navigate to API Keys section and create a new API key</li>
+<li>Use the cluster URL as <code>QDRANT_URL</code> and the API key as <code>QDRANT_API_KEY</code></li>
+</ol>
+<p><strong>Self-hosted Qdrant:</strong></p>
+<ul>
+<li>If running Qdrant locally, use <code>http://localhost:6333</code> as <code>QDRANT_URL</code></li>
+<li>For self-hosted instances, API key may not be required (leave empty or check your Qdrant configuration)</li>
+</ul>
 <p><strong>Reference:</strong> <a href="https://qdrant.tech/documentation/cloud/">Qdrant Cloud Documentation</a></p>
 <h4 id="jwt-secret-key">JWT Secret Key</h4>
 <p>Generate a secure random string for JWT token signing. You can use one of these methods:</p>
@@ -3066,9 +3076,11 @@ print(secrets.token_urlsafe(32))
 <p><strong>Using PowerShell (Windows):</strong></p>
 <pre><code class="language-powershell">[Convert]::ToBase64String((1..32 | ForEach-Object { Get-Random -Maximum 256 }))
 </code></pre>
-<p><strong>Online Generator:</strong>
-- Use a secure random string generator like <a href="https://randomkeygen.com/">randomkeygen.com</a>
-- Copy a 256-bit key and use it as <code>JWT_SECRET_KEY</code></p>
+<p><strong>Online Generator:</strong></p>
+<ul>
+<li>Use a secure random string generator like <a href="https://randomkeygen.com/">randomkeygen.com</a></li>
+<li>Copy a 256-bit key and use it as <code>JWT_SECRET_KEY</code></li>
+</ul>
 <p><strong>Important:</strong> Keep this key secret and never commit it to version control.</p>
 <h4 id="runpod-api-key">Runpod API Key</h4>
 <ol>
@@ -3133,11 +3145,13 @@ Simply use the base URL of the service's OpenAI-compatible endpoint.</p>
 </ol>
 <p><strong>Reference:</strong> <a href="https://siliconflow.cn/docs">SiliconFlow Documentation</a></p>
 <h4 id="redis-url">Redis URL</h4>
-<p><strong>Redis Cloud (Recommended):</strong>
-1. Sign up for a free account at <a href="https://redis.com/try-free/">Redis Cloud</a>
-2. Create a new database
-3. Copy the connection URL (format: <code>redis://:password@host:port</code>)
-4. Use it as <code>REDIS_URL</code></p>
+<p><strong>Redis Cloud (Recommended):</strong></p>
+<ol>
+<li>Sign up for a free account at <a href="https://redis.com/try-free/">Redis Cloud</a></li>
+<li>Create a new database</li>
+<li>Copy the connection URL (format: <code>redis://:password@host:port</code>)</li>
+<li>Use it as <code>REDIS_URL</code></li>
+</ol>
 <p><strong>Local Redis:</strong>
 - If running Redis locally: <code>redis://localhost:6379</code>
 - If Redis has a password: <code>redis://:password@localhost:6379</code></p>
