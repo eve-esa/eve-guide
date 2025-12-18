@@ -113,6 +113,7 @@ nav:
   - Home: index.md
   - Frontend:
       - Home: frontend/docs/index.md
+      - Getting Started: frontend/docs/getting_started.md
       - Features:
         - Chat: frontend/docs/features/chat.md
         - Control Panel: frontend/docs/features/control_panel.md
