@@ -10,7 +10,7 @@
 <td width="68%" align="left" valign="middle">
 
 <b>Earth Virtual Expert (EVE)</b>  
-An open science initiative funded and supported by the <b>European Space Agency's Φ-lab</b>, developed by <b>Pi School</b> in collaboration with <b>Imperative Space</b> and <b>Mistral AI</b>, aimed at advancing the use of **Large Language Models (LLMs)** for the Earth Observation (EO) and Earth Science (ES) communities.
+An open science initiative funded and supported by the <b>European Space Agency's Φ-lab</b>, developed by <b>Pi School</b> in collaboration with <b>Imperative Space</b> and <b>Mistral AI</b>, aimed at advancing the use of <b>Large Language Models (LLMs)</b> for the Earth Observation (EO) and Earth Science (ES) communities.
 
 </td>
 </tr>
@@ -45,12 +45,13 @@ Here below the list of experiments repositories:
 
 EVE is a domain-specialized AI system designed to support **scientists, analysts, and decision-makers** through natural-language interaction.
 
-It provides expert assistance across tasks such as:  
-- EO and ES knowledge search and summarisation  
-- Scientific Q&A and policy brief generation  
-- Document understanding and retrieval  
-- Technical and educational content creation  
-- Integration of private EO document collections via RAG  
+It provides expert assistance across tasks such as:
+
+  - EO and ES knowledge search and summarisation  
+  - Scientific Q&A and policy brief generation  
+  - Document understanding and retrieval  
+  - Technical and educational content creation  
+  - Integration of private EO document collections via RAG  
 
 The project unites **data curation, model development, evaluation, and deployment** to deliver open, reusable tools for Europe’s EO ecosystem.
 
@@ -65,10 +66,11 @@ It is targeted for **public release in early 2026**.
 
 ## Model Development  
 
-`EVE-instruct` is trained on domain-curated corpora by fine-tuning **Mistral Small 3.2 24B**, through **continued pretraining** and **instruction fine-tuning**.  
-- The model is optimized for factuality, reasoning, and integration with retrieval-augmented generation.  
-- Training was carried out using **EuroHPC Marenostrum**, cloud environments, and **Mistral infrastructure**.  
-- Evaluation targets both **general domain** and **EO-specific** benchmarks.
+`EVE-instruct` is trained on domain-curated corpora by fine-tuning **Mistral Small 3.2 24B**, through **continued pretraining** and **instruction fine-tuning**.
+
+  - The model is optimized for factuality, reasoning, and integration with retrieval-augmented generation.  
+  - Training was carried out using **EuroHPC Marenostrum**, cloud environments, and **Mistral infrastructure**.  
+  - Evaluation targets both **general domain** and **EO-specific** benchmarks.
 
 
 ## Licence  
