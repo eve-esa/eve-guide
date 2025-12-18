@@ -309,6 +309,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../frontend/docs/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -318,10 +346,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -339,8 +367,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -5125,14 +5153,18 @@ class NewJournalScraper(BaseIterativePublisherScraper):
 }
 </code></pre>
 <h4 id="configuration-keys">Configuration Keys</h4>
-<p><strong>Required:</strong>
-- <code>bucket_key</code>: S3 storage path (use <code>{main_folder}</code> placeholder)</p>
-<p><strong>Optional:</strong>
-- <code>base_url</code>: Base URL of the website
-- <code>cookie_selector</code>: CSS selector for cookie banner acceptance button
-- <code>files_by_request</code>: Whether to download files via HTTP (default: <code>true</code>) or scrape them
-- <code>request_with_proxy</code>: Use proxy for requests (default: <code>false</code>)
-- <code>sources</code>: List of sources to scrape (structure depends on your model)</p>
+<p><strong>Required:</strong></p>
+<ul>
+<li><code>bucket_key</code>: S3 storage path (use <code>{main_folder}</code> placeholder)</li>
+</ul>
+<p><strong>Optional:</strong></p>
+<ul>
+<li><code>base_url</code>: Base URL of the website</li>
+<li><code>cookie_selector</code>: CSS selector for cookie banner acceptance button</li>
+<li><code>files_by_request</code>: Whether to download files via HTTP (default: <code>true</code>) or scrape them</li>
+<li><code>request_with_proxy</code>: Use proxy for requests (default: <code>false</code>)</li>
+<li><code>sources</code>: List of sources to scrape (structure depends on your model)</li>
+</ul>
 <h3 id="5-test-your-scraper">5. Test Your Scraper</h3>
 <p>Run your new scraper:</p>
 <pre><code class="language-bash"># Run with force to test from scratch
@@ -7063,13 +7095,15 @@ retrieve the final list of processed URLs. This method must be implemented in th
 
     <div class="doc doc-contents ">
 
-        <p>Scrape the issue for the PDFs. The logic is as follows:
-- Find the next issue URL, i.e., the URL of the previous issue, if it exists.
-- Check if there are any PDFs to download. If not, try with the next issue.
-- Download the PDFs in a zip file and wait for the download to complete.
-- Unpack the zip files in a temporary folder.
-- Return the result of the scraping. If the issue was scraped successfully, return the next issue URL, i.e.,
-    the URL of the previous issue to scrape next.</p>
+        <p>Scrape the issue for the PDFs. The logic is as follows:</p>
+<ul>
+<li>Find the next issue URL, i.e., the URL of the previous issue, if it exists.</li>
+<li>Check if there are any PDFs to download. If not, try with the next issue.</li>
+<li>Download the PDFs in a zip file and wait for the download to complete.</li>
+<li>Unpack the zip files in a temporary folder.</li>
+<li>Return the result of the scraping. If the issue was scraped successfully, return the next issue URL, i.e.,
+    the URL of the previous issue to scrape next.</li>
+</ul>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -7141,11 +7175,13 @@ retrieve the final list of processed URLs. This method must be implemented in th
 
     <div class="doc doc-contents ">
 
-        <p>Scrape the journal for the issues. The logic is as follows:
-- Get the first issue link from the journal page, i.e., the newest issue.
-- Scrape the issue and get the next issue URL. If the issue was scraped successfully, add the issue URL to the
-    list of journal links.
-- Repeat the process until there are no more issues to scrape.</p>
+        <p>Scrape the journal for the issues. The logic is as follows:</p>
+<ul>
+<li>Get the first issue link from the journal page, i.e., the newest issue.</li>
+<li>Scrape the issue and get the next issue URL. If the issue was scraped successfully, add the issue URL to the
+    list of journal links.</li>
+<li>Repeat the process until there are no more issues to scrape.</li>
+</ul>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>

@@ -309,6 +309,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -318,10 +346,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -339,8 +367,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3732,14 +3760,17 @@
 <summary><h3>Vector Configuration</h3></summary>
 
 #### Distance Metric: COSINE
+
 Cosine similarity measures the angle between vectors, making it ideal for text embeddings where the direction matters more than magnitude. This is the standard choice for semantic search applications.
 
 [Read about Distance Metrics →](https://qdrant.tech/documentation/concepts/search/#metrics)
 
 #### On-Disk Storage: Enabled
+
 Stores vectors on disk rather than in RAM, significantly reducing memory requirements for large collections. While slightly slower than in-memory storage, this allows you to store millions of vectors affordably.
 
 #### Shards: 8
+
 Distributes data across 8 shards for parallel processing. More shards improve write throughput and allow better resource utilization, especially important for large datasets.
 
 [Learn about Sharding →](https://qdrant.tech/documentation/guides/distributed_deployment/)
@@ -3750,13 +3781,17 @@ Distributes data across 8 shards for parallel processing. More shards improve wr
 <p>HNSW (Hierarchical Navigable Small World) is the indexing algorithm that enables fast approximate nearest neighbor search.</p>
 <p><a href="https://qdrant.tech/documentation/concepts/indexing/#vector-index">Deep dive into HNSW →</a></p>
 <h4 id="m-16">m: 16</h4>
-<p>Number of bidirectional links created for each node. Higher values improve search quality but increase memory usage and indexing time. 16 is a balanced choice for most applications.
-- <strong>Lower (4-8)</strong>: Less memory, faster indexing, slightly lower recall
-- <strong>Higher (32-64)</strong>: Better recall, more memory, slower indexing</p>
+<p>Number of bidirectional links created for each node. Higher values improve search quality but increase memory usage and indexing time. 16 is a balanced choice for most applications.</p>
+<ul>
+<li><strong>Lower (4-8)</strong>: Less memory, faster indexing, slightly lower recall</li>
+<li><strong>Higher (32-64)</strong>: Better recall, more memory, slower indexing</li>
+</ul>
 <h4 id="ef_construct-128">ef_construct: 128</h4>
-<p>Size of the dynamic candidate list during index construction. Higher values produce better index quality but take longer to build. 128 provides good quality without excessive build time.
-- <strong>Lower (64)</strong>: Faster indexing, slightly lower search quality
-- <strong>Higher (256-512)</strong>: Better search quality, slower indexing</p>
+<p>Size of the dynamic candidate list during index construction. Higher values produce better index quality but take longer to build. 128 provides good quality without excessive build time.</p>
+<ul>
+<li><strong>Lower (64)</strong>: Faster indexing, slightly lower search quality</li>
+<li><strong>Higher (256-512)</strong>: Better search quality, slower indexing</li>
+</ul>
 <h4 id="full_scan_threshold-10000">full_scan_threshold: 10,000</h4>
 <p>When collection size is below this threshold, Qdrant uses exact (brute-force) search instead of the HNSW index. Exact search is faster for small collections.</p>
 <h4 id="max_indexing_threads-2">max_indexing_threads: 2</h4>
@@ -3768,11 +3803,13 @@ Distributes data across 8 shards for parallel processing. More shards improve wr
 <p><a href="https://qdrant.tech/documentation/guides/quantization/">Learn about Quantization →</a></p>
 <h4 id="type-binary-quantization">Type: Binary Quantization</h4>
 <p>Converts vector components to binary (0 or 1) for massive memory savings. The original vectors are still used for final re-ranking, so search quality remains high.</p>
-<p><strong>Benefits:</strong>
-- 32x memory reduction (32-bit float → 1-bit)
-- Faster distance calculations
-- More vectors fit in RAM for better performance
-- Negligible impact on search quality (typically &lt;2% recall loss)</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>32x memory reduction (32-bit float → 1-bit)</li>
+<li>Faster distance calculations</li>
+<li>More vectors fit in RAM for better performance</li>
+<li>Negligible impact on search quality (typically &lt;2% recall loss)</li>
+</ul>
 <h4 id="always_ram-false">always_ram: false</h4>
 <p>Allows quantized vectors to be stored on disk when needed, rather than always keeping them in RAM. This provides flexibility for very large collections.</p>
 <h3 id="optimizer-settings">Optimizer Settings</h3>
@@ -3791,33 +3828,45 @@ Distributes data across 8 shards for parallel processing. More shards improve wr
 <p><a href="https://qdrant.tech/documentation/concepts/indexing/#payload-index">Learn about Payload Indexes →</a></p>
 <p>The pipeline automatically creates indexes on common academic metadata fields:</p>
 <h4 id="text-indexes-title-journal">Text Indexes (title, journal)</h4>
-<p>Enable full-text search and filtering on text fields. The word tokenizer splits text into searchable terms.
-- <strong>min_token_len</strong>: Minimum word length to index
-- <strong>max_token_len</strong>: Maximum word length to index
-- <strong>lowercase</strong>: Normalize to lowercase for case-insensitive search</p>
-<p><strong>Example filters:</strong>
-- Find papers with "neural" in title
-- Filter by journal name
-- Combine with vector search for semantic + keyword search</p>
+<p>Enable full-text search and filtering on text fields. The word tokenizer splits text into searchable terms.</p>
+<ul>
+<li><strong>min_token_len</strong>: Minimum word length to index</li>
+<li><strong>max_token_len</strong>: Maximum word length to index</li>
+<li><strong>lowercase</strong>: Normalize to lowercase for case-insensitive search</li>
+</ul>
+<p><strong>Example filters:</strong></p>
+<ul>
+<li>Find papers with "neural" in title</li>
+<li>Filter by journal name</li>
+<li>Combine with vector search for semantic + keyword search</li>
+</ul>
 <h4 id="integer-indexes-year-n_citations">Integer Indexes (year, n_citations)</h4>
 <p>Enable efficient range queries on numeric fields.</p>
-<p><strong>Example filters:</strong>
-- Papers published after 2020
-- Papers with &gt;100 citations
-- Combine filters: papers from 2015-2023 with &gt;50 citations</p>
-<p><strong>Performance Impact:</strong>
-- Indexes speed up filtering by 100-1000x
-- Small storage overhead (~10-20% of original data)
-- Slightly slower writes (indexes must be updated)</p>
+<p><strong>Example filters:</strong></p>
+<ul>
+<li>Papers published after 2020</li>
+<li>Papers with &gt;100 citations</li>
+<li>Combine filters: papers from 2015-2023 with &gt;50 citations</li>
+</ul>
+<p><strong>Performance Impact:</strong></p>
+<ul>
+<li>Indexes speed up filtering by 100-1000x</li>
+<li>Small storage overhead (~10-20% of original data)</li>
+<li>Slightly slower writes (indexes must be updated)</li>
+</ul>
 <h2 id="stage-behavior">Stage Behavior</h2>
 <h3 id="metadata-handling">Metadata Handling</h3>
-<p>Document metadata is prepared for storage:
-- <strong>content</strong>: Document text content
-- <strong>metadata</strong>: All user metadata fields (unwrapped at root level)
-- <strong>pipeline_metadata</strong>: Processing metadata (if <code>upload_pipeline_metadata: true</code>)</p>
-<p>Type conversions:
-- <code>year</code> field converted to integer
-- <code>title</code> field converted to string</p>
+<p>Document metadata is prepared for storage:</p>
+<ul>
+<li><strong>content</strong>: Document text content</li>
+<li><strong>metadata</strong>: All user metadata fields (unwrapped at root level)</li>
+<li><strong>pipeline_metadata</strong>: Processing metadata (if <code>upload_pipeline_metadata: true</code>)</li>
+</ul>
+<p>Type conversions:</p>
+<ul>
+<li><code>year</code> field converted to integer</li>
+<li><code>title</code> field converted to string</li>
+</ul>
 <h3 id="error-handling">Error Handling</h3>
 <ul>
 <li>Batch uploads retry up to 3 times on failure</li>
@@ -3953,9 +4002,11 @@ python vllm.py
 
 
         <p>Pipeline step for uploading chunked documents to Qdrant vector database or storing embeddings locally.</p>
-<p>Supports two modes:
-- "qdrant": Upload embeddings to a Qdrant vector database
-- "local": Store embeddings in document metadata without uploading</p>
+<p>Supports two modes:</p>
+<ul>
+<li>"qdrant": Upload embeddings to a Qdrant vector database</li>
+<li>"local": Store embeddings in document metadata without uploading</li>
+</ul>
 
 
 
@@ -4454,10 +4505,13 @@ python vllm.py
 <span class="normal">576</span>
 <span class="normal">577</span>
 <span class="normal">578</span>
-<span class="normal">579</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">QdrantUploadStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
+<span class="normal">579</span>
+<span class="normal">580</span>
+<span class="normal">581</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">QdrantUploadStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Pipeline step for uploading chunked documents to Qdrant vector database or storing embeddings locally.</span>
 
 <span class="sd">    Supports two modes:</span>
+
 <span class="sd">    - &quot;qdrant&quot;: Upload embeddings to a Qdrant vector database</span>
 <span class="sd">    - &quot;local&quot;: Store embeddings in document metadata without uploading</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -4467,6 +4521,7 @@ python vllm.py
 
 <span class="sd">        Args:</span>
 <span class="sd">            config (dict): Configuration dictionary containing:</span>
+
 <span class="sd">                - mode (str, optional): &quot;qdrant&quot; or &quot;local&quot;. Defaults to &quot;qdrant&quot;.</span>
 <span class="sd">                - use_existing_embeddings (bool, optional): If True, use embeddings</span>
 <span class="sd">                    from document.embedding field. Defaults to False.</span>
@@ -4993,24 +5048,30 @@ python vllm.py
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Configuration dictionary containing:
-- mode (str, optional): "qdrant" or "local". Defaults to "qdrant".
-- use_existing_embeddings (bool, optional): If True, use embeddings
-    from document.embedding field. Defaults to False.
-- upload_pipeline_metadata (bool, optional): If True, include
-    pipeline_metadata in Qdrant payload. Defaults to False.
-- vector_store (dict, required for "qdrant" mode):
-    - url (str): Qdrant instance URL.
-    - api_key (str, optional): API key for Qdrant authentication.
-    - collection_name (str): Target collection name.
-    - batch_size (int): Number of documents per batch.
-    - vector_size (int): Dimension of embedding vectors.
-- embedder (dict, required if use_existing_embeddings=False):
-    - url (str): URL of VLLM embedding server.
-    - model_name (str): Embedding model identifier.
-    - timeout (int, optional): Request timeout in seconds. Defaults to 300.
-    - api_key (str, optional): API key for VLLM. Defaults to "EMPTY".
-- batch_size (int, optional): Batch size for local mode. Defaults to 10.</p>
+                <p>Configuration dictionary containing:</p>
+<ul>
+<li>mode (str, optional): "qdrant" or "local". Defaults to "qdrant".</li>
+<li>use_existing_embeddings (bool, optional): If True, use embeddings
+    from document.embedding field. Defaults to False.</li>
+<li>upload_pipeline_metadata (bool, optional): If True, include
+    pipeline_metadata in Qdrant payload. Defaults to False.</li>
+<li>vector_store (dict, required for "qdrant" mode):<ul>
+<li>url (str): Qdrant instance URL.</li>
+<li>api_key (str, optional): API key for Qdrant authentication.</li>
+<li>collection_name (str): Target collection name.</li>
+<li>batch_size (int): Number of documents per batch.</li>
+<li>vector_size (int): Dimension of embedding vectors.</li>
+</ul>
+</li>
+<li>embedder (dict, required if use_existing_embeddings=False):<ul>
+<li>url (str): URL of VLLM embedding server.</li>
+<li>model_name (str): Embedding model identifier.</li>
+<li>timeout (int, optional): Request timeout in seconds. Defaults to 300.</li>
+<li>api_key (str, optional): API key for VLLM. Defaults to "EMPTY".</li>
+</ul>
+</li>
+<li>batch_size (int, optional): Batch size for local mode. Defaults to 10.</li>
+</ul>
               </div>
             </td>
             <td>
@@ -5062,8 +5123,7 @@ python vllm.py
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/qdrant/qdrant_step.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 99</span>
-<span class="normal">100</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">100</span>
 <span class="normal">101</span>
 <span class="normal">102</span>
 <span class="normal">103</span>
@@ -5141,11 +5201,14 @@ python vllm.py
 <span class="normal">175</span>
 <span class="normal">176</span>
 <span class="normal">177</span>
-<span class="normal">178</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;QdrantUpload&quot;</span><span class="p">):</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;QdrantUpload&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the Qdrant upload step.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        config (dict): Configuration dictionary containing:</span>
+
 <span class="sd">            - mode (str, optional): &quot;qdrant&quot; or &quot;local&quot;. Defaults to &quot;qdrant&quot;.</span>
 <span class="sd">            - use_existing_embeddings (bool, optional): If True, use embeddings</span>
 <span class="sd">                from document.embedding field. Defaults to False.</span>
@@ -5304,9 +5367,7 @@ pipeline chaining.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/qdrant/qdrant_step.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">437</span>
-<span class="normal">438</span>
-<span class="normal">439</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">439</span>
 <span class="normal">440</span>
 <span class="normal">441</span>
 <span class="normal">442</span>
@@ -5328,7 +5389,9 @@ pipeline chaining.</p>
 <span class="normal">458</span>
 <span class="normal">459</span>
 <span class="normal">460</span>
-<span class="normal">461</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute the upload step.</span>
 
 <span class="sd">    Routes to appropriate execution method based on configured mode</span>

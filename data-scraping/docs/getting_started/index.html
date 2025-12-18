@@ -309,6 +309,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../frontend/docs/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -318,10 +346,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -339,8 +367,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2868,16 +2896,22 @@ INTERACTING_PROXY_USER=&lt;username&gt;
 INTERACTING_PROXY_PASSWORD=&lt;password&gt;
 </code></pre>
 <h4 id="configuration-notes">Configuration Notes</h4>
-<p><strong>MinIO for Local Development</strong>:
-- The MinIO server emulates a remote S3 bucket for local testing
-- The <code>AWS_URL</code> key must be set to the URL of the MinIO server
-- For production, remove the <code>AWS_URL</code> from the configuration to use real AWS S3</p>
-<p><strong>Browser Settings</strong>:
-- <code>HEADLESS_BROWSER=true</code>: Run browser without GUI (recommended for servers)
-- <code>XVFB_MODE=true</code>: Use virtual frame buffer (required for headless Linux servers)</p>
-<p><strong>Proxy Settings</strong> (optional):
-- Required only for accessing restricted content
-- Contact the project maintainer for proxy credentials</p>
+<p><strong>MinIO for Local Development</strong>:</p>
+<ul>
+<li>The MinIO server emulates a remote S3 bucket for local testing</li>
+<li>The <code>AWS_URL</code> key must be set to the URL of the MinIO server</li>
+<li>For production, remove the <code>AWS_URL</code> from the configuration to use real AWS S3</li>
+</ul>
+<p><strong>Browser Settings</strong>:</p>
+<ul>
+<li><code>HEADLESS_BROWSER=true</code>: Run browser without GUI (recommended for servers)</li>
+<li><code>XVFB_MODE=true</code>: Use virtual frame buffer (required for headless Linux servers)</li>
+</ul>
+<p><strong>Proxy Settings</strong> (optional):</p>
+<ul>
+<li>Required only for accessing restricted content</li>
+<li>Contact the project maintainer for proxy credentials</li>
+</ul>
 <h3 id="3-installation">3. Installation</h3>
 <p>Start the Docker containers:</p>
 <pre><code class="language-bash">make up
@@ -2889,20 +2923,24 @@ INTERACTING_PROXY_PASSWORD=&lt;password&gt;
 <p>Check that all containers are running:</p>
 <pre><code class="language-bash">docker ps
 </code></pre>
-<p>You should see containers for:
-- MinIO (S3-compatible storage)
-- MySQL (database)
-- The scraping application</p>
+<p>You should see containers for:</p>
+<ul>
+<li>MinIO (S3-compatible storage)</li>
+<li>MySQL (database)</li>
+<li>The scraping application</li>
+</ul>
 <h2 id="running-the-pipeline">Running the Pipeline</h2>
 <h3 id="basic-usage">Basic Usage</h3>
 <p>Run all configured scrapers:</p>
 <pre><code class="language-bash">make run
 </code></pre>
-<p>The pipeline will:
-1. Connect to MinIO and MySQL
-2. Execute all scrapers defined in <code>config/config.json</code>
-3. Store scraped data in MinIO
-4. Track progress in MySQL database</p>
+<p>The pipeline will:</p>
+<ol>
+<li>Connect to MinIO and MySQL</li>
+<li>Execute all scrapers defined in <code>config/config.json</code></li>
+<li>Store scraped data in MinIO</li>
+<li>Track progress in MySQL database</li>
+</ol>
 <h3 id="running-specific-scrapers">Running Specific Scrapers</h3>
 <p>Execute one or more specific scrapers:</p>
 <pre><code class="language-bash"># Run a single scraper
@@ -2962,10 +3000,12 @@ INTERACTING_PROXY_PASSWORD=&lt;proxy-password&gt;
 <p>Run the deployment script on your Linux-based POD:</p>
 <pre><code class="language-bash">sh pod.sh
 </code></pre>
-<p>This script will:
-- Install required packages
-- Set up the environment
-- Configure the infrastructure</p>
+<p>This script will:</p>
+<ul>
+<li>Install required packages</li>
+<li>Set up the environment</li>
+<li>Configure the infrastructure</li>
+</ul>
 <h3 id="3-run-in-production">3. Run in Production</h3>
 <p>Execute the pipeline in production:</p>
 <pre><code class="language-bash">make runpod
@@ -2992,12 +3032,14 @@ make runpod args=&quot;--scrapers IOPScraper&quot;
   }
 }
 </code></pre>
-<p>Key configuration parameters:
-- <code>bucket_key</code>: S3 path where data will be stored
-- <code>base_url</code>: Base URL of the website (optional)
-- <code>cookie_selector</code>: CSS selector for cookie banner (optional)
-- <code>files_by_request</code>: Whether to retrieve files via HTTP request vs scraping (default: <code>true</code>)
-- <code>sources</code>: List of URLs or configurations to scrape</p>
+<p>Key configuration parameters:</p>
+<ul>
+<li><code>bucket_key</code>: S3 path where data will be stored</li>
+<li><code>base_url</code>: Base URL of the website (optional)</li>
+<li><code>cookie_selector</code>: CSS selector for cookie banner (optional)</li>
+<li><code>files_by_request</code>: Whether to retrieve files via HTTP request vs scraping (default: <code>true</code>)</li>
+<li><code>sources</code>: List of URLs or configurations to scrape</li>
+</ul>
 <p>For detailed configuration examples, see the <a href="../scrapers/">Scrapers</a> documentation.</p>
 <h2 id="common-commands">Common Commands</h2>
 <table>
@@ -3050,9 +3092,11 @@ make up
 <pre><code class="language-bash">docker logs &lt;mysql-container-id&gt;
 </code></pre>
 <h3 id="minio-access-issues">MinIO Access Issues</h3>
-<p>Access MinIO console at <code>http://localhost:9100</code> with credentials from <code>.env</code>:
-- Username: <code>minio</code>
-- Password: <code>minio1234</code></p>
+<p>Access MinIO console at <code>http://localhost:9100</code> with credentials from <code>.env</code>:</p>
+<ul>
+<li>Username: <code>minio</code></li>
+<li>Password: <code>minio1234</code></li>
+</ul>
 <h3 id="browserselenium-issues">Browser/Selenium Issues</h3>
 <p>If you encounter browser-related errors:</p>
 <ol>

@@ -309,6 +309,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -318,10 +346,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -339,8 +367,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3964,14 +3992,12 @@
         <p>Filter documents based on content length (word count).</p>
 <p>This step filters documents based on their word count with configurable
 thresholds and policies.</p>
+<p>Config parameters:</p>
+<pre><code>- length (int): The word count threshold for filtering
+- comparison (str): Either "less" or "greater" to compare against threshold
+- action (str): Either "keep" or "discard" - what to do with documents matching the condition
+</code></pre>
 
-
-<details class="config-parameters" open>
-  <summary>Config parameters</summary>
-  <p>length (int): The word count threshold for filtering
-comparison (str): Either "less" or "greater" to compare against threshold
-action (str): Either "keep" or "discard" - what to do with documents matching the condition</p>
-</details>
 
 <p><span class="doc-section-title">Examples:</span></p>
     <h3 id="eve.steps.filters.length_filter.LengthFilterStep--keep-documents-with-more-than-1000-words">Keep documents with more than 1000 words</h3>
@@ -4116,16 +4142,18 @@ action (str): Either "keep" or "discard" - what to do with documents matching th
 <span class="normal">131</span>
 <span class="normal">132</span>
 <span class="normal">133</span>
-<span class="normal">134</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">LengthFilterStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
+<span class="normal">134</span>
+<span class="normal">135</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">LengthFilterStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter documents based on content length (word count).</span>
 
 <span class="sd">    This step filters documents based on their word count with configurable</span>
 <span class="sd">    thresholds and policies.</span>
 
 <span class="sd">    Config parameters:</span>
-<span class="sd">        length (int): The word count threshold for filtering</span>
-<span class="sd">        comparison (str): Either &quot;less&quot; or &quot;greater&quot; to compare against threshold</span>
-<span class="sd">        action (str): Either &quot;keep&quot; or &quot;discard&quot; - what to do with documents matching the condition</span>
+
+<span class="sd">        - length (int): The word count threshold for filtering</span>
+<span class="sd">        - comparison (str): Either &quot;less&quot; or &quot;greater&quot; to compare against threshold</span>
+<span class="sd">        - action (str): Either &quot;keep&quot; or &quot;discard&quot; - what to do with documents matching the condition</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        # Keep documents with more than 1000 words</span>
@@ -4333,8 +4361,7 @@ action (str): Either "keep" or "discard" - what to do with documents matching th
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/filters/length_filter.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 81</span>
-<span class="normal"> 82</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 82</span>
 <span class="normal"> 83</span>
 <span class="normal"> 84</span>
 <span class="normal"> 85</span>
@@ -4386,7 +4413,8 @@ action (str): Either "keep" or "discard" - what to do with documents matching th
 <span class="normal">131</span>
 <span class="normal">132</span>
 <span class="normal">133</span>
-<span class="normal">134</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="normal">134</span>
+<span class="normal">135</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute length filtering on documents.</span>
 
 <span class="sd">    Args:</span>
@@ -4512,16 +4540,14 @@ action (str): Either "keep" or "discard" - what to do with documents matching th
 <p>This step calculates the percentage of PII tokens ([PERSON], [EMAIL_ADDRESS]) in documents
 and filters them based on a threshold. Documents with "abstract" or "introduction" in their
 headers or text are kept regardless of PII percentage.</p>
-
-
-<details class="config-parameters" open>
-  <summary>Config parameters</summary>
-  <p>threshold (float): PII token percentage threshold (e.g., 0.03 for 3%)
-action (str): Either "keep" or "discard" (default: "discard")
+<p>Config parameters:</p>
+<pre><code>- threshold (float): PII token percentage threshold (e.g., 0.03 for 3%)
+- action (str): Either "keep" or "discard" (default: "discard")
     - "discard": Remove documents with PII &gt;= threshold (except abstract/intro)
     - "keep": Keep only documents with PII &gt;= threshold (except abstract/intro)
-apply_filter (bool): Whether to apply filtering (default: True)</p>
-</details>
+- apply_filter (bool): Whether to apply filtering (default: True)
+</code></pre>
+
 
 <p><span class="doc-section-title">Examples:</span></p>
     <h3 id="eve.steps.filters.pii_filter.PiiFilterStep--remove-documents-with-3-pii-tokens-but-keep-abstractsintros">Remove documents with &gt;= 3% PII tokens (but keep abstracts/intros)</h3>
@@ -4698,7 +4724,8 @@ apply_filter (bool): Whether to apply filtering (default: True)</p>
 <span class="normal">166</span>
 <span class="normal">167</span>
 <span class="normal">168</span>
-<span class="normal">169</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">PiiFilterStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
+<span class="normal">169</span>
+<span class="normal">170</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">PiiFilterStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter documents based on PII (Personally Identifiable Information) token percentage.</span>
 
 <span class="sd">    This step calculates the percentage of PII tokens ([PERSON], [EMAIL_ADDRESS]) in documents</span>
@@ -4706,11 +4733,12 @@ apply_filter (bool): Whether to apply filtering (default: True)</p>
 <span class="sd">    headers or text are kept regardless of PII percentage.</span>
 
 <span class="sd">    Config parameters:</span>
-<span class="sd">        threshold (float): PII token percentage threshold (e.g., 0.03 for 3%)</span>
-<span class="sd">        action (str): Either &quot;keep&quot; or &quot;discard&quot; (default: &quot;discard&quot;)</span>
+
+<span class="sd">        - threshold (float): PII token percentage threshold (e.g., 0.03 for 3%)</span>
+<span class="sd">        - action (str): Either &quot;keep&quot; or &quot;discard&quot; (default: &quot;discard&quot;)</span>
 <span class="sd">            - &quot;discard&quot;: Remove documents with PII &gt;= threshold (except abstract/intro)</span>
 <span class="sd">            - &quot;keep&quot;: Keep only documents with PII &gt;= threshold (except abstract/intro)</span>
-<span class="sd">        apply_filter (bool): Whether to apply filtering (default: True)</span>
+<span class="sd">        - apply_filter (bool): Whether to apply filtering (default: True)</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        # Remove documents with &gt;= 3% PII tokens (but keep abstracts/intros)</span>
@@ -4949,8 +4977,7 @@ apply_filter (bool): Whether to apply filtering (default: True)</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/filters/pii_filter.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 98</span>
-<span class="normal"> 99</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 99</span>
 <span class="normal">100</span>
 <span class="normal">101</span>
 <span class="normal">102</span>
@@ -5020,7 +5047,8 @@ apply_filter (bool): Whether to apply filtering (default: True)</p>
 <span class="normal">166</span>
 <span class="normal">167</span>
 <span class="normal">168</span>
-<span class="normal">169</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="normal">169</span>
+<span class="normal">170</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute PII filtering on documents.</span>
 
 <span class="sd">    Args:</span>
@@ -5164,14 +5192,12 @@ apply_filter (bool): Whether to apply filtering (default: True)</p>
 <p>This step filters documents based on their newline chunk count with configurable
 thresholds and policies. A newline chunk is defined as a sequence of text
 separated by newline characters.</p>
+<p>Config parameters:</p>
+<pre><code>- chunks (int): The newline chunk count threshold for filtering
+- comparison (str): Either "less" or "greater" to compare against threshold
+- action (str): Either "keep" or "discard" - what to do with documents matching the condition
+</code></pre>
 
-
-<details class="config-parameters" open>
-  <summary>Config parameters</summary>
-  <p>chunks (int): The newline chunk count threshold for filtering
-comparison (str): Either "less" or "greater" to compare against threshold
-action (str): Either "keep" or "discard" - what to do with documents matching the condition</p>
-</details>
 
 <p><span class="doc-section-title">Examples:</span></p>
     <h3 id="eve.steps.filters.newline_filter.NewLineFilterStep--keep-documents-with-more-than-10-chunks">Keep documents with more than 10 chunks</h3>
@@ -5320,7 +5346,8 @@ action (str): Either "keep" or "discard" - what to do with documents matching th
 <span class="normal">135</span>
 <span class="normal">136</span>
 <span class="normal">137</span>
-<span class="normal">138</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">NewLineFilterStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
+<span class="normal">138</span>
+<span class="normal">139</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">NewLineFilterStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter documents based on the number of newline chunks.</span>
 
 <span class="sd">    This step filters documents based on their newline chunk count with configurable</span>
@@ -5328,9 +5355,10 @@ action (str): Either "keep" or "discard" - what to do with documents matching th
 <span class="sd">    separated by newline characters.</span>
 
 <span class="sd">    Config parameters:</span>
-<span class="sd">        chunks (int): The newline chunk count threshold for filtering</span>
-<span class="sd">        comparison (str): Either &quot;less&quot; or &quot;greater&quot; to compare against threshold</span>
-<span class="sd">        action (str): Either &quot;keep&quot; or &quot;discard&quot; - what to do with documents matching the condition</span>
+
+<span class="sd">        - chunks (int): The newline chunk count threshold for filtering</span>
+<span class="sd">        - comparison (str): Either &quot;less&quot; or &quot;greater&quot; to compare against threshold</span>
+<span class="sd">        - action (str): Either &quot;keep&quot; or &quot;discard&quot; - what to do with documents matching the condition</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        # Keep documents with more than 10 chunks</span>
@@ -5541,8 +5569,7 @@ action (str): Either "keep" or "discard" - what to do with documents matching th
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/filters/newline_filter.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 85</span>
-<span class="normal"> 86</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 86</span>
 <span class="normal"> 87</span>
 <span class="normal"> 88</span>
 <span class="normal"> 89</span>
@@ -5594,7 +5621,8 @@ action (str): Either "keep" or "discard" - what to do with documents matching th
 <span class="normal">135</span>
 <span class="normal">136</span>
 <span class="normal">137</span>
-<span class="normal">138</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="normal">138</span>
+<span class="normal">139</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute newline chunk filtering on documents.</span>
 
 <span class="sd">    Args:</span>
@@ -5719,17 +5747,17 @@ action (str): Either "keep" or "discard" - what to do with documents matching th
         <p>Filter documents containing references or acknowledgements.</p>
 <p>This step removes documents that contain reference or acknowledgement sections,
 checking both in document headers and in the document text content.</p>
-<p>The filter checks for:
-- Headers containing: "reference", "references", "acknowledgement", "acknowledgements"
-- Text content containing markdown headers with these keywords</p>
-
-
-<details class="config-parameters" open>
-  <summary>Config parameters</summary>
-  <p>action (str): Either "keep" or "discard" (default: "discard")
+<p>The filter checks for:</p>
+<ul>
+<li>Headers containing: "reference", "references", "acknowledgement", "acknowledgements"</li>
+<li>Text content containing markdown headers with these keywords</li>
+</ul>
+<p>Config parameters:</p>
+<pre><code>- action (str): Either "keep" or "discard" (default: "discard")
     - "discard": Remove documents with references/acknowledgements
-    - "keep": Keep only documents with references/acknowledgements</p>
-</details>
+    - "keep": Keep only documents with references/acknowledgements
+</code></pre>
+
 
 <p><span class="doc-section-title">Examples:</span></p>
     <h3 id="eve.steps.filters.reference_filter.ReferenceFilterStep--remove-documents-with-references-or-acknowledgements-default-behavior">Remove documents with references or acknowledgements (default behavior)</h3>
@@ -5922,18 +5950,22 @@ checking both in document headers and in the document text content.</p>
 <span class="normal">182</span>
 <span class="normal">183</span>
 <span class="normal">184</span>
-<span class="normal">185</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ReferenceFilterStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ReferenceFilterStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter documents containing references or acknowledgements.</span>
 
 <span class="sd">    This step removes documents that contain reference or acknowledgement sections,</span>
 <span class="sd">    checking both in document headers and in the document text content.</span>
 
 <span class="sd">    The filter checks for:</span>
+
 <span class="sd">    - Headers containing: &quot;reference&quot;, &quot;references&quot;, &quot;acknowledgement&quot;, &quot;acknowledgements&quot;</span>
 <span class="sd">    - Text content containing markdown headers with these keywords</span>
 
 <span class="sd">    Config parameters:</span>
-<span class="sd">        action (str): Either &quot;keep&quot; or &quot;discard&quot; (default: &quot;discard&quot;)</span>
+
+<span class="sd">        - action (str): Either &quot;keep&quot; or &quot;discard&quot; (default: &quot;discard&quot;)</span>
 <span class="sd">            - &quot;discard&quot;: Remove documents with references/acknowledgements</span>
 <span class="sd">            - &quot;keep&quot;: Keep only documents with references/acknowledgements</span>
 
@@ -6189,9 +6221,7 @@ checking both in document headers and in the document text content.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/filters/reference_filter.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">142</span>
 <span class="normal">143</span>
 <span class="normal">144</span>
 <span class="normal">145</span>
@@ -6234,7 +6264,9 @@ checking both in document headers and in the document text content.</p>
 <span class="normal">182</span>
 <span class="normal">183</span>
 <span class="normal">184</span>
-<span class="normal">185</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute reference/acknowledgement filtering on documents.</span>
 
 <span class="sd">    Args:</span>
@@ -6352,17 +6384,15 @@ checking both in document headers and in the document text content.</p>
 <p>This step computes perplexity scores for documents using a causal language model
 and optionally filters them based on a threshold. Lower perplexity indicates more
 natural, coherent text.</p>
-
-
-<details class="config-parameters" open>
-  <summary>Config parameters</summary>
-  <p>model_name (str): Hugging Face model name (default: "TinyLlama/TinyLlama-1.1B-Chat-v1.0")
+<p>Config parameters:</p>
+<pre><code>- model_name (str): Hugging Face model name (default: "TinyLlama/TinyLlama-1.1B-Chat-v1.0")
 stride (int): Stride for sliding window perplexity calculation (default: 128)
-batch_size (int): Batch size for model inference (default: 128)
-max_length (int): Maximum sequence length for model (default: 1024)
-threshold (float): Perplexity threshold for filtering (default: 0.0)
-enable_threshold (bool): Whether to apply threshold-based filtering (default: False)</p>
-</details>
+- batch_size (int): Batch size for model inference (default: 128)
+- max_length (int): Maximum sequence length for model (default: 1024)
+- threshold (float): Perplexity threshold for filtering (default: 0.0)
+- enable_threshold (bool): Whether to apply threshold-based filtering (default: False)
+</code></pre>
+
 
 <p><span class="doc-section-title">Examples:</span></p>
     <h3 id="eve.steps.filters.perplexity.PerplexityFilterStep--calculate-perplexity-without-filtering">Calculate perplexity without filtering</h3>
@@ -6469,7 +6499,8 @@ enable_threshold (bool): Whether to apply threshold-based filtering (default: Fa
 <span class="normal"> 99</span>
 <span class="normal">100</span>
 <span class="normal">101</span>
-<span class="normal">102</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">PerplexityFilterStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
+<span class="normal">102</span>
+<span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">PerplexityFilterStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter documents based on perplexity scores calculated by a language model.</span>
 
 <span class="sd">    This step computes perplexity scores for documents using a causal language model</span>
@@ -6477,12 +6508,13 @@ enable_threshold (bool): Whether to apply threshold-based filtering (default: Fa
 <span class="sd">    natural, coherent text.</span>
 
 <span class="sd">    Config parameters:</span>
-<span class="sd">        model_name (str): Hugging Face model name (default: &quot;TinyLlama/TinyLlama-1.1B-Chat-v1.0&quot;)</span>
+
+<span class="sd">        - model_name (str): Hugging Face model name (default: &quot;TinyLlama/TinyLlama-1.1B-Chat-v1.0&quot;)</span>
 <span class="sd">        stride (int): Stride for sliding window perplexity calculation (default: 128)</span>
-<span class="sd">        batch_size (int): Batch size for model inference (default: 128)</span>
-<span class="sd">        max_length (int): Maximum sequence length for model (default: 1024)</span>
-<span class="sd">        threshold (float): Perplexity threshold for filtering (default: 0.0)</span>
-<span class="sd">        enable_threshold (bool): Whether to apply threshold-based filtering (default: False)</span>
+<span class="sd">        - batch_size (int): Batch size for model inference (default: 128)</span>
+<span class="sd">        - max_length (int): Maximum sequence length for model (default: 1024)</span>
+<span class="sd">        - threshold (float): Perplexity threshold for filtering (default: 0.0)</span>
+<span class="sd">        - enable_threshold (bool): Whether to apply threshold-based filtering (default: False)</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        # Calculate perplexity without filtering</span>
@@ -6623,8 +6655,7 @@ enable_threshold (bool): Whether to apply threshold-based filtering (default: Fa
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/filters/perplexity.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">35</span>
-<span class="normal">36</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
 <span class="normal">39</span>
@@ -6642,7 +6673,8 @@ enable_threshold (bool): Whether to apply threshold-based filtering (default: Fa
 <span class="normal">51</span>
 <span class="normal">52</span>
 <span class="normal">53</span>
-<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="normal">54</span>
+<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the perplexity filter step.</span>
 
 <span class="sd">    Args:</span>
@@ -6754,8 +6786,7 @@ If enable_threshold is True, filters documents based on the perplexity threshold
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/filters/perplexity.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 68</span>
-<span class="normal"> 69</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 69</span>
 <span class="normal"> 70</span>
 <span class="normal"> 71</span>
 <span class="normal"> 72</span>
@@ -6788,7 +6819,8 @@ If enable_threshold is True, filters documents based on the perplexity threshold
 <span class="normal"> 99</span>
 <span class="normal">100</span>
 <span class="normal">101</span>
-<span class="normal">102</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="normal">102</span>
+<span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute perplexity calculation and optional filtering on documents.</span>
 
 <span class="sd">    Computes perplexity scores for all documents and adds them to metadata.</span>
@@ -6847,8 +6879,7 @@ appropriate padding configuration.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/filters/perplexity.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">56</span>
-<span class="normal">57</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">57</span>
 <span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
@@ -6857,7 +6888,8 @@ appropriate padding configuration.</p>
 <span class="normal">63</span>
 <span class="normal">64</span>
 <span class="normal">65</span>
-<span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">init_model_tokenizer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">66</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">init_model_tokenizer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the language model and tokenizer.</span>
 
 <span class="sd">    Loads the model from Hugging Face and sets up the tokenizer with</span>

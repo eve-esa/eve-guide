@@ -309,6 +309,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -318,10 +346,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -339,8 +367,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -6403,9 +6431,11 @@
 
 
 
-        <p>this class does exact duplication by -
-1. calculate size as a first filter to save computation.
-2. calcuates checksum and finds the duplicates.</p>
+        <p>this class does exact duplication by -</p>
+<ol>
+<li>calculate size as a first filter to save computation.</li>
+<li>calcuates checksum and finds the duplicates.</li>
+</ol>
 
 
 
@@ -6478,8 +6508,10 @@
 <span class="normal">70</span>
 <span class="normal">71</span>
 <span class="normal">72</span>
-<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ExactDuplication</span><span class="p">:</span>
+<span class="normal">73</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ExactDuplication</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;this class does exact duplication by -</span>
+
 <span class="sd">    1. calculate size as a first filter to save computation.</span>
 <span class="sd">    2. calcuates checksum and finds the duplicates.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -6577,8 +6609,7 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/dedup/exact_duplicates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
-<span class="normal">42</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
@@ -6609,7 +6640,8 @@
 <span class="normal">70</span>
 <span class="normal">71</span>
 <span class="normal">72</span>
-<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">find_duplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">Document</span><span class="p">]]:</span>
+<span class="normal">73</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">find_duplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">Document</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Find duplicate files based on size and SHA-256 checksum.&quot;&quot;&quot;</span>
 
     <span class="c1"># stage 1: group files by size</span>
@@ -7034,13 +7066,15 @@ Adjust SHINGLE_SIZE: Larger shingles are more specific but increase computation.
 
 
         <p>Comprehensive cleaning step that applies multiple data cleaning components.</p>
-<p>This step processes extracted text through various cleaning components to:
-- Fix OCR-induced errors
-- Remove OCR duplicates
-- Apply Nougat corrections
-- Apply rule-based corrections
-- Remove Nougat artifacts
-- Correct LaTeX syntax errors (optional)</p>
+<p>This step processes extracted text through various cleaning components to:</p>
+<ul>
+<li>Fix OCR-induced errors</li>
+<li>Remove OCR duplicates</li>
+<li>Apply Nougat corrections</li>
+<li>Apply rule-based corrections</li>
+<li>Remove Nougat artifacts</li>
+<li>Correct LaTeX syntax errors (optional)</li>
+</ul>
 
 
 
@@ -7193,11 +7227,15 @@ Adjust SHINGLE_SIZE: Larger shingles are more specific but increase computation.
 <span class="normal">155</span>
 <span class="normal">156</span>
 <span class="normal">157</span>
-<span class="normal">158</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">CleaningStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">CleaningStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Comprehensive cleaning step that applies multiple data cleaning components.</span>
 
 <span class="sd">    This step processes extracted text through various cleaning components to:</span>
+
 <span class="sd">    - Fix OCR-induced errors</span>
 <span class="sd">    - Remove OCR duplicates</span>
 <span class="sd">    - Apply Nougat corrections</span>
@@ -7211,13 +7249,15 @@ Adjust SHINGLE_SIZE: Larger shingles are more specific but increase computation.
 
 <span class="sd">        Args:</span>
 <span class="sd">            config: Configuration dictionary with component settings.</span>
-<span class="sd">                   Expected keys:</span>
-<span class="sd">                   - ocr_threshold: float (default 0.99) - OCR duplicate threshold</span>
-<span class="sd">                   - min_words: int (default 2) - Minimum words for processing</span>
-<span class="sd">                   - enable_latex_correction: bool (default False) - Enable LaTeX correction</span>
-<span class="sd">                   - openrouter_api_key: str (optional) - API key for LaTeX correction</span>
-<span class="sd">                   - openrouter_model: str (default &quot;anthropic/claude-3-haiku&quot;) - Model for corrections</span>
-<span class="sd">                   - debug: bool (default False) - Enable debug output</span>
+
+<span class="sd">                Expected keys:</span>
+
+<span class="sd">                - ocr_threshold: float (default 0.99) - OCR duplicate threshold</span>
+<span class="sd">                - min_words: int (default 2) - Minimum words for processing</span>
+<span class="sd">                - enable_latex_correction: bool (default False) - Enable LaTeX correction</span>
+<span class="sd">                - openrouter_api_key: str (optional) - API key for LaTeX correction</span>
+<span class="sd">                - openrouter_model: str (default &quot;anthropic/claude-3-haiku&quot;) - Model for corrections</span>
+<span class="sd">                - debug: bool (default False) - Enable debug output</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CleaningStep&quot;</span><span class="p">)</span>
 
@@ -7386,14 +7426,16 @@ Adjust SHINGLE_SIZE: Larger shingles are more specific but increase computation.
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Configuration dictionary with component settings.
-   Expected keys:
-   - ocr_threshold: float (default 0.99) - OCR duplicate threshold
-   - min_words: int (default 2) - Minimum words for processing
-   - enable_latex_correction: bool (default False) - Enable LaTeX correction
-   - openrouter_api_key: str (optional) - API key for LaTeX correction
-   - openrouter_model: str (default "anthropic/claude-3-haiku") - Model for corrections
-   - debug: bool (default False) - Enable debug output</p>
+                <p>Configuration dictionary with component settings.</p>
+<p>Expected keys:</p>
+<ul>
+<li>ocr_threshold: float (default 0.99) - OCR duplicate threshold</li>
+<li>min_words: int (default 2) - Minimum words for processing</li>
+<li>enable_latex_correction: bool (default False) - Enable LaTeX correction</li>
+<li>openrouter_api_key: str (optional) - API key for LaTeX correction</li>
+<li>openrouter_model: str (default "anthropic/claude-3-haiku") - Model for corrections</li>
+<li>debug: bool (default False) - Enable debug output</li>
+</ul>
               </div>
             </td>
             <td>
@@ -7406,8 +7448,7 @@ Adjust SHINGLE_SIZE: Larger shingles are more specific but increase computation.
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/cleaning/cleaning_step.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">29</span>
-<span class="normal">30</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
 <span class="normal">33</span>
@@ -7441,18 +7482,23 @@ Adjust SHINGLE_SIZE: Larger shingles are more specific but increase computation.
 <span class="normal">61</span>
 <span class="normal">62</span>
 <span class="normal">63</span>
-<span class="normal">64</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the cleaning step with configuration.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        config: Configuration dictionary with component settings.</span>
-<span class="sd">               Expected keys:</span>
-<span class="sd">               - ocr_threshold: float (default 0.99) - OCR duplicate threshold</span>
-<span class="sd">               - min_words: int (default 2) - Minimum words for processing</span>
-<span class="sd">               - enable_latex_correction: bool (default False) - Enable LaTeX correction</span>
-<span class="sd">               - openrouter_api_key: str (optional) - API key for LaTeX correction</span>
-<span class="sd">               - openrouter_model: str (default &quot;anthropic/claude-3-haiku&quot;) - Model for corrections</span>
-<span class="sd">               - debug: bool (default False) - Enable debug output</span>
+
+<span class="sd">            Expected keys:</span>
+
+<span class="sd">            - ocr_threshold: float (default 0.99) - OCR duplicate threshold</span>
+<span class="sd">            - min_words: int (default 2) - Minimum words for processing</span>
+<span class="sd">            - enable_latex_correction: bool (default False) - Enable LaTeX correction</span>
+<span class="sd">            - openrouter_api_key: str (optional) - API key for LaTeX correction</span>
+<span class="sd">            - openrouter_model: str (default &quot;anthropic/claude-3-haiku&quot;) - Model for corrections</span>
+<span class="sd">            - debug: bool (default False) - Enable debug output</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CleaningStep&quot;</span><span class="p">)</span>
 
@@ -7557,10 +7603,7 @@ Adjust SHINGLE_SIZE: Larger shingles are more specific but increase computation.
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/cleaning/cleaning_step.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 66</span>
-<span class="normal"> 67</span>
-<span class="normal"> 68</span>
-<span class="normal"> 69</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 69</span>
 <span class="normal"> 70</span>
 <span class="normal"> 71</span>
 <span class="normal"> 72</span>
@@ -7617,7 +7660,10 @@ Adjust SHINGLE_SIZE: Larger shingles are more specific but increase computation.
 <span class="normal">123</span>
 <span class="normal">124</span>
 <span class="normal">125</span>
-<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute the cleaning step on input data.</span>
 
 <span class="sd">    Args:</span>
@@ -7723,10 +7769,7 @@ Adjust SHINGLE_SIZE: Larger shingles are more specific but increase computation.
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/cleaning/cleaning_step.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">145</span>
 <span class="normal">146</span>
 <span class="normal">147</span>
 <span class="normal">148</span>
@@ -7739,7 +7782,10 @@ Adjust SHINGLE_SIZE: Larger shingles are more specific but increase computation.
 <span class="normal">155</span>
 <span class="normal">156</span>
 <span class="normal">157</span>
-<span class="normal">158</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_component_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_component_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get information about enabled cleaning processors.</span>
 
 <span class="sd">    Returns:</span>
@@ -11624,7 +11670,8 @@ from the input text.</p>
 <span class="normal">199</span>
 <span class="normal">200</span>
 <span class="normal">201</span>
-<span class="normal">202</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MetadataStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
+<span class="normal">202</span>
+<span class="normal">203</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MetadataStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Metadata extraction step that extracts metadata from PDF and HTML documents.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -11635,6 +11682,7 @@ from the input text.</p>
 
 <span class="sd">        Args:</span>
 <span class="sd">            config: Configuration dictionary with options:</span>
+
 <span class="sd">                - enabled_formats: List of file formats to process (pdf, html, txt, md)</span>
 <span class="sd">                - fallback_to_filename: Use filename as title fallback</span>
 <span class="sd">                - debug: Enable debug logging</span>
@@ -11862,14 +11910,16 @@ from the input text.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Configuration dictionary with options:
-- enabled_formats: List of file formats to process (pdf, html, txt, md)
-- fallback_to_filename: Use filename as title fallback
-- debug: Enable debug logging
-- export_metadata: Whether to export metadata to JSON file
-- metadata_destination: Directory to save metadata file
-- metadata_filename: Name of the metadata JSON file
-  Note: Text formats (txt, md) automatically enable this feature</p>
+                <p>Configuration dictionary with options:</p>
+<ul>
+<li>enabled_formats: List of file formats to process (pdf, html, txt, md)</li>
+<li>fallback_to_filename: Use filename as title fallback</li>
+<li>debug: Enable debug logging</li>
+<li>export_metadata: Whether to export metadata to JSON file</li>
+<li>metadata_destination: Directory to save metadata file</li>
+<li>metadata_filename: Name of the metadata JSON file
+  Note: Text formats (txt, md) automatically enable this feature</li>
+</ul>
               </div>
             </td>
             <td>
@@ -11907,12 +11957,14 @@ from the input text.</p>
 <span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span>
-<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Initialize the metadata extraction step.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        config: Configuration dictionary with options:</span>
+
 <span class="sd">            - enabled_formats: List of file formats to process (pdf, html, txt, md)</span>
 <span class="sd">            - fallback_to_filename: Use filename as title fallback</span>
 <span class="sd">            - debug: Enable debug logging</span>
@@ -12013,8 +12065,7 @@ from the input text.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/metadata/metadata_step.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">108</span>
-<span class="normal">109</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">109</span>
 <span class="normal">110</span>
 <span class="normal">111</span>
 <span class="normal">112</span>
@@ -12069,7 +12120,8 @@ from the input text.</p>
 <span class="normal">161</span>
 <span class="normal">162</span>
 <span class="normal">163</span>
-<span class="normal">164</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="normal">164</span>
+<span class="normal">165</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Execute metadata extraction on input documents.</span>
 
@@ -12780,9 +12832,11 @@ for parsing HTML content efficiently without requiring a full HTML parser.</p>
 <a id="eve.steps.metadata.extractors.pdf_extractor"></a>
     <div class="doc doc-contents first">
 
-        <p>PDF metadata extractor is a two stage process.
-1. Extract content using monkeyocr.
-2. Use crossref to extract metadata from the content.</p>
+        <p>PDF metadata extractor is a two stage process.</p>
+<ol>
+<li>Extract content using monkeyocr.</li>
+<li>Use crossref to extract metadata from the content.</li>
+</ol>
 
 
 
@@ -12827,8 +12881,7 @@ for parsing HTML content efficiently without requiring a full HTML parser.</p>
 
               <details class="mkdocstrings-source">
                 <summary>Source code in <code>eve/steps/metadata/extractors/pdf_extractor.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 22</span>
-<span class="normal"> 23</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 23</span>
 <span class="normal"> 24</span>
 <span class="normal"> 25</span>
 <span class="normal"> 26</span>
@@ -13011,7 +13064,8 @@ for parsing HTML content efficiently without requiring a full HTML parser.</p>
 <span class="normal">203</span>
 <span class="normal">204</span>
 <span class="normal">205</span>
-<span class="normal">206</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">PdfMetadataExtractor</span><span class="p">():</span>
+<span class="normal">206</span>
+<span class="normal">207</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">PdfMetadataExtractor</span><span class="p">():</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -13259,15 +13313,15 @@ for parsing HTML content efficiently without requiring a full HTML parser.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/metadata/extractors/pdf_extractor.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
-<span class="normal">25</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
 <span class="normal">31</span>
-<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Initialize the PDF metadata extractor.</span>
 
@@ -13438,8 +13492,7 @@ for parsing HTML content efficiently without requiring a full HTML parser.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/metadata/extractors/pdf_extractor.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">166</span>
-<span class="normal">167</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">167</span>
 <span class="normal">168</span>
 <span class="normal">169</span>
 <span class="normal">170</span>
@@ -13478,7 +13531,8 @@ for parsing HTML content efficiently without requiring a full HTML parser.</p>
 <span class="normal">203</span>
 <span class="normal">204</span>
 <span class="normal">205</span>
-<span class="normal">206</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">extract_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">:</span> <span class="n">Document</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="normal">206</span>
+<span class="normal">207</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">extract_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">:</span> <span class="n">Document</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Extract metadata from a PDF document using crossref.</span>
 
@@ -13683,13 +13737,15 @@ for parsing HTML content efficiently without requiring a full HTML parser.</p>
 <span class="normal">95</span>
 <span class="normal">96</span>
 <span class="normal">97</span>
-<span class="normal">98</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ExportStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
+<span class="normal">98</span>
+<span class="normal">99</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ExportStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ExportStep&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the export step.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            config: Configuration containing:</span>
+
 <span class="sd">                - output_dir: Output directory path</span>
 <span class="sd">                - format: Output format (jsonl, md, etc.)</span>
 <span class="sd">                - resume: Whether to enable resume functionality (default: False)</span>
@@ -13821,10 +13877,12 @@ for parsing HTML content efficiently without requiring a full HTML parser.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Configuration containing:
-- output_dir: Output directory path
-- format: Output format (jsonl, md, etc.)
-- resume: Whether to enable resume functionality (default: False)</p>
+                <p>Configuration containing:</p>
+<ul>
+<li>output_dir: Output directory path</li>
+<li>format: Output format (jsonl, md, etc.)</li>
+<li>resume: Whether to enable resume functionality (default: False)</li>
+</ul>
               </div>
             </td>
             <td>
@@ -13874,11 +13932,13 @@ for parsing HTML content efficiently without requiring a full HTML parser.</p>
 <span class="normal">31</span>
 <span class="normal">32</span>
 <span class="normal">33</span>
-<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ExportStep&quot;</span><span class="p">):</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ExportStep&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the export step.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        config: Configuration containing:</span>
+
 <span class="sd">            - output_dir: Output directory path</span>
 <span class="sd">            - format: Output format (jsonl, md, etc.)</span>
 <span class="sd">            - resume: Whether to enable resume functionality (default: False)</span>

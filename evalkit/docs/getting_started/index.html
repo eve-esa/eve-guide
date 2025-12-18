@@ -309,6 +309,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../frontend/docs/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -318,10 +346,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -339,8 +367,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2979,25 +3007,29 @@ output_dir: evals_outputs
   run_name: custom-run-name       # Optional: Custom run name prefix
   api_key: your-wandb-api-key     # WandB API key
 </code></pre>
-<p>When enabled, the evaluation will log:
-- Evaluation metrics (accuracy, F1, IoU, etc.)
-- Individual sample predictions
-- Task configurations
-- Model metadata
-- Evaluation duration and timestamps</p>
+<p>When enabled, the evaluation will log:</p>
+<ul>
+<li>Evaluation metrics (accuracy, F1, IoU, etc.)</li>
+<li>Individual sample predictions</li>
+<li>Task configurations</li>
+<li>Model metadata</li>
+<li>Evaluation duration and timestamps</li>
+</ul>
 <h3 id="output-directory">Output Directory</h3>
 <p>Specify where evaluation results should be saved:</p>
 <pre><code class="language-yaml">output_dir: evals_outputs  # Default: eval_results
 </code></pre>
 <hr />
 <h2 id="example-configurations">Example Configurations</h2>
-<p>For comprehensive configuration examples including:
-- EVE Earth Observation tasks
-- LM-Eval-Harness standard benchmarks
-- Mixed evaluations
-- Multiple model comparisons
-- Environment variables usage
-- Testing with limited samples</p>
+<p>For comprehensive configuration examples including:</p>
+<ul>
+<li>EVE Earth Observation tasks</li>
+<li>LM-Eval-Harness standard benchmarks</li>
+<li>Mixed evaluations</li>
+<li>Multiple model comparisons</li>
+<li>Environment variables usage</li>
+<li>Testing with limited samples</li>
+</ul>
 <p>Please see the dedicated <strong><a href="../examples/">Examples</a></strong> page.</p>
 <hr />
 <h2 id="output-structure">Output Structure</h2>
@@ -3075,12 +3107,14 @@ output_dir: evals_outputs
 {&quot;doc_id&quot;: 1, &quot;doc&quot;: {...}, &quot;target&quot;: &quot;expected&quot;, &quot;arguments&quot;: [...], &quot;resps&quot;: [[&quot;predicted&quot;]], &quot;filtered_resps&quot;: [&quot;predicted&quot;], &quot;doc_hash&quot;: &quot;ghi789&quot;, &quot;prompt_hash&quot;: &quot;jkl012&quot;, &quot;task_name&quot;: &quot;task_name&quot;}
 ...
 </code></pre>
-<p>Each line contains:
-- <code>doc</code>: The input document/question
-- <code>target</code>: Expected answer
-- <code>resps</code>: Raw model response
-- <code>filtered_resps</code>: Processed model response
-- Metadata for reproducibility</p>
+<p>Each line contains:</p>
+<ul>
+<li><code>doc</code>: The input document/question</li>
+<li><code>target</code>: Expected answer</li>
+<li><code>resps</code>: Raw model response</li>
+<li><code>filtered_resps</code>: Processed model response</li>
+<li>Metadata for reproducibility</li>
+</ul>
 <hr />
 <h2 id="wandb-integration">WandB Integration</h2>
 <p>When WandB logging is enabled, the following information is automatically logged:</p>
@@ -3137,25 +3171,29 @@ output_dir: evals_outputs
 <hr />
 <h2 id="available-tasks">Available Tasks</h2>
 <h3 id="eve-earth-observation-tasks">EVE Earth Observation Tasks</h3>
-<p>See the <a href="../eo_tasks/">EO Tasks</a> page for detailed information about:
-- <code>eo_summarization</code>
-- <code>mcqa_multiple_answer</code>
-- <code>mcqa_single_answer</code>
-- <code>open_ended</code>
-- <code>open_ended_w_context</code>
-- <code>refusal</code>
-- <code>hallucination_detection</code></p>
+<p>See the <a href="../eo_tasks/">EO Tasks</a> page for detailed information about:</p>
+<ul>
+<li><code>eo_summarization</code></li>
+<li><code>mcqa_multiple_answer</code></li>
+<li><code>mcqa_single_answer</code></li>
+<li><code>open_ended</code></li>
+<li><code>open_ended_w_context</code></li>
+<li><code>refusal</code></li>
+<li><code>hallucination_detection</code></li>
+</ul>
 <h3 id="lm-evaluation-harness-tasks">LM-Evaluation-Harness Tasks</h3>
 <p>All tasks from the <a href="https://github.com/EleutherAI/lm-evaluation-harness">lm-evaluation-harness</a> are supported, including:</p>
-<p><strong>Popular Benchmarks:</strong>
-- <code>mmlu_pro</code> - MMLU-Pro (challenging multiple-choice)
-- <code>gsm8k</code> - Grade School Math
-- <code>hellaswag</code> - Commonsense reasoning
-- <code>arc_challenge</code> - AI2 Reasoning Challenge
-- <code>truthfulqa</code> - Truthfulness evaluation
-- <code>winogrande</code> - Commonsense reasoning
-- <code>piqa</code> - Physical commonsense
-- And more...</p>
+<p><strong>Popular Benchmarks:</strong></p>
+<ul>
+<li><code>mmlu_pro</code> - MMLU-Pro (challenging multiple-choice)</li>
+<li><code>gsm8k</code> - Grade School Math</li>
+<li><code>hellaswag</code> - Commonsense reasoning</li>
+<li><code>arc_challenge</code> - AI2 Reasoning Challenge</li>
+<li><code>truthfulqa</code> - Truthfulness evaluation</li>
+<li><code>winogrande</code> - Commonsense reasoning</li>
+<li><code>piqa</code> - Physical commonsense</li>
+<li>And more...</li>
+</ul>
 <p><strong>To list all available tasks:</strong></p>
 <pre><code class="language-bash">lm_eval --tasks list
 </code></pre>
@@ -3192,10 +3230,12 @@ output_dir: evals_outputs
 <li><strong>Explore Tasks</strong>: Check out the <a href="../eo_tasks/">EO Tasks</a> page for details on Earth Observation evaluation tasks</li>
 </ul>
 <h2 id="support">Support</h2>
-<p>For issues or questions:
-- GitHub Issues: <a href="https://github.com/eve-esa/eve-evaluation/issues">eve-esa/eve-evaluation</a>
-- Documentation: <a href="https://docs.eve-evaluation.org">https://docs.eve-evaluation.org</a>
-- LM-Eval-Harness: <a href="https://github.com/EleutherAI/lm-evaluation-harness">EleutherAI Documentation</a></p>
+<p>For issues or questions:</p>
+<ul>
+<li>GitHub Issues: <a href="https://github.com/eve-esa/eve-evaluation/issues">eve-esa/eve-evaluation</a></li>
+<li>Documentation: <a href="https://docs.eve-evaluation.org">https://docs.eve-evaluation.org</a></li>
+<li>LM-Eval-Harness: <a href="https://github.com/EleutherAI/lm-evaluation-harness">EleutherAI Documentation</a></li>
+</ul>
 
 
 

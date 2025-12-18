@@ -309,6 +309,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../frontend/docs/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -318,10 +346,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -339,8 +367,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3050,13 +3078,15 @@
 <p>Run a specific scraper to collect data from one source:</p>
 <pre><code class="language-bash">make run args=&quot;--scrapers IOPScraper&quot;
 </code></pre>
-<p><strong>What happens:</strong>
-1. The pipeline loads configuration from <code>config/config.json</code>
-2. IOPScraper is initialized with its configuration
-3. The scraper navigates to configured URLs
-4. PDF links are extracted and downloaded
-5. Files are uploaded to MinIO/S3
-6. Results are logged to the database</p>
+<p><strong>What happens:</strong></p>
+<ol>
+<li>The pipeline loads configuration from <code>config/config.json</code></li>
+<li>IOPScraper is initialized with its configuration</li>
+<li>The scraper navigates to configured URLs</li>
+<li>PDF links are extracted and downloaded</li>
+<li>Files are uploaded to MinIO/S3</li>
+<li>Results are logged to the database</li>
+</ol>
 <h3 id="running-multiple-scrapers">Running Multiple Scrapers</h3>
 <p>Execute several scrapers sequentially:</p>
 <pre><code class="language-bash">make run args=&quot;--scrapers IOPScraper SpringerScraper MDPIScraper&quot;
@@ -3072,41 +3102,51 @@
 <p>Force a scraper to run again even if it completed successfully before:</p>
 <pre><code class="language-bash">make run args=&quot;--scrapers IOPScraper --force&quot;
 </code></pre>
-<p><strong>Use cases:</strong>
-- Testing after code changes
-- Collecting new content from the same source
-- Recovering from incomplete runs</p>
+<p><strong>Use cases:</strong></p>
+<ul>
+<li>Testing after code changes</li>
+<li>Collecting new content from the same source</li>
+<li>Recovering from incomplete runs</li>
+</ul>
 <h3 id="resume-failed-urls">Resume Failed URLs</h3>
 <p>Resume only failed URLs from the previous execution:</p>
 <pre><code class="language-bash">make run args=&quot;--scrapers IOPScraper --resume&quot;
 </code></pre>
-<p><strong>When to use:</strong>
-- Network errors occurred during scraping
-- Some pages were temporarily unavailable
-- Timeout errors on specific URLs</p>
-<p><strong>What it does:</strong>
-- Queries <code>scraper_failure</code> table for failed URLs
-- Re-attempts only those URLs
-- Updates success/failure status</p>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Network errors occurred during scraping</li>
+<li>Some pages were temporarily unavailable</li>
+<li>Timeout errors on specific URLs</li>
+</ul>
+<p><strong>What it does:</strong></p>
+<ul>
+<li>Queries <code>scraper_failure</code> table for failed URLs</li>
+<li>Re-attempts only those URLs</li>
+<li>Updates success/failure status</li>
+</ul>
 <h3 id="resume-failed-uploads">Resume Failed Uploads</h3>
 <p>Resume only failed file uploads:</p>
 <pre><code class="language-bash">make run args=&quot;--scrapers IOPScraper --resume-upload&quot;
 </code></pre>
-<p><strong>When to use:</strong>
-- S3/MinIO connection issues occurred
-- Upload timeouts for large files
-- Storage quota was exceeded</p>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>S3/MinIO connection issues occurred</li>
+<li>Upload timeouts for large files</li>
+<li>Storage quota was exceeded</li>
+</ul>
 <p><strong>Important:</strong> Cannot combine <code>--resume</code> and <code>--resume-upload</code> in one command.</p>
 <h2 id="analytics-examples">Analytics Examples</h2>
 <h3 id="view-all-scraper-statistics">View All Scraper Statistics</h3>
 <p>Get analytics for all scrapers:</p>
 <pre><code class="language-bash">make run args=&quot;--analytics-only&quot;
 </code></pre>
-<p><strong>Output includes:</strong>
-- URLs scraped
-- Content successfully retrieved
-- Files uploaded to storage
-- Failure counts</p>
+<p><strong>Output includes:</strong></p>
+<ul>
+<li>URLs scraped</li>
+<li>Content successfully retrieved</li>
+<li>Files uploaded to storage</li>
+<li>Failure counts</li>
+</ul>
 <h3 id="view-specific-scraper-statistics">View Specific Scraper Statistics</h3>
 <p>Get analytics for specific scrapers:</p>
 <pre><code class="language-bash">make run args=&quot;--analytics-only --scrapers IOPScraper SpringerScraper&quot;
@@ -3129,10 +3169,12 @@
   }
 }
 </code></pre>
-<p><strong>Metrics explained:</strong>
-- <strong>scraped</strong>: URLs processed by the scraper
-- <strong>content_retrieved</strong>: Resources whose content was successfully downloaded
-- <strong>uploaded</strong>: Resources successfully uploaded to S3</p>
+<p><strong>Metrics explained:</strong></p>
+<ul>
+<li><strong>scraped</strong>: URLs processed by the scraper</li>
+<li><strong>content_retrieved</strong>: Resources whose content was successfully downloaded</li>
+<li><strong>uploaded</strong>: Resources successfully uploaded to S3</li>
+</ul>
 <h2 id="configuration-examples">Configuration Examples</h2>
 <h3 id="simple-publisher-configuration">Simple Publisher Configuration</h3>
 <p>For a straightforward journal website:</p>
@@ -3170,10 +3212,12 @@
   }
 }
 </code></pre>
-<p><strong>Parameters:</strong>
-- <code>start_volume/end_volume</code>: Volume range to scrape
-- <code>start_issue/end_issue</code>: Issue range per volume
-- <code>consecutive_missing_*_threshold</code>: Stop after N consecutive missing volumes/issues</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>start_volume/end_volume</code>: Volume range to scrape</li>
+<li><code>start_issue/end_issue</code>: Issue range per volume</li>
+<li><code>consecutive_missing_*_threshold</code>: Stop after N consecutive missing volumes/issues</li>
+</ul>
 <h3 id="pagination-configuration">Pagination Configuration</h3>
 <p>For search results with pagination:</p>
 <pre><code class="language-json">{
@@ -3190,10 +3234,12 @@
   }
 }
 </code></pre>
-<p><strong>Parameters:</strong>
-- <code>{page_number}</code>: Placeholder for page number (auto-incremented)
-- <code>page_size</code>: Results per page
-- <code>max_allowed_papers</code>: Maximum papers to collect</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>{page_number}</code>: Placeholder for page number (auto-incremented)</li>
+<li><code>page_size</code>: Results per page</li>
+<li><code>max_allowed_papers</code>: Maximum papers to collect</li>
+</ul>
 <h3 id="multi-source-configuration">Multi-Source Configuration</h3>
 <p>For scrapers with multiple sub-sources:</p>
 <pre><code class="language-json">{

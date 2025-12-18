@@ -309,6 +309,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -318,10 +346,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -339,8 +367,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3465,23 +3493,23 @@ E = mc^2
 
 
         <p>Chunk documents into smaller, semantically meaningful pieces.</p>
-<p>Uses a two-step chunking strategy:
-1. Split by Markdown headers to maintain document structure
-2. Further split large sections by sentences while preserving LaTeX and tables
-3. Optionally merge small chunks that share compatible heading levels</p>
+<p>Uses a two-step chunking strategy:</p>
+<ol>
+<li>Split by Markdown headers to maintain document structure</li>
+<li>Further split large sections by sentences while preserving LaTeX and tables</li>
+<li>Optionally merge small chunks that share compatible heading levels</li>
+</ol>
 <p>The chunker processes documents in parallel using multiprocessing for performance.</p>
+<p>Config parameters:</p>
+<pre><code>- max_chunk_size (int): Maximum size of any chunk in words (default: 512)
+- chunk_overlap (int): Number of characters to overlap between chunks (default: 0)
+- word_overlap (int): Number of words to overlap between chunks (default: 0)
+- add_headers (bool): Whether to prepend section headers to chunks (default: False)
+- merge_small_chunks (bool): Whether to merge small chunks with compatible headers (default: True)
+- headers_to_split_on (list[int]): Markdown header levels to split on (default: [1, 2, 3, 4, 5, 6])
+- max_workers (int): Number of parallel workers, None uses CPU count (default: None)
+</code></pre>
 
-
-<details class="config-parameters" open>
-  <summary>Config parameters</summary>
-  <p>max_chunk_size (int): Maximum size of any chunk in words (default: 512)
-chunk_overlap (int): Number of characters to overlap between chunks (default: 0)
-word_overlap (int): Number of words to overlap between chunks (default: 0)
-add_headers (bool): Whether to prepend section headers to chunks (default: False)
-merge_small_chunks (bool): Whether to merge small chunks with compatible headers (default: True)
-headers_to_split_on (list[int]): Markdown header levels to split on (default: [1, 2, 3, 4, 5, 6])
-max_workers (int): Number of parallel workers, None uses CPU count (default: None)</p>
-</details>
 
 <p><span class="doc-section-title">Examples:</span></p>
     <h3 id="eve.steps.chunking.chunker_step.ChunkerStep--basic-chunking-with-default-settings">Basic chunking with default settings</h3>
@@ -3620,10 +3648,13 @@ max_workers (int): Number of parallel workers, None uses CPU count (default: Non
 <span class="normal">123</span>
 <span class="normal">124</span>
 <span class="normal">125</span>
-<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ChunkerStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ChunkerStep</span><span class="p">(</span><span class="n">PipelineStep</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Chunk documents into smaller, semantically meaningful pieces.</span>
 
 <span class="sd">    Uses a two-step chunking strategy:</span>
+
 <span class="sd">    1. Split by Markdown headers to maintain document structure</span>
 <span class="sd">    2. Further split large sections by sentences while preserving LaTeX and tables</span>
 <span class="sd">    3. Optionally merge small chunks that share compatible heading levels</span>
@@ -3631,13 +3662,14 @@ max_workers (int): Number of parallel workers, None uses CPU count (default: Non
 <span class="sd">    The chunker processes documents in parallel using multiprocessing for performance.</span>
 
 <span class="sd">    Config parameters:</span>
-<span class="sd">        max_chunk_size (int): Maximum size of any chunk in words (default: 512)</span>
-<span class="sd">        chunk_overlap (int): Number of characters to overlap between chunks (default: 0)</span>
-<span class="sd">        word_overlap (int): Number of words to overlap between chunks (default: 0)</span>
-<span class="sd">        add_headers (bool): Whether to prepend section headers to chunks (default: False)</span>
-<span class="sd">        merge_small_chunks (bool): Whether to merge small chunks with compatible headers (default: True)</span>
-<span class="sd">        headers_to_split_on (list[int]): Markdown header levels to split on (default: [1, 2, 3, 4, 5, 6])</span>
-<span class="sd">        max_workers (int): Number of parallel workers, None uses CPU count (default: None)</span>
+
+<span class="sd">        - max_chunk_size (int): Maximum size of any chunk in words (default: 512)</span>
+<span class="sd">        - chunk_overlap (int): Number of characters to overlap between chunks (default: 0)</span>
+<span class="sd">        - word_overlap (int): Number of words to overlap between chunks (default: 0)</span>
+<span class="sd">        - add_headers (bool): Whether to prepend section headers to chunks (default: False)</span>
+<span class="sd">        - merge_small_chunks (bool): Whether to merge small chunks with compatible headers (default: True)</span>
+<span class="sd">        - headers_to_split_on (list[int]): Markdown header levels to split on (default: [1, 2, 3, 4, 5, 6])</span>
+<span class="sd">        - max_workers (int): Number of parallel workers, None uses CPU count (default: None)</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        # Basic chunking with default settings</span>
@@ -3795,9 +3827,7 @@ max_workers (int): Number of parallel workers, None uses CPU count (default: Non
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/chunking/chunker_step.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">56</span>
 <span class="normal">57</span>
 <span class="normal">58</span>
 <span class="normal">59</span>
@@ -3818,7 +3848,9 @@ max_workers (int): Number of parallel workers, None uses CPU count (default: Non
 <span class="normal">74</span>
 <span class="normal">75</span>
 <span class="normal">76</span>
-<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the chunker step.</span>
 
 <span class="sd">    Args:</span>
@@ -3924,9 +3956,7 @@ all chunks into a single list.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/chunking/chunker_step.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 79</span>
-<span class="normal"> 80</span>
-<span class="normal"> 81</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 81</span>
 <span class="normal"> 82</span>
 <span class="normal"> 83</span>
 <span class="normal"> 84</span>
@@ -3971,7 +4001,9 @@ all chunks into a single list.</p>
 <span class="normal">123</span>
 <span class="normal">124</span>
 <span class="normal">125</span>
-<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute chunking on documents in parallel.</span>
 
 <span class="sd">    Processes each document independently using multiprocessing, then flattens</span>
@@ -4121,9 +4153,7 @@ all chunks into a single list.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>eve/steps/chunking/chunker_step.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">222</span>
-<span class="normal">223</span>
-<span class="normal">224</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">224</span>
 <span class="normal">225</span>
 <span class="normal">226</span>
 <span class="normal">227</span>
@@ -4139,7 +4169,9 @@ all chunks into a single list.</p>
 <span class="normal">237</span>
 <span class="normal">238</span>
 <span class="normal">239</span>
-<span class="normal">240</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">convert_langchain_doc</span><span class="p">(</span><span class="n">doc</span><span class="p">:</span> <span class="n">Document</span><span class="p">,</span> <span class="n">chunk</span><span class="p">:</span> <span class="n">LangchainDocument</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Document</span><span class="p">:</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">convert_langchain_doc</span><span class="p">(</span><span class="n">doc</span><span class="p">:</span> <span class="n">Document</span><span class="p">,</span> <span class="n">chunk</span><span class="p">:</span> <span class="n">LangchainDocument</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Document</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a LangChain Document chunk to an Eve Document.</span>
 
 <span class="sd">    Extracts headers from chunk metadata and combines with original document metadata.</span>
