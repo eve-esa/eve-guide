@@ -1,8 +1,8 @@
-name: ci 
+name: ci
 on:
   push:
     branches:
-      - master 
+      - master
       - main
 permissions:
   contents: write
@@ -11,22 +11,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/checkout@v4           # eve-backend
+      - uses: actions/checkout@v4 # eve-backend
         with:
           repository: eve-esa/backend
           ref: staging
           path: backend
-      - uses: actions/checkout@v4           # evalkit
+      - uses: actions/checkout@v4 # evalkit
         with:
           repository: eve-esa/evalkit
           ref: task-refactoring
           path: evalkit
-      - uses: actions/checkout@v4           # data-scrapping
+      - uses: actions/checkout@v4 # data-scrapping
         with:
           repository: eve-esa/data-scraping
           ref: docs
           path: data-scraping
-      - uses: actions/checkout@v4           # data-process
+      - uses: actions/checkout@v4 # data-process
         with:
           repository: eve-esa/data-processing
           ref: main
@@ -38,7 +38,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
@@ -48,4 +48,5 @@ jobs:
       - run: pip install mkdocs-material
       - run: pip install mkdocstrings-python
       - run: pip install mkdocs-multirepo-plugin
+      - run: pip install mkdocs-swagger-ui-tag
       - run: mkdocs gh-deploy --force
