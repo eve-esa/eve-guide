@@ -14,7 +14,7 @@ extra_css:
   - stylesheets/extra.css
 plugins:
   - search
-
+  - swagger-ui-tag
   - multirepo:
       cleanup: false
       nav_repos:
@@ -48,7 +48,8 @@ plugins:
             docs/api/routers-health_check.md,
             docs/api/routers-message.md,
             docs/api/routers-user.md,
-            docs/api/types.md
+            docs/api/types.md,
+            docs/api/swagger-api.md
           ]
         - name: evalkit
           import_url: 'https://github.com/eve-esa/evalkit.git?branch=task-refactoring'
@@ -133,6 +134,7 @@ nav:
         - Message: backend/docs/api/routers-message.md
         - User: backend/docs/api/routers-user.md
         - Types: backend/docs/api/types.md
+        - Swagger API: backend/docs/api/swagger-api.md
   - Evalkit:
       - Home: evalkit/docs/index.md
       - Getting Started: evalkit/docs/getting_started.md

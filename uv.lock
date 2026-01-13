@@ -142,6 +142,7 @@ dependencies = [
     { name = "mkdocs-material" },
     { name = "mkdocs-multirepo" },
     { name = "mkdocs-multirepo-plugin" },
+    { name = "mkdocs-swagger-ui-tag" },
     { name = "mkdocstrings", extra = ["python"] },
 ]
 
@@ -150,6 +151,7 @@ requires-dist = [
     { name = "mkdocs-material", specifier = ">=9.7.0" },
     { name = "mkdocs-multirepo", specifier = ">=0.5.2" },
     { name = "mkdocs-multirepo-plugin", specifier = ">=0.8.3" },
+    { name = "mkdocs-swagger-ui-tag", specifier = ">=0.7.2" },
     { name = "mkdocstrings", extras = ["python"], specifier = ">=1.0.0" },
 ]
 
@@ -389,6 +391,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/98/3b/ef032e99788315b898171262df8c685bbba4b7dd91f88de61a8f574d4667/mkdocs_multirepo_plugin-0.8.3.tar.gz", hash = "sha256:c474fe29dc9f8fc73c27c133fe378c240fd98f79ca1b9b46575f83af9a1f2559", size = 21352, upload-time = "2024-08-13T12:57:02.027Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/32/26/c0fb3e12b53da7969369a86872054ad11c3ef4d8276206c7b0cba33bb848/mkdocs_multirepo_plugin-0.8.3-py2.py3-none-any.whl", hash = "sha256:76190e457d22d768d53b79d4b11be513711c5c8587a4c28a8d605947e5733cde", size = 19905, upload-time = "2024-08-13T12:57:00.572Z" },
+]
+
+[[package]]
+name = "mkdocs-swagger-ui-tag"
+version = "0.7.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "beautifulsoup4" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ac/98/37df3ff6895cc25ad5e95922e4c862248533b0af630c1c3fd31ce8ece6b2/mkdocs_swagger_ui_tag-0.7.2.tar.gz", hash = "sha256:d3030e70a3937b1b2c2a399cf5a77c54a13c2eb6dd88e7c45864a175bf3a283e", size = 1277948, upload-time = "2025-08-23T16:24:47.495Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/cc/9f/8b9664d53021a6fe4272f7ec4c3d73dcef44546ba7f2959398a15396b7e4/mkdocs_swagger_ui_tag-0.7.2-py3-none-any.whl", hash = "sha256:6e96e983f6990c5b7e96604c28a33f35984c862df18879ef31d96f3df2dbe5c7", size = 1292596, upload-time = "2025-08-23T16:24:45.515Z" },
 ]
 
 [[package]]
