@@ -89,7 +89,3 @@ The project’s outputs—**models, datasets, pipelines, and documentation**—a
   <a href="https://www.imperative.space/" target="_blank">Imperative Space</a> ·
   <a href="https://mistral.ai/" target="_blank">Mistral AI</a> ·
 </p>
-
-<p align="center">
-  <img src="assets/OFFICIAL_EVE_Avatar.png" width="180" alt="EVE Logo">
-</p>
