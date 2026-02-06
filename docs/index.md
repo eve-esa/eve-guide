@@ -75,10 +75,10 @@ The project’s outputs—**models, datasets, pipelines, and documentation**—a
 - 🌐 **Project Website** — [eve.philab.esa.int](https://eve.philab.esa.int/)  
   Central hub for project updates, communication materials, and registration for early access to the EVE chat platform.
 
-- 🤗 **Models & Data (Work in Progress)** — [huggingface.co/eve-esa](https://huggingface.co/eve-esa)  
+- 🤗 **Models & Data** — [huggingface.co/eve-esa](https://huggingface.co/eve-esa)  
   Repository for domain-specific model checkpoints, datasets, and evaluation benchmarks.
 
-- 💻 **Codebase (Work in Progress)** — [github.com/eve-esa](https://github.com/eve-esa)  
+- 💻 **Codebase** — [github.com/eve-esa](https://github.com/eve-esa)  
   Open-source tools, pipelines, and scripts developed within the EVE initiative.
 
 ## Contributors
