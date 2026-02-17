@@ -59,7 +59,7 @@ It is targeted for **public release in early 2026**.
 
 ## Model Development
 
-`EVE-instruct` is trained on domain-curated corpora by fine-tuning **Mistral Small 3.2 24B**, through **continued pretraining** and **instruction fine-tuning**.
+`EVE-Instruct` is trained on domain-curated corpora by fine-tuning **Mistral Small 3.2 24B**, through **continued pretraining** and **instruction fine-tuning**.
 
 - The model is optimized for factuality, reasoning, and integration with retrieval-augmented generation.
 - Training was carried out using **EuroHPC Marenostrum**, cloud environments, and **Mistral infrastructure**.
