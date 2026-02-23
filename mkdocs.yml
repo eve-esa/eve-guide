@@ -52,7 +52,7 @@ plugins:
             docs/api/swagger-api.md
           ]
         - name: evalkit
-          import_url: 'https://github.com/eve-esa/evalkit.git?branch=task-refactoring'
+          import_url: 'https://github.com/eve-esa/evalkit.git?branch=main'
           imports: [
             docs/index.md,
             docs/getting_started.md,
