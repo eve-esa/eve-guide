@@ -39,7 +39,8 @@ plugins:
           import_url: 'https://github.com/eve-esa/backend.git?branch=staging'
           imports: [
             docs/index.md,
-            docs/getting_started.md,
+            docs/docker_setup.md,
+            docs/local_setup.md,
             docs/api/routers-auth.md,
             docs/api/routers-collection.md,
             docs/api/routers-conversation.md,
@@ -123,7 +124,9 @@ nav:
         - Profile: frontend/docs/features/profile.md
   - Backend:
       - Home: backend/docs/index.md
-      - Getting Started: backend/docs/getting_started.md
+      - Getting Started: 
+        - Local Setup: backend/docs/local_setup.md
+        - Docker Setup: backend/docs/docker_setup.md
       - API Reference:
         - Auth: backend/docs/api/routers-auth.md
         - Collection: backend/docs/api/routers-collection.md
