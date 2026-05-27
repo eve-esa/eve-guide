@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v4 # data-scrapping
         with:
           repository: eve-esa/data-scraping
-          ref: docs
+          ref: main
           path: data-scraping
       - uses: actions/checkout@v4 # data-process
         with:

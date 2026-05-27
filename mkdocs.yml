@@ -62,7 +62,7 @@ plugins:
             docs/examples.md
           ]
         - name: data-scraping
-          import_url: 'https://github.com/eve-esa/data-scraping.git?branch=docs'
+          import_url: 'https://github.com/eve-esa/data-scraping.git?branch=main'
           imports: [
             docs/examples.md,
             docs/getting_started.md,
