@@ -4,6 +4,7 @@ on:
     branches:
       - master
       - main
+  pull_request:
   workflow_dispatch:
 permissions:
   contents: write
@@ -15,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4 # eve-backend
         with:
           repository: eve-esa/backend
-          ref: staging
+          ref: main
           path: backend
       - uses: actions/checkout@v4 # evalkit
         with:
@@ -36,9 +37,9 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@v6
         with:
-          python-version: 3.x
+          python-version: "3.12"
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v4
         with:
@@ -46,8 +47,11 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material
-      - run: pip install mkdocstrings-python
-      - run: pip install mkdocs-multirepo-plugin
-      - run: pip install mkdocs-swagger-ui-tag
-      - run: mkdocs gh-deploy --force
+      - run: uv sync --frozen
+      # The Swagger page reads a static copy: the browser cannot fetch the API spec across origins.
+      - run: curl -fsS https://eve-chat.chat/api/openapi.json -o docs/assets/backend-openapi.json
+      # A pull request only proves the site builds; publishing happens on main.
+      - if: github.event_name == 'pull_request'
+        run: uv run mkdocs build
+      - if: github.event_name != 'pull_request'
+        run: uv run mkdocs gh-deploy --force
