@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://example.com/backend/docs/api/routers-message/">
+        <link rel="canonical" href="https://eve-esa.github.io/eve-guide/backend/docs/api/routers-message/">
       
       
-        <link rel="prev" href="../routers-health_check/">
+        <link rel="prev" href="../routers-conversation/">
       
       
-        <link rel="next" href="../routers-user/">
+        <link rel="next" href="../generation-errors/">
       
       
         
@@ -518,6 +518,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/features/api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -805,14 +833,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-collection/" class="md-nav__link">
+      <a href="../routers-user/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Collection
+    User
   
 
     
@@ -841,90 +869,6 @@
     
   
     Conversation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../routers-document/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Document
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../routers-forgot_password/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Forget Password
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../routers-health_check/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Health Check
   
 
     
@@ -1221,10 +1165,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-message-feedback" class="md-nav__link">
+  <a href="#agentic-generation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update message feedback
+        Agentic generation
       
     </span>
   </a>
@@ -1232,15 +1176,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.update_message" class="md-nav__link">
+  <a href="#routers.message.create_agentic_message" class="md-nav__link">
     <span class="md-ellipsis">
       
-        update_message
+        create_agentic_message
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="update_message">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routers.message.create_agentic_message_stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_agentic_message_stream
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create_agentic_message_stream">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1282,10 +1237,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stop-active-generation" class="md-nav__link">
+  <a href="#busy-service-429-overloaded" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Stop active generation
+        Busy service (429 overloaded)
       
     </span>
   </a>
@@ -1293,15 +1248,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.stop_conversation" class="md-nav__link">
+  <a href="#update-message-feedback" class="md-nav__link">
     <span class="md-ellipsis">
       
-        stop_conversation
+        Update message feedback
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="stop_conversation">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routers.message.update_message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update_message
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="update_message">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1343,10 +1309,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-source-log-for-a-message" class="md-nav__link">
+  <a href="#stop-active-generation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Add source log for a message
+        Stop active generation
       
     </span>
   </a>
@@ -1354,15 +1320,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.get_source_logs" class="md-nav__link">
+  <a href="#routers.message.stop_conversation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        get_source_logs
+        stop_conversation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="get_source_logs">
+    <nav class="md-nav" aria-label="stop_conversation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1404,10 +1370,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detect-hallucination-non-streaming" class="md-nav__link">
+  <a href="#add-source-log-for-a-message" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Detect hallucination (non-streaming)
+        Add source log for a message
       
     </span>
   </a>
@@ -1415,15 +1381,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.hallucination_detect" class="md-nav__link">
+  <a href="#routers.message.get_source_logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        hallucination_detect
+        get_source_logs
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="hallucination_detect">
+    <nav class="md-nav" aria-label="get_source_logs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1465,10 +1431,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detect-hallucination-sse-streaming" class="md-nav__link">
+  <a href="#detect-hallucination-non-streaming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Detect hallucination (SSE streaming)
+        Detect hallucination (non-streaming)
       
     </span>
   </a>
@@ -1476,15 +1442,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.stream_hallucination" class="md-nav__link">
+  <a href="#routers.message.hallucination_detect" class="md-nav__link">
     <span class="md-ellipsis">
       
-        stream_hallucination
+        hallucination_detect
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="stream_hallucination">
+    <nav class="md-nav" aria-label="hallucination_detect">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1526,10 +1492,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#llm-only-generation" class="md-nav__link">
+  <a href="#detect-hallucination-sse-streaming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LLM-only generation
+        Detect hallucination (SSE streaming)
       
     </span>
   </a>
@@ -1537,15 +1503,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.generate_llm" class="md-nav__link">
+  <a href="#routers.message.stream_hallucination" class="md-nav__link">
     <span class="md-ellipsis">
       
-        generate_llm
+        stream_hallucination
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="generate_llm">
+    <nav class="md-nav" aria-label="stream_hallucination">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1587,6 +1553,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#llm-only-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM-only generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routers.message.generate_llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        generate_llm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="generate_llm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#one-off-full-generate" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1610,7 +1637,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_9" class="md-nav__link">
+  <a href="#usage_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         Usage
@@ -1621,7 +1648,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation_9" class="md-nav__link">
+  <a href="#explanation_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         Explanation
@@ -1671,7 +1698,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_10" class="md-nav__link">
+  <a href="#usage_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         Usage
@@ -1682,7 +1709,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation_10" class="md-nav__link">
+  <a href="#explanation_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         Explanation
@@ -1732,7 +1759,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_11" class="md-nav__link">
+  <a href="#usage_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         Usage
@@ -1743,7 +1770,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation_11" class="md-nav__link">
+  <a href="#explanation_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         Explanation
@@ -1754,7 +1781,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_9" class="md-nav__link">
+  <a href="#notes_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         Notes
@@ -1793,7 +1820,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_12" class="md-nav__link">
+  <a href="#usage_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         Usage
@@ -1804,7 +1831,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation_12" class="md-nav__link">
+  <a href="#explanation_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         Explanation
@@ -1815,7 +1842,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_10" class="md-nav__link">
+  <a href="#notes_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         Notes
@@ -1857,14 +1884,182 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-user/" class="md-nav__link">
+      <a href="../generation-errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User
+    Generation Failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-health_check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Health Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openai-gateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bug-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reports
   
 
     
@@ -1913,7 +2108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../swagger-api/" class="md-nav__link">
+      <a href="../../../../backend-swagger/" class="md-nav__link">
         
   
   
@@ -3330,10 +3525,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-message-feedback" class="md-nav__link">
+  <a href="#agentic-generation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update message feedback
+        Agentic generation
       
     </span>
   </a>
@@ -3341,15 +3536,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.update_message" class="md-nav__link">
+  <a href="#routers.message.create_agentic_message" class="md-nav__link">
     <span class="md-ellipsis">
       
-        update_message
+        create_agentic_message
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="update_message">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routers.message.create_agentic_message_stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_agentic_message_stream
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create_agentic_message_stream">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3391,10 +3597,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stop-active-generation" class="md-nav__link">
+  <a href="#busy-service-429-overloaded" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Stop active generation
+        Busy service (429 overloaded)
       
     </span>
   </a>
@@ -3402,15 +3608,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.stop_conversation" class="md-nav__link">
+  <a href="#update-message-feedback" class="md-nav__link">
     <span class="md-ellipsis">
       
-        stop_conversation
+        Update message feedback
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="stop_conversation">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routers.message.update_message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update_message
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="update_message">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3452,10 +3669,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-source-log-for-a-message" class="md-nav__link">
+  <a href="#stop-active-generation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Add source log for a message
+        Stop active generation
       
     </span>
   </a>
@@ -3463,15 +3680,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.get_source_logs" class="md-nav__link">
+  <a href="#routers.message.stop_conversation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        get_source_logs
+        stop_conversation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="get_source_logs">
+    <nav class="md-nav" aria-label="stop_conversation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3513,10 +3730,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detect-hallucination-non-streaming" class="md-nav__link">
+  <a href="#add-source-log-for-a-message" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Detect hallucination (non-streaming)
+        Add source log for a message
       
     </span>
   </a>
@@ -3524,15 +3741,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.hallucination_detect" class="md-nav__link">
+  <a href="#routers.message.get_source_logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        hallucination_detect
+        get_source_logs
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="hallucination_detect">
+    <nav class="md-nav" aria-label="get_source_logs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3574,10 +3791,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detect-hallucination-sse-streaming" class="md-nav__link">
+  <a href="#detect-hallucination-non-streaming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Detect hallucination (SSE streaming)
+        Detect hallucination (non-streaming)
       
     </span>
   </a>
@@ -3585,15 +3802,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.stream_hallucination" class="md-nav__link">
+  <a href="#routers.message.hallucination_detect" class="md-nav__link">
     <span class="md-ellipsis">
       
-        stream_hallucination
+        hallucination_detect
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="stream_hallucination">
+    <nav class="md-nav" aria-label="hallucination_detect">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3635,10 +3852,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#llm-only-generation" class="md-nav__link">
+  <a href="#detect-hallucination-sse-streaming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LLM-only generation
+        Detect hallucination (SSE streaming)
       
     </span>
   </a>
@@ -3646,15 +3863,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.message.generate_llm" class="md-nav__link">
+  <a href="#routers.message.stream_hallucination" class="md-nav__link">
     <span class="md-ellipsis">
       
-        generate_llm
+        stream_hallucination
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="generate_llm">
+    <nav class="md-nav" aria-label="stream_hallucination">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3696,6 +3913,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#llm-only-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM-only generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routers.message.generate_llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        generate_llm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="generate_llm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#one-off-full-generate" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3719,7 +3997,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_9" class="md-nav__link">
+  <a href="#usage_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         Usage
@@ -3730,7 +4008,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation_9" class="md-nav__link">
+  <a href="#explanation_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         Explanation
@@ -3780,7 +4058,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_10" class="md-nav__link">
+  <a href="#usage_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         Usage
@@ -3791,7 +4069,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation_10" class="md-nav__link">
+  <a href="#explanation_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         Explanation
@@ -3841,7 +4119,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_11" class="md-nav__link">
+  <a href="#usage_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         Usage
@@ -3852,7 +4130,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation_11" class="md-nav__link">
+  <a href="#explanation_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         Explanation
@@ -3863,7 +4141,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_9" class="md-nav__link">
+  <a href="#notes_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         Notes
@@ -3902,7 +4180,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_12" class="md-nav__link">
+  <a href="#usage_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         Usage
@@ -3913,7 +4191,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation_12" class="md-nav__link">
+  <a href="#explanation_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         Explanation
@@ -3924,7 +4202,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes_10" class="md-nav__link">
+  <a href="#notes_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         Notes
@@ -3974,10 +4252,10 @@
 <p>This page covers chat generation, streaming, retry, feedback, and testing endpoints.</p>
 <h2 id="api-call-order">API call order</h2>
 <ol>
-<li>Authenticate first (<code>/signup</code> + <code>/verify</code> + <code>/login</code>).</li>
+<li>Authenticate first: an identity provider access token or an <code>eve_</code> API key (<a href="../routers-auth/">Auth</a>).</li>
 <li>Create conversation with <code>POST /conversations</code>.</li>
 <li>Get valid collection names via <code>GET /collections/public</code> (and/or private collection names you own).</li>
-<li>Call message or generate endpoints with <code>conversation_id</code> and collection names.</li>
+<li>Call the <a href="#agentic-generation">agentic generation</a> endpoints with <code>conversation_id</code> and collection names.</li>
 <li>Optionally run retry, feedback, hallucination, and stats endpoints.</li>
 </ol>
 <p>Shared request setup is documented once in <a href="https://eve-esa.github.io/eve-guide/backend/docs/">API index</a>.</p>
@@ -3990,6 +4268,7 @@
 <p>See <a href="../routers-collection/">Collection API</a> for endpoint details and examples.</p>
 <h2 id="create-message-non-streaming">Create message (non-streaming)</h2>
 <p><code>POST /conversations/{conversation_id}/messages</code></p>
+<p>Deprecated since 1.2 and removed in a later release: use <code>POST /conversations/{conversation_id}/generate-agentic</code> (<a href="#agentic-generation">Agentic generation</a>) instead.</p>
 
 
 <div class="doc doc-object doc-function">
@@ -4000,6 +4279,7 @@
     <div class="doc doc-contents first">
 
         <p>Create a new message in a conversation and generate an answer.</p>
+<p>Deprecated since 1.2 and removed in a later release: use <code>POST /conversations/{conversation_id}/generate-agentic</code> instead.</p>
 <p>Validates conversation ownership, normalizes requested public collections, persists a placeholder <code>Message</code>, runs generation, updates the message with answer and retrieval metadata, and schedules rollup/trimming of history.</p>
 
 
@@ -4120,7 +4400,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>404 if conversation is not found; 403 if ownership/collections invalid; 500 for server errors.</p>
+                <p>404 if conversation is not found; 403 if ownership/collections invalid; 429 <code>overloaded</code> past the worker's in-flight cap; 500 for server errors.</p>
               </div>
             </td>
           </tr>
@@ -4162,15 +4442,16 @@ print(message[&quot;answer&quot;])
 <h3 id="important-params">Important params</h3>
 <ul>
 <li><code>query</code>: User prompt sent to the model.</li>
-<li><code>score_threshold</code>: Retrieval similarity threshold from <code>0.0</code> to <code>1.0</code>.</li>
-<li><code>k</code>: Number of retrieved documents from <code>0</code> to <code>10</code>.</li>
+<li><code>score_threshold</code>: Retrieval similarity threshold from <code>0.0</code> to <code>1.0</code> (default <code>0.6</code>).</li>
+<li><code>k</code>: Number of retrieved documents from <code>0</code> to <code>10</code> (default <code>10</code>).</li>
 <li><code>filters</code>: Optional Qdrant-compatible filter object.</li>
 <li><code>public_collections</code>: Collection names from collection listing endpoints.</li>
 <li><code>temperature</code>: Generation temperature from <code>0.0</code> to <code>1.0</code>.</li>
-<li><code>llm_type</code>: Optional model selector (for example <code>main</code>, <code>fallback</code>, <code>satcom_small</code>, <code>satcom_large</code>, <code>ship</code>, <code>eve_v05</code>).</li>
+<li><code>llm_type</code>: Optional model selector (for example <code>main</code>, <code>fallback</code>, <code>satcom_small</code>, <code>satcom_large</code>, <code>eve_jsc</code>).</li>
 </ul>
 <h2 id="create-message-sse-streaming">Create message (SSE streaming)</h2>
 <p><code>POST /conversations/{conversation_id}/stream_messages</code></p>
+<p>Deprecated since 1.2 and removed in a later release: use <code>POST /conversations/{conversation_id}/stream-generate-agentic</code> (<a href="#agentic-generation">Agentic generation</a>) instead.</p>
 
 
 <div class="doc doc-object doc-function">
@@ -4181,6 +4462,7 @@ print(message[&quot;answer&quot;])
     <div class="doc doc-contents first">
 
         <p>Create a new message and stream generation via Server-Sent Events (SSE).</p>
+<p>Deprecated since 1.2 and removed in a later release: use <code>POST /conversations/{conversation_id}/stream-generate-agentic</code> instead.</p>
 <p>Sets up a per-message stream bus and runs generation in a decoupled task. Yields SSE-formatted chunks including status updates, tokens, and final payloads.</p>
 
 
@@ -4301,7 +4583,7 @@ print(message[&quot;answer&quot;])
             </td>
             <td>
               <div class="doc-md-description">
-                <p>404 if conversation is not found; 403 if ownership/collections invalid; 500 for server errors.</p>
+                <p>404 if conversation is not found; 403 if ownership/collections invalid; 429 <code>overloaded</code> past the worker's in-flight cap; 500 for server errors.</p>
               </div>
             </td>
           </tr>
@@ -4328,10 +4610,8 @@ print(message[&quot;answer&quot;])
         &quot;llm_type&quot;: &quot;main&quot;,
         &quot;public_collections&quot;: [
             &quot;Wiley AI Gateway&quot;,
-            &quot;esa-data-qwen-1024&quot;,
-            &quot;Wikipedia EO&quot;,
+            &quot;esa-rag-scraped-qwen3-newpipeline&quot;,
             &quot;wikipedia-512&quot;,
-            &quot;satcom-chunks-collection&quot;,
             &quot;qwen-512-filtered&quot;
         ]
     },
@@ -4483,7 +4763,7 @@ print(message[&quot;answer&quot;])
             </td>
             <td>
               <div class="doc-md-description">
-                <p>404 if conversation/message not found; 403 if ownership invalid; 400 if message cannot be retried; 500 for server errors.</p>
+                <p>404 if conversation/message not found; 403 if ownership invalid; 400 if message cannot be retried; 429 <code>overloaded</code> past the worker's in-flight cap; 500 for server errors.</p>
               </div>
             </td>
           </tr>
@@ -4507,7 +4787,383 @@ print(resp.json())
 <h3 id="notes_2">Notes</h3>
 <ul>
 <li>Useful when model/provider transient failures occur.</li>
+<li>An agentic message is retried through the agentic pipeline, with the same
+  authoritative UI params as the original call.</li>
 </ul>
+<h2 id="agentic-generation">Agentic generation</h2>
+<p><code>POST /conversations/{conversation_id}/generate-agentic</code></p>
+<p><code>POST /conversations/{conversation_id}/stream-generate-agentic</code></p>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="routers.message.create_agentic_message"></a>
+    <div class="doc doc-contents first">
+
+        <p>Create a new message using the fully agentic LangGraph pipeline.</p>
+<p>The agent autonomously decides when to search the knowledge base or the
+Wiley AI Gateway (via tool calls) and loops until it produces a final answer.</p>
+<p><code>public_mcp_servers</code> controls which MCP servers are available for this
+request. Pass server names in <code>request.public_mcp_servers</code>; only enabled
+servers found in the MCP server store are resolved and attached to the
+request as tool configs before generation starts.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>request</code>
+            </td>
+            <td>
+                  <code><span title="src.schemas.generation_request.GenerationRequest">GenerationRequest</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Generation parameters including query, collections, and model settings.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>conversation_id</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Target conversation identifier.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>background_tasks</code>
+            </td>
+            <td>
+                  <code><span title="fastapi.BackgroundTasks">BackgroundTasks</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Background task runner used to schedule rollups.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>requesting_user</code>
+            </td>
+            <td>
+                  <code><span title="src.database.models.user.User">User</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Authenticated user injected by dependency.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="fastapi.Depends">Depends</span>(<span title="src.middlewares.auth.get_current_user">get_current_user</span>)</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="src.schemas.message.CreateMessageResponse">CreateMessageResponse</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Message id, query, answer, documents, flags, and metadata.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="src.schemas.message.CreateMessageResponse">CreateMessageResponse</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p><code>trace</code> contains the agentic execution steps captured during generation.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="fastapi.HTTPException">HTTPException</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>404 if conversation is not found; 403 if ownership invalid; 429 <code>overloaded</code> past the worker's in-flight cap; 500 for server errors.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="routers.message.create_agentic_message_stream"></a>
+    <div class="doc doc-contents first">
+
+        <p>Create a new message using the agentic pipeline and stream the result via SSE.</p>
+<p><code>public_mcp_servers</code> controls which MCP servers are available for this
+request. Pass server names in <code>request.public_mcp_servers</code>; only enabled
+servers found in the MCP server store are resolved and attached to the
+request as tool configs before streaming generation starts.</p>
+<p>Streams structured events:
+- <code>tool_call</code>   — agent is searching (with the query used)
+- <code>tool_result</code> — tool returned a preview
+- <code>token</code>       — LLM final-answer token
+- <code>final</code>       — complete answer + latencies
+- <code>stopped</code>     — generation cancelled by client
+- <code>error</code>       — unhandled exception</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>request</code>
+            </td>
+            <td>
+                  <code><span title="src.schemas.generation_request.GenerationRequest">GenerationRequest</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Generation parameters including query, collections, and model settings.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>conversation_id</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Target conversation identifier.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>background_tasks</code>
+            </td>
+            <td>
+                  <code><span title="fastapi.BackgroundTasks">BackgroundTasks</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Background task runner used to schedule rollups.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>requesting_user</code>
+            </td>
+            <td>
+                  <code><span title="src.database.models.user.User">User</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Authenticated user injected by dependency.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="fastapi.Depends">Depends</span>(<span title="src.middlewares.auth.get_current_user">get_current_user</span>)</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="fastapi.responses.StreamingResponse">StreamingResponse</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>SSE stream for the agentic generation lifecycle.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="fastapi.responses.StreamingResponse">StreamingResponse</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The <code>final</code> event includes <code>trace</code> with the agentic execution steps captured during generation.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="fastapi.HTTPException">HTTPException</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>404 if conversation is not found; 403 if ownership invalid; 429 <code>overloaded</code> past the worker's in-flight cap; 500 for server errors.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div><h3 id="usage_3">Usage</h3>
+<pre><code class="language-python">payload = {
+    &quot;query&quot;: &quot;How is TROPOMI used to support policy making?&quot;,
+    &quot;public_collections&quot;: [&quot;qwen-512-filtered&quot;, &quot;wikipedia-512&quot;],
+    &quot;public_mcp_servers&quot;: [&quot;eve_retrieval&quot;],
+    &quot;k&quot;: 10,
+    &quot;score_threshold&quot;: 0.6,
+    &quot;temperature&quot;: 0.0,
+    &quot;llm_type&quot;: &quot;main&quot;,
+    &quot;filters&quot;: {&quot;must&quot;: [], &quot;should&quot;: None, &quot;must_not&quot;: None, &quot;min_should&quot;: None},
+}
+
+resp = requests.post(
+    f&quot;{BASE_URL}/conversations/{CONVERSATION_ID}/generate-agentic&quot;,
+    json=payload,
+    headers=headers,
+    timeout=180,
+)
+resp.raise_for_status()
+message = resp.json()
+print(message[&quot;use_rag&quot;], len(message[&quot;documents&quot;]), message[&quot;answer&quot;])
+</code></pre>
+<h3 id="explanation_3">Explanation</h3>
+<p>The agent decides by itself whether to search the knowledge base, and searches
+by calling the <code>retrieve</code> tool of the <code>eve_retrieval</code> MCP server. Retrieval is a
+tool call here, not a fixed pipeline step, but the retrieval settings are not
+the model's to pick.</p>
+<h3 id="notes_3">Notes</h3>
+<ul>
+<li>Retrieval params from the request body are authoritative on every <code>retrieve</code>
+  tool call: <code>k</code>, <code>score_threshold</code>, <code>public_collections</code>,
+  <code>private_collections</code>, <code>filters</code>, <code>year</code>, <code>temperature</code>, <code>llm_type</code>,
+  <code>embeddings_model</code> and <code>max_new_tokens</code> overwrite whatever the model put in
+  the call. Leaving one unset is a choice too: it clears the model's own value
+  rather than letting it stand.</li>
+<li>The model only supplies <code>query</code>, the search string. It is the one argument the
+  request never overwrites, and the request <code>query</code> fills it in only when the
+  model leaves it empty.</li>
+<li>Only argument names the tool schema declares are forced, so an MCP server
+  exposing a narrower <code>retrieve</code> signature receives exactly the params it
+  accepts and nothing else.</li>
+<li><code>documents</code> are the documents returned by the <code>retrieve</code> tool, in the same
+  shape as the classic generation path, so the sources UI reads them the same
+  way.</li>
+<li><code>use_rag</code> is <code>true</code> only when a <code>retrieve</code> call actually ran in that turn. A
+  turn answered from the model's own knowledge, or one where every retrieval
+  call came back as an error, returns <code>false</code>.</li>
+<li><code>public_mcp_servers</code> selects which MCP servers are attached as tools for the
+  request; only enabled servers present in the MCP server store are resolved.</li>
+</ul>
+<h2 id="busy-service-429-overloaded">Busy service (429 <code>overloaded</code>)</h2>
+<p>Every generation route (<code>/messages</code>, <code>/stream_messages</code>, <code>.../retry</code>, <code>/generate-agentic</code>,
+<code>/stream-generate-agentic</code>) answers <code>429</code> with <code>Retry-After: 10</code> and
+<code>{"detail": {"code": "overloaded", "message": "The service is busy, retry in a few seconds"}}</code>
+when the server already runs its maximum of concurrent generations. Wait <code>Retry-After</code>
+seconds, then send the request again. See <a href="../generation-errors/">Generation failures</a>.</p>
 <h2 id="update-message-feedback">Update message feedback</h2>
 <p><code>PATCH /conversations/{conversation_id}/messages/{message_id}</code></p>
 
@@ -4650,7 +5306,7 @@ print(resp.json())
 
     </div>
 
-</div><h3 id="usage_3">Usage</h3>
+</div><h3 id="usage_4">Usage</h3>
 <pre><code class="language-python">resp = requests.patch(
     f&quot;{BASE_URL}/conversations/{CONVERSATION_ID}/messages/{MESSAGE_ID}&quot;,
     json={
@@ -4664,9 +5320,9 @@ print(resp.json())
 resp.raise_for_status()
 print(resp.json())
 </code></pre>
-<h3 id="explanation_3">Explanation</h3>
+<h3 id="explanation_4">Explanation</h3>
 <p>Stores user feedback and message-level annotations.</p>
-<h3 id="notes_3">Notes</h3>
+<h3 id="notes_4">Notes</h3>
 <ul>
 <li>Call after displaying a generated response.</li>
 </ul>
@@ -4780,7 +5436,7 @@ print(resp.json())
 
     </div>
 
-</div><h3 id="usage_4">Usage</h3>
+</div><h3 id="usage_5">Usage</h3>
 <pre><code class="language-python">resp = requests.post(
     f&quot;{BASE_URL}/conversations/{CONVERSATION_ID}/stop&quot;,
     headers=headers,
@@ -4789,9 +5445,9 @@ print(resp.json())
 resp.raise_for_status()
 print(resp.json())
 </code></pre>
-<h3 id="explanation_4">Explanation</h3>
+<h3 id="explanation_5">Explanation</h3>
 <p>Requests cancellation of an active generation stream in the conversation.</p>
-<h3 id="notes_4">Notes</h3>
+<h3 id="notes_5">Notes</h3>
 <ul>
 <li>Usually paired with streaming UIs.</li>
 </ul>
@@ -4927,7 +5583,7 @@ print(resp.json())
             </td>
             <td>
               <div class="doc-md-description">
-                <p>404 if conversation/message not found or mismatched; 500 for server errors.</p>
+                <p>404 if conversation/message not found or mismatched, or if the conversation belongs to another user; 500 for server errors.</p>
               </div>
             </td>
           </tr>
@@ -4937,7 +5593,7 @@ print(resp.json())
 
     </div>
 
-</div><h3 id="usage_5">Usage</h3>
+</div><h3 id="usage_6">Usage</h3>
 <pre><code class="language-python">resp = requests.post(
     f&quot;{BASE_URL}/conversations/{CONVERSATION_ID}/messages/{MESSAGE_ID}/source_logs&quot;,
     json={
@@ -4952,9 +5608,9 @@ print(resp.json())
 resp.raise_for_status()
 print(resp.json())
 </code></pre>
-<h3 id="explanation_5">Explanation</h3>
+<h3 id="explanation_6">Explanation</h3>
 <p>Adds source metadata associated with a generated answer.</p>
-<h3 id="notes_5">Notes</h3>
+<h3 id="notes_6">Notes</h3>
 <ul>
 <li>Use when you want explicit source tracking beyond default retrieval metadata.</li>
 </ul>
@@ -5084,7 +5740,7 @@ print(resp.json())
 
     </div>
 
-</div><h3 id="usage_6">Usage</h3>
+</div><h3 id="usage_7">Usage</h3>
 <pre><code class="language-python">resp = requests.post(
     f&quot;{BASE_URL}/conversations/{CONVERSATION_ID}/messages/{MESSAGE_ID}/hallucination&quot;,
     headers=headers,
@@ -5093,9 +5749,9 @@ print(resp.json())
 resp.raise_for_status()
 print(resp.json())
 </code></pre>
-<h3 id="explanation_6">Explanation</h3>
+<h3 id="explanation_7">Explanation</h3>
 <p>Runs hallucination detection and returns labels, reason, and related outputs.</p>
-<h3 id="notes_6">Notes</h3>
+<h3 id="notes_7">Notes</h3>
 <ul>
 <li>Requires an existing message ID.</li>
 </ul>
@@ -5229,7 +5885,7 @@ print(resp.json())
 
     </div>
 
-</div><h3 id="usage_7">Usage</h3>
+</div><h3 id="usage_8">Usage</h3>
 <pre><code class="language-python">with requests.post(
     f&quot;{BASE_URL}/conversations/{CONVERSATION_ID}/messages/{MESSAGE_ID}/stream-hallucination&quot;,
     headers={**headers, &quot;Accept&quot;: &quot;text/event-stream&quot;},
@@ -5241,9 +5897,9 @@ print(resp.json())
         if line:
             print(line)
 </code></pre>
-<h3 id="explanation_7">Explanation</h3>
+<h3 id="explanation_8">Explanation</h3>
 <p>Streams hallucination detection lifecycle events.</p>
-<h3 id="notes_7">Notes</h3>
+<h3 id="notes_8">Notes</h3>
 <ul>
 <li>Useful for progressive moderation/validation UX.</li>
 </ul>
@@ -5264,7 +5920,7 @@ print(resp.json())
 
     </div>
 
-</div><h3 id="usage_8">Usage</h3>
+</div><h3 id="usage_9">Usage</h3>
 <pre><code class="language-python">resp = requests.post(
     f&quot;{BASE_URL}/generate-llm&quot;,
     json={&quot;query&quot;: &quot;What is Earth Observation?&quot;},
@@ -5274,9 +5930,9 @@ print(resp.json())
 resp.raise_for_status()
 print(resp.json())
 </code></pre>
-<h3 id="explanation_8">Explanation</h3>
+<h3 id="explanation_9">Explanation</h3>
 <p>Runs direct LLM generation (main model path) without retrieval or conversation persistence.</p>
-<h3 id="notes_8">Notes</h3>
+<h3 id="notes_9">Notes</h3>
 <ul>
 <li>Useful for baseline/debug scenarios.</li>
 </ul>
@@ -5411,7 +6067,7 @@ and model settings.</p>
 
     </div>
 
-</div><h3 id="usage_9">Usage</h3>
+</div><h3 id="usage_10">Usage</h3>
 <pre><code class="language-python">resp = requests.post(
     f&quot;{BASE_URL}/generate&quot;,
     json={
@@ -5428,10 +6084,8 @@ and model settings.</p>
         &quot;llm_type&quot;: &quot;main&quot;,
         &quot;public_collections&quot;: [
             &quot;Wiley AI Gateway&quot;,
-            &quot;esa-data-qwen-1024&quot;,
-            &quot;Wikipedia EO&quot;,
+            &quot;esa-rag-scraped-qwen3-newpipeline&quot;,
             &quot;wikipedia-512&quot;,
-            &quot;satcom-chunks-collection&quot;,
             &quot;qwen-512-filtered&quot;
         ]
     },
@@ -5441,17 +6095,18 @@ and model settings.</p>
 resp.raise_for_status()
 print(resp.json())
 </code></pre>
-<h3 id="explanation_9">Explanation</h3>
+<h3 id="explanation_10">Explanation</h3>
 <p>Runs full retrieval + generation pipeline without storing a conversation message.</p>
 <h3 id="important-params_1">Important params</h3>
 <ul>
 <li><code>query</code>: User prompt sent to the model.</li>
-<li><code>score_threshold</code>: Retrieval similarity threshold from <code>0.0</code> to <code>1.0</code>.</li>
-<li><code>k</code>: Number of retrieved documents from <code>0</code> to <code>10</code>.</li>
+<li><code>score_threshold</code>: Retrieval similarity threshold from <code>0.0</code> to <code>1.0</code> (default <code>0.6</code>).</li>
+<li><code>k</code>: Number of retrieved documents from <code>0</code> to <code>10</code> (default <code>10</code>).</li>
 <li><code>filters</code>: Optional Qdrant-compatible filter object.</li>
-<li><code>public_collections</code>: Collection names from collection listing endpoints.</li>
+<li><code>public_collections</code>: Public collection names from collection listing endpoint - /collections/public.</li>
+<li><code>private_collections</code>: Private Collection ids from collection listing endpoint - /collections</li>
 <li><code>temperature</code>: Generation temperature from <code>0.0</code> to <code>1.0</code> (lower is more deterministic).</li>
-<li><code>llm_type</code>: Optional model selector (for example <code>main</code>, <code>fallback</code>, <code>satcom_small</code>, <code>satcom_large</code>, <code>ship</code>, <code>eve_v05</code>).</li>
+<li><code>llm_type</code>: Optional model selector (for example <code>main</code>, <code>fallback</code>, <code>satcom_small</code>, <code>satcom_large</code>, <code>eve_jsc</code>).</li>
 </ul>
 <h2 id="retrieval-only">Retrieval-only</h2>
 <p><code>POST /retrieve</code></p>
@@ -5546,7 +6201,7 @@ setup_rag_and_context and returns all retrieved documents.</p>
 
     </div>
 
-</div><h3 id="usage_10">Usage</h3>
+</div><h3 id="usage_11">Usage</h3>
 <pre><code class="language-python">resp = requests.post(
     f&quot;{BASE_URL}/retrieve&quot;,
     json={
@@ -5561,10 +6216,8 @@ setup_rag_and_context and returns all retrieved documents.</p>
         },
         &quot;public_collections&quot;: [
             &quot;Wiley AI Gateway&quot;,
-            &quot;esa-data-qwen-1024&quot;,
-            &quot;Wikipedia EO&quot;,
+            &quot;esa-rag-scraped-qwen3-newpipeline&quot;,
             &quot;wikipedia-512&quot;,
-            &quot;satcom-chunks-collection&quot;,
             &quot;qwen-512-filtered&quot;
         ]
     },
@@ -5574,13 +6227,13 @@ setup_rag_and_context and returns all retrieved documents.</p>
 resp.raise_for_status()
 print(resp.json())
 </code></pre>
-<h3 id="explanation_10">Explanation</h3>
+<h3 id="explanation_11">Explanation</h3>
 <p>Runs only retrieval and returns matched documents/metadata.</p>
 <h3 id="important-params_2">Important params</h3>
 <ul>
 <li><code>query</code>: User query string.</li>
-<li><code>score_threshold</code>: Retrieval similarity threshold from <code>0.0</code> to <code>1.0</code>.</li>
-<li><code>k</code>: Number of retrieved documents from <code>0</code> to <code>10</code>.</li>
+<li><code>score_threshold</code>: Retrieval similarity threshold from <code>0.0</code> to <code>1.0</code> (default <code>0.6</code>).</li>
+<li><code>k</code>: Number of retrieved documents from <code>0</code> to <code>10</code> (default <code>10</code>).</li>
 <li><code>filters</code>: Optional Qdrant-compatible filter object.</li>
 <li><code>public_collections</code>: Collection names from collection listing endpoints.</li>
 </ul>
@@ -5678,7 +6331,7 @@ print(resp.json())
 
     </div>
 
-</div><h3 id="usage_11">Usage</h3>
+</div><h3 id="usage_12">Usage</h3>
 <pre><code class="language-python">resp = requests.get(
     f&quot;{BASE_URL}/conversations/messages/me/stats&quot;,
     headers=headers,
@@ -5687,9 +6340,9 @@ print(resp.json())
 resp.raise_for_status()
 print(resp.json())
 </code></pre>
-<h3 id="explanation_11">Explanation</h3>
+<h3 id="explanation_12">Explanation</h3>
 <p>Returns message-level usage statistics for the authenticated user.</p>
-<h3 id="notes_9">Notes</h3>
+<h3 id="notes_10">Notes</h3>
 <ul>
 <li>Requires authentication.</li>
 </ul>
@@ -5803,7 +6456,7 @@ print(resp.json())
 
     </div>
 
-</div><h3 id="usage_12">Usage</h3>
+</div><h3 id="usage_13">Usage</h3>
 <pre><code class="language-python">resp = requests.get(
     f&quot;{BASE_URL}/conversations/messages/average-latencies&quot;,
     params={&quot;start_date&quot;: &quot;2026-01-01T00:00:00Z&quot;, &quot;end_date&quot;: &quot;2026-12-31T23:59:59Z&quot;},
@@ -5812,14 +6465,14 @@ print(resp.json())
 resp.raise_for_status()
 print(resp.json())
 </code></pre>
-<h3 id="explanation_12">Explanation</h3>
+<h3 id="explanation_13">Explanation</h3>
 <p>Returns average pipeline latency metrics for the selected date range.</p>
-<h3 id="notes_10">Notes</h3>
+<h3 id="notes_11">Notes</h3>
 <ul>
 <li>Endpoint can be used for performance monitoring dashboards.</li>
 </ul>
 <h2 id="full-api-reference">Full API reference</h2>
-<p>For exhaustive schema details, use <a href="../swagger-api/">Swagger API</a>.</p>
+<p>For exhaustive schema details, use <a href="https://eve-esa.github.io/eve-guide/backend-swagger/">Swagger API</a>.</p>
 
 
 

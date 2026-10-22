@@ -8,10 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://example.com/backend/docs/">
+        <link rel="canonical" href="https://eve-esa.github.io/eve-guide/backend/docs/">
       
       
-        <link rel="prev" href="../../frontend/docs/features/profile/">
+        <link rel="prev" href="../../frontend/docs/features/api-keys/">
       
       
         <link rel="next" href="local_setup/">
@@ -518,6 +518,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/docs/features/api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -694,6 +722,17 @@
     <span class="md-ellipsis">
       
         API guides (usage-first)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base URLs
       
     </span>
   </a>
@@ -962,14 +1001,14 @@
   
   
     <li class="md-nav__item">
-      <a href="api/routers-collection/" class="md-nav__link">
+      <a href="api/routers-user/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Collection
+    User
   
 
     
@@ -1018,14 +1057,14 @@
   
   
     <li class="md-nav__item">
-      <a href="api/routers-document/" class="md-nav__link">
+      <a href="api/routers-message/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Document
+    Message
   
 
     
@@ -1046,14 +1085,70 @@
   
   
     <li class="md-nav__item">
-      <a href="api/routers-forgot_password/" class="md-nav__link">
+      <a href="api/generation-errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Forget Password
+    Generation Failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/routers-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/routers-document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document
   
 
     
@@ -1102,14 +1197,14 @@
   
   
     <li class="md-nav__item">
-      <a href="api/routers-message/" class="md-nav__link">
+      <a href="api/api-keys/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Message
+    API Keys
   
 
     
@@ -1130,14 +1225,42 @@
   
   
     <li class="md-nav__item">
-      <a href="api/routers-user/" class="md-nav__link">
+      <a href="api/openai-gateway/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/bug-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reports
   
 
     
@@ -1186,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/swagger-api/" class="md-nav__link">
+      <a href="../../backend-swagger/" class="md-nav__link">
         
   
   
@@ -2441,6 +2564,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#base-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base URLs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#shared-api-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2526,8 +2660,8 @@
 <p>A FastAPI-based backend service for chat with Retrieval-Augmented Generation (RAG). It provides authentication, collections and document ingestion, conversation/message management, streaming responses, and a hallucination detection pipeline.</p>
 <p>For setup and running the backend, see:</p>
 <ul>
-<li><a href="https://eve-esa.github.io/eve-guide/backend/docs/local_setup/">Local development &amp; configuration</a> — prerequisites, environment variables, and running the backend directly on your machine</li>
-<li><a href="https://eve-esa.github.io/eve-guide/backend/docs/docker_setup/">Docker setup</a> — run the backend with Docker Compose</li>
+<li><a href="https://eve-esa.github.io/eve-guide/backend/docs/local_setup/">Local development &amp; configuration</a>: prerequisites, environment variables, and running the backend directly on your machine</li>
+<li><a href="https://eve-esa.github.io/eve-guide/backend/docs/docker_setup/">Docker setup</a>: run the backend with Docker Compose</li>
 </ul>
 <p>For additional deployment details, you can also refer to <a href="https://github.com/eve-esa/backend/blob/main/README.md">README.md</a>.</p>
 <h3 id="architecture">Architecture</h3>
@@ -2540,7 +2674,7 @@
 </ul>
 <h3 id="directory-structure">Directory structure</h3>
 <pre><code class="language-text">src/
-  routers/            # FastAPI route handlers (auth, collection, document, conversation, message, tool, user, health)
+  routers/            # FastAPI route handlers (user, collection, document, conversation, message, health_check, openai_proxy, mcp_proxy)
   services/           # Business logic (auth, generate_answer, email, hallucination, etc.)
   database/           # ODM-style models and pagination helpers
   core/               # Vector store and LLM managers
@@ -2554,8 +2688,10 @@ docs/                 # Site content (this page, api references)
 <h3 id="key-workflows">Key workflows</h3>
 <ul>
 <li><strong>Authentication</strong><ul>
-<li>Signup, email activation, login, refresh</li>
-<li>Endpoints in <code>routers.auth</code> and <code>routers.forgot_password</code></li>
+<li>Sign in, sign up, verify mail and reset password at the identity provider (Keycloak
+  locally, Cognito per AWS environment), not at this API</li>
+<li>Machine callers use a self-service <code>eve_</code> API key instead: create, list, revoke via
+  <code>routers.user</code></li>
 </ul>
 </li>
 <li><strong>Collections &amp; Documents</strong><ul>
@@ -2578,31 +2714,57 @@ docs/                 # Site content (this page, api references)
 </ul>
 <h3 id="api-guides-usage-first">API guides (usage-first)</h3>
 <ul>
-<li>Auth (working examples): <code>[routers-auth]</code></li>
-<li>Collections (public/private + examples): <code>[routers-collection]</code></li>
-<li>Documents (ingestion + examples): <code>[routers-document]</code></li>
-<li>Conversations (chat lifecycle + examples): <code>[routers-conversation]</code></li>
-<li>Messages (generation/streaming + examples): <code>[routers-message]</code></li>
+<li>Auth (identity provider, API keys): <a href="api/routers-auth/">routers-auth</a></li>
+<li>API keys (create/list/revoke, curl walkthrough): <a href="api/api-keys/">api-keys</a></li>
+<li>OpenAI-compatible gateway (<code>/v1/*</code>, budget, SDK example): <a href="api/openai-gateway/">openai-gateway</a></li>
+<li>Collections (public/private + examples): <a href="api/routers-collection/">routers-collection</a></li>
+<li>Documents (ingestion + examples): <a href="api/routers-document/">routers-document</a></li>
+<li>Conversations (chat lifecycle + examples): <a href="api/routers-conversation/">routers-conversation</a></li>
+<li>Messages (generation/streaming + examples): <a href="api/routers-message/">routers-message</a></li>
+<li>Generation failures (error codes, 429 and Retry-After): <a href="api/generation-errors/">generation-errors</a></li>
+<li>Bug reports (<code>POST /bug-reports</code>, rate limit, log event): <a href="api/bug-reports/">bug-reports</a></li>
 </ul>
-<p>Use <code>[swagger-api]</code> only when you need exhaustive field-level reference.</p>
+<p>Use <a href="https://eve-esa.github.io/eve-guide/backend-swagger/">swagger-api</a> only when you need exhaustive field-level reference.</p>
+<h3 id="base-urls">Base URLs</h3>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Base URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Production API</td>
+<td><code>https://eve-chat.chat/api</code></td>
+</tr>
+<tr>
+<td>OpenAI-compatible gateway</td>
+<td><code>https://eve-chat.chat/api/v1</code></td>
+</tr>
+<tr>
+<td>Local backend</td>
+<td><code>http://localhost:8000</code></td>
+</tr>
+</tbody>
+</table>
 <h3 id="shared-api-setup">Shared API setup</h3>
 <p>Use this once and reuse it across all API examples:</p>
 <pre><code class="language-python">import requests
 
-BASE_URL = &quot;http://localhost:8000&quot;
+BASE_URL = &quot;https://eve-chat.chat/api&quot;  # local: http://localhost:8000
 
-# Auth flow:
-# 1) signup -&gt; verify -&gt; login
-# 2) set ACCESS_TOKEN from login response
-ACCESS_TOKEN = &quot;&lt;your_access_token&gt;&quot;
-headers = {&quot;Authorization&quot;: f&quot;Bearer {ACCESS_TOKEN}&quot;}
+# Bearer credential, either of:
+# - an access token from the identity provider (sign in at https://eve-chat.chat)
+# - an eve_ API key (see API keys)
+TOKEN = &quot;&lt;access_token_or_eve_api_key&gt;&quot;
+headers = {&quot;Authorization&quot;: f&quot;Bearer {TOKEN}&quot;}
 </code></pre>
 <h3 id="recommended-api-call-order">Recommended API call order</h3>
 <ol>
 <li><strong>Auth first</strong><ul>
-<li><code>POST /signup</code></li>
-<li><code>POST /verify</code></li>
-<li><code>POST /login</code> -&gt; get <code>access_token</code> / <code>refresh_token</code></li>
+<li>Sign in at the identity provider, get <code>ACCESS_TOKEN</code> from its response</li>
+<li>Or create an <code>eve_</code> API key once with that token and use it from then on</li>
 </ul>
 </li>
 <li><strong>Collection discovery</strong><ul>
@@ -2614,7 +2776,8 @@ headers = {&quot;Authorization&quot;: f&quot;Bearer {ACCESS_TOKEN}&quot;}
 </ul>
 </li>
 <li><strong>Message generation</strong><ul>
-<li><code>POST /conversations/{conversation_id}/messages</code> or <code>/stream_messages</code></li>
+<li><code>POST /conversations/{conversation_id}/generate-agentic</code> or <code>/stream-generate-agentic</code> (<a href="api/routers-message/#agentic-generation">agentic generation</a>)</li>
+<li>The classic <code>/messages</code> and <code>/stream_messages</code> routes are deprecated since 1.2 and will be removed in a later release</li>
 </ul>
 </li>
 <li><strong>Optional ingestion for private retrieval</strong><ul>
@@ -2632,7 +2795,7 @@ headers = {&quot;Authorization&quot;: f&quot;Bearer {ACCESS_TOKEN}&quot;}
 <li>Message endpoints require a valid <code>conversation_id</code>.</li>
 <li>Generation endpoints require valid collection names (<code>public_collections</code>) from collection listing.</li>
 <li>Document endpoints require a valid private <code>collection_id</code>.</li>
-<li>Most non-auth endpoints require <code>Authorization: Bearer &lt;access_token&gt;</code>.</li>
+<li>Every route except <code>/health</code> and <code>/collections/public</code> requires <code>Authorization: Bearer &lt;token&gt;</code>, with an access token or an <code>eve_</code> API key.</li>
 </ul>
 <h3 id="message-generation-flow-high-level">Message generation flow (high-level)</h3>
 <ol>

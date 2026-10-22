@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/data-processing/docs/pipeline-stages/metadata-extraction/">
+        <link rel="canonical" href="https://eve-esa.github.io/eve-guide/data-processing/docs/pipeline-stages/metadata-extraction/">
       
       
         <link rel="prev" href="../pii-removal/">
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#metadata-extraction-stage" class="md-skip">
+        <a href="#metadata-extraction" class="md-skip">
           Skip to content
         </a>
       
@@ -518,6 +518,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/features/api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -801,14 +829,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/routers-collection/" class="md-nav__link">
+      <a href="../../../../backend/docs/api/routers-user/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Collection
+    User
   
 
     
@@ -857,14 +885,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/routers-document/" class="md-nav__link">
+      <a href="../../../../backend/docs/api/routers-message/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Document
+    Message
   
 
     
@@ -885,14 +913,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/routers-forgot_password/" class="md-nav__link">
+      <a href="../../../../backend/docs/api/generation-errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Forget Password
+    Generation Failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../backend/docs/api/routers-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../backend/docs/api/routers-document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document
   
 
     
@@ -941,14 +1025,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/routers-message/" class="md-nav__link">
+      <a href="../../../../backend/docs/api/api-keys/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Message
+    API Keys
   
 
     
@@ -969,14 +1053,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/routers-user/" class="md-nav__link">
+      <a href="../../../../backend/docs/api/openai-gateway/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../backend/docs/api/bug-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reports
   
 
     
@@ -1025,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/swagger-api/" class="md-nav__link">
+      <a href="../../../../backend-swagger/" class="md-nav__link">
         
   
   
@@ -1921,22 +2033,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#extracted-metadata-fields" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extracted Metadata Fields
+        Quick start
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Extracted Metadata Fields">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-stage-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the stage does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format behavior
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format behavior">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#document-identification" class="md-nav__link">
+  <a href="#pdf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Document Identification
+        PDF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTML
       
     </span>
   </a>
@@ -1949,99 +2094,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extraction-methods" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extraction Methods
+        Configuration
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Extraction Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pdf-metadata-extraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PDF Metadata Extraction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-format-extraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Other format Extraction
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-parameters" class="md-nav__link">
+  <a href="#output-and-schema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enabled_formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        enabled_formats
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#export_metadata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        export_metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metadata_destination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        metadata_destination
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Steps
+        Output and schema
       
     </span>
   </a>
@@ -2405,22 +2472,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#extracted-metadata-fields" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extracted Metadata Fields
+        Quick start
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Extracted Metadata Fields">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-stage-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the stage does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format behavior
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format behavior">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#document-identification" class="md-nav__link">
+  <a href="#pdf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Document Identification
+        PDF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTML
       
     </span>
   </a>
@@ -2433,99 +2533,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extraction-methods" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extraction Methods
+        Configuration
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Extraction Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pdf-metadata-extraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PDF Metadata Extraction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-format-extraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Other format Extraction
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-parameters" class="md-nav__link">
+  <a href="#output-and-schema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enabled_formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        enabled_formats
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#export_metadata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        export_metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metadata_destination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        metadata_destination
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Steps
+        Output and schema
       
     </span>
   </a>
@@ -2552,69 +2574,114 @@
   
 
 
-<h1 id="metadata-extraction-stage">Metadata Extraction Stage</h1>
-<p>The metadata extraction stage automatically identifies and extracts structured metadata from documents.</p>
-<h2 id="extracted-metadata-fields">Extracted Metadata Fields</h2>
-<h3 id="document-identification">Document Identification</h3>
-<ul>
-<li><strong>title</strong>: Document title</li>
-<li><strong>authors</strong>: List of author names</li>
-<li><strong>doi</strong>: Digital Object Identifier</li>
-<li><strong>url</strong>: Source URL or link</li>
-<li><strong>year</strong>: Publication year</li>
-<li><strong>journal</strong>: Journal or publication name</li>
-<li><strong>publisher</strong>: Publisher name</li>
-</ul>
-<h2 id="extraction-methods">Extraction Methods</h2>
-<h3 id="pdf-metadata-extraction">PDF Metadata Extraction</h3>
-<p>Setup MonkeyOCR using the bash file under the <code>\server</code> directory. Then run the extractions using this command <code>python3 parse.py &lt;dir&gt; --pred-abandon</code>
-You will see the predictions stored in the MonkeyOCR folder. You can then run the metadata extraction pipeline given below -</p>
+<h1 id="metadata-extraction">Metadata Extraction</h1>
+<p>The <code>metadata</code> stage adds metadata to each pipeline <code>Document</code>. It supports PDF, HTML, plain text, and Markdown files. The stage can also write a separate JSON Lines metadata report; the normal <code>export</code> stage can then save the complete documents, including their metadata.</p>
+<p>The PDF path has an important external dependency: it reads existing MonkeyOCR output from a fixed directory. Running the EVE metadata stage does not run OCR itself.</p>
+<h2 id="quick-start">Quick start</h2>
+<p>Place your input documents under a directory and configure the metadata stage in the repository's <code>config.yaml</code>:</p>
 <pre><code class="language-yaml">pipeline:
-  batch_size: 2
+  batch_size: 10
   inputs:
-    path: &quot;htmls&quot; # path to the folder
+    path: &quot;input_data&quot;
   stages:
     - name: metadata
       config:
         enabled_formats: [&quot;pdf&quot;, &quot;html&quot;, &quot;txt&quot;, &quot;md&quot;]
+        fallback_to_filename: true
+        export_metadata: true
+        metadata_destination: &quot;./output&quot;
+        metadata_filename: &quot;metadata.jsonl&quot;
 
     - name: export
-      config: { format: &quot;jsonl&quot;, output_dir: &quot;output&quot;}
+      config:
+        format: &quot;jsonl&quot;
+        output_dir: &quot;./output/documents&quot;
 </code></pre>
-<ol>
-<li>We first extract text from the first page of the PDF files using MonkeyOCR. The doi and the title are usually present within the first page of the document.</li>
-<li>We extract dois using handwritten regex patterns<ul>
-<li>if the file is from arXiv, we invoke the <a href="https://info.arxiv.org/help/api/basics.html">arXiv API</a> to extract metadata.</li>
-<li>if the file is from other publishers, we invoke the <a href="https://www.crossref.org/">crossref API</a> to extract metadata.</li>
-</ul>
-</li>
-<li>Fallback - if doi is not present, we extract the title and then invoke the crossref API using the title to extract the metadata.</li>
-</ol>
-<h3 id="other-format-extraction">Other format Extraction</h3>
-<p>For other documents like HTML, TXT, JSON, the extractor uses handwritten regex patterns to extract the document title and the URL of the page.</p>
-<h2 id="configuration-parameters">Configuration Parameters</h2>
-<h3 id="enabled_formats">enabled_formats</h3>
+<p>Run from the repository root:</p>
+<pre><code class="language-bash">eve run
+</code></pre>
+<p>The CLI loads <code>config.yaml</code> from the current working directory. The <code>metadata</code> stage is run in the order listed in <code>stages</code>; if there is no <code>export</code> stage, the pipeline adds one with its defaults. Prefer specifying <code>export</code> explicitly so the output format and directory are clear.</p>
+<h2 id="what-the-stage-does">What the stage does</h2>
+<p>The stage filters the incoming documents by <code>enabled_formats</code>, processes supported documents concurrently within each pipeline batch, and passes unsupported documents through unchanged. If the extractor returns no metadata (or raises an error), <code>fallback_to_filename</code> can add a <code>title</code> derived from the filename (for example, <code>mission-report_2024.txt</code> becomes <code>mission report 2024</code>).</p>
+<h2 id="format-behavior">Format behavior</h2>
+<h3 id="pdf">PDF</h3>
+<p>The current PDF extractor reads already-created MonkeyOCR artifacts below:</p>
+<pre><code class="language-text">server/MonkeyOCR/output/&lt;subdirectory&gt;/&lt;subdirectory&gt;.md
+server/MonkeyOCR/output/&lt;subdirectory&gt;/&lt;subdirectory&gt;_content_list.json
+</code></pre>
+<p>The root is hard-coded as <code>server/MonkeyOCR/output</code> relative to the process working directory. For each subdirectory, it looks for a DOI, arXiv identifier, or ISBN in the Markdown file, and looks for title candidates in the content-list JSON. A title candidate is a row with <code>text_level == 1</code>; the longest candidate is used. It then requests metadata from Crossref by DOI, or from the arXiv API for an arXiv identifier. If that lookup returns no metadata, it tries Crossref's bibliographic title search. The network requests have a 50-second timeout and the extractor allows up to 40 concurrent lookups.</p>
+<p><strong>Prequisitre: Running MonkeyOCR</strong></p>
 <ul>
-<li><strong>Type</strong>: List</li>
-<li><strong>Default</strong>: <code>["pdf", "html", "txt", "md"]</code></li>
-<li><strong>Description</strong>: The list of file formats to process.</li>
+<li>Run MonkeyOCR separately to produce the expected files. The setup helper is <a href="../../server/setup_monkeyocr.sh">server/setup_monkeyocr.sh</a>; it clones MonkeyOCR into <code>server/MonkeyOCR</code> when run from the <code>server</code> directory. </li>
+<li>To OCR only the first page before prediction, <a href="../../scripts/extract_first_pages.py">scripts/extract_first_pages.py</a> can create a first-page PDF tree. For example: <code>python scripts/extract_first_pages.py --input-dir ./pdfs --output-dir ./pdf_first_pages</code>. Its default input and output paths are <code>/data/pdfs</code> and <code>/data/pdf_first_pages</code>.</li>
 </ul>
-<h3 id="export_metadata">export_metadata</h3>
-<ul>
-<li><strong>Type</strong>: Boolean</li>
-<li><strong>Default</strong>: <code>true</code></li>
-<li><strong>Description</strong>: Whether to export metadata to JSON file.</li>
-</ul>
-<h3 id="metadata_destination">metadata_destination</h3>
-<ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: <code>./output</code></li>
-<li><strong>Description</strong>: Directory to save metadata file</li>
-</ul>
-<h2 id="next-steps">Next Steps</h2>
-<ul>
-<li>Learn about <a href="../export/">document export</a></li>
-</ul>
+<h3 id="html">HTML</h3>
+<p>For HTML, the extractor reads the source file as UTF-8 and replaces <code>document.content</code> with its raw HTML. It extracts the contents of the first <code>&lt;title&gt;</code> element using regular expressions, strips tags inside the title, replaces named and numeric HTML entities with spaces, collapses whitespace, and rejects titles shorter than three characters or made only of digits.</p>
+<h2 id="configuration">Configuration</h2>
+<p>All options below go under the metadata stage's <code>config</code> key.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled_formats</code></td>
+<td>list of strings</td>
+<td><code>["pdf", "html", "txt", "md"]</code></td>
+<td>File formats the stage handles. Format is inferred from the file extension, lowercased.</td>
+</tr>
+<tr>
+<td><code>fallback_to_filename</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Add a filename-derived <code>title</code> when extraction returns no metadata or raises an error.</td>
+</tr>
+<tr>
+<td><code>debug</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>Enable debug logging for the stage and extractors.</td>
+</tr>
+<tr>
+<td><code>export_metadata</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Append a metadata summary record for each document to a separate JSONL file.</td>
+</tr>
+<tr>
+<td><code>metadata_destination</code></td>
+<td>path</td>
+<td><code>"./output"</code></td>
+<td>Directory for the separate metadata report. Created if missing.</td>
+</tr>
+<tr>
+<td><code>metadata_filename</code></td>
+<td>string</td>
+<td><code>"metadata.jsonl"</code></td>
+<td>Name of the separate report file.</td>
+</tr>
+</tbody>
+</table>
+<p>The separate report is append-only: a rerun with the same destination and filename adds more records rather than replacing the old report. Set <code>export_metadata: false</code> to disable that report. This does not disable the main pipeline <code>export</code> stage.</p>
+<h2 id="output-and-schema">Output and schema</h2>
+<p>The separate report has one JSON object per line. The stage writes base fields and then includes fields from <code>document.metadata</code>:</p>
+<pre><code class="language-json">{
+  &quot;filename&quot;: &quot;report.html&quot;,
+  &quot;file_path&quot;: &quot;input_data/report.html&quot;,
+  &quot;file_format&quot;: &quot;html&quot;,
+  &quot;content_length&quot;: 1234,
+  &quot;has_extracted_metadata&quot;: true,
+  &quot;extracted_metadata&quot;: {
+    &quot;title&quot;: &quot;Example report&quot;,
+    &quot;content_length&quot;: 1234
+  }
+}
+</code></pre>
 
 
 

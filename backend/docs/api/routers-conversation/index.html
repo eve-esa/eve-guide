@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://example.com/backend/docs/api/routers-conversation/">
+        <link rel="canonical" href="https://eve-esa.github.io/eve-guide/backend/docs/api/routers-conversation/">
       
       
-        <link rel="prev" href="../routers-collection/">
+        <link rel="prev" href="../routers-user/">
       
       
-        <link rel="next" href="../routers-document/">
+        <link rel="next" href="../routers-message/">
       
       
         
@@ -518,6 +518,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/features/api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -805,14 +833,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-collection/" class="md-nav__link">
+      <a href="../routers-user/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Collection
+    User
   
 
     
@@ -1235,14 +1263,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-document/" class="md-nav__link">
+      <a href="../routers-message/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Document
+    Message
   
 
     
@@ -1263,14 +1291,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-forgot_password/" class="md-nav__link">
+      <a href="../generation-errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Forget Password
+    Generation Failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document
   
 
     
@@ -1319,14 +1403,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-message/" class="md-nav__link">
+      <a href="../api-keys/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Message
+    API Keys
   
 
     
@@ -1347,14 +1431,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-user/" class="md-nav__link">
+      <a href="../openai-gateway/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bug-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reports
   
 
     
@@ -1403,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../swagger-api/" class="md-nav__link">
+      <a href="../../../../backend-swagger/" class="md-nav__link">
         
   
   
@@ -3084,7 +3196,7 @@ print(conversation)
 <p>Creates a user-owned conversation thread.</p>
 <h3 id="notes">Notes</h3>
 <ul>
-<li>Required before calling <code>POST /conversations/{conversation_id}/messages</code>.</li>
+<li>Required before calling <code>POST /conversations/{conversation_id}/generate-agentic</code> or <code>/stream-generate-agentic</code> (<a href="../routers-message/#agentic-generation">agentic generation</a>). The classic <code>/messages</code> and <code>/stream_messages</code> routes are deprecated since 1.2 and will be removed in a later release.</li>
 </ul>
 <h2 id="list-my-conversations">List my conversations</h2>
 <p><code>GET /conversations?page=1&amp;limit=20</code></p>
@@ -3602,7 +3714,7 @@ print(resp.json())
 <li>Destructive operation.</li>
 </ul>
 <h2 id="full-api-reference">Full API reference</h2>
-<p>For exhaustive schema details, use <a href="../swagger-api/">Swagger API</a>.</p>
+<p>For exhaustive schema details, use <a href="https://eve-esa.github.io/eve-guide/backend-swagger/">Swagger API</a>.</p>
 
 
 

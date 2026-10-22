@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://example.com/backend/docs/api/routers-auth/">
+        <link rel="canonical" href="https://eve-esa.github.io/eve-guide/backend/docs/api/routers-auth/">
       
       
         <link rel="prev" href="../../docker_setup/">
       
       
-        <link rel="next" href="../routers-collection/">
+        <link rel="next" href="../routers-user/">
       
       
         
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#auth-api" class="md-skip">
+        <a href="#auth" class="md-skip">
           Skip to content
         </a>
       
@@ -518,6 +518,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/features/api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -848,10 +876,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#signup" class="md-nav__link">
+  <a href="#programmatic-access-without-an-identity-provider-session" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Signup
+        Programmatic access without an identity-provider session
       
     </span>
   </a>
@@ -859,304 +887,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.auth.signup" class="md-nav__link">
+  <a href="#why" class="md-nav__link">
     <span class="md-ellipsis">
       
-        signup
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="signup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-account" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify account
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routers.auth.verify" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        verify
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="verify">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#login" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Login
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routers.auth.login" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        login
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="login">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#refresh-access-token" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Refresh access token
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routers.auth.refresh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        refresh
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="refresh">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resend-activation-email" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resend activation email
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routers.auth.resend_activation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        resend_activation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="resend_activation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#token-usage-helper" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Token usage helper
+        Why
       
     </span>
   </a>
@@ -1190,14 +924,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-collection/" class="md-nav__link">
+      <a href="../routers-user/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Collection
+    User
   
 
     
@@ -1246,14 +980,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-document/" class="md-nav__link">
+      <a href="../routers-message/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Document
+    Message
   
 
     
@@ -1274,14 +1008,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-forgot_password/" class="md-nav__link">
+      <a href="../generation-errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Forget Password
+    Generation Failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document
   
 
     
@@ -1330,14 +1120,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-message/" class="md-nav__link">
+      <a href="../api-keys/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Message
+    API Keys
   
 
     
@@ -1358,14 +1148,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-user/" class="md-nav__link">
+      <a href="../openai-gateway/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bug-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reports
   
 
     
@@ -1414,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../swagger-api/" class="md-nav__link">
+      <a href="../../../../backend-swagger/" class="md-nav__link">
         
   
   
@@ -2626,10 +2444,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#signup" class="md-nav__link">
+  <a href="#programmatic-access-without-an-identity-provider-session" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Signup
+        Programmatic access without an identity-provider session
       
     </span>
   </a>
@@ -2637,304 +2455,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.auth.signup" class="md-nav__link">
+  <a href="#why" class="md-nav__link">
     <span class="md-ellipsis">
       
-        signup
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="signup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-account" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify account
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routers.auth.verify" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        verify
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="verify">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#login" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Login
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routers.auth.login" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        login
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="login">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#refresh-access-token" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Refresh access token
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routers.auth.refresh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        refresh
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="refresh">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resend-activation-email" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resend activation email
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routers.auth.resend_activation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        resend_activation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="resend_activation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#token-usage-helper" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Token usage helper
+        Why
       
     </span>
   </a>
@@ -2972,586 +2496,32 @@
   
 
 
-<h1 id="auth-api">Auth API</h1>
-<p>Authentication is the first step for all protected routes.</p>
+<h1 id="auth">Auth</h1>
+<p>There is no local auth router any more. <code>/signup</code>, <code>/login</code>, <code>/refresh</code>, <code>/verify</code> and
+<code>/forgot-password</code> are removed; the backend no longer stores or checks passwords.</p>
 <h2 id="api-call-order">API call order</h2>
 <ol>
-<li><code>POST /signup</code></li>
-<li><code>POST /verify</code></li>
-<li><code>POST /login</code> to receive tokens</li>
-<li>Use <code>access_token</code> in protected routes</li>
-<li><code>POST /refresh</code> when access token expires</li>
+<li>Sign in at the identity provider (Keycloak locally, Cognito per AWS environment), not at
+   this API. The provider issues the access token.</li>
+<li>Use that token as <code>Authorization: Bearer &lt;access_token&gt;</code> on every protected route.</li>
+<li>Refresh through the provider's own token endpoint when it expires; there is no backend
+   <code>/refresh</code> to call.</li>
 </ol>
 <p>Shared request setup is documented once in <a href="https://eve-esa.github.io/eve-guide/backend/docs/">API index</a>.</p>
-<h2 id="signup">Signup</h2>
-<p><code>POST /signup</code></p>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<a id="routers.auth.signup"></a>
-    <div class="doc doc-contents first">
-
-        <p>Register a new user and send an activation email.</p>
-<p>Creates a user account and emails an activation link containing a one-time activation code.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>request</code>
-            </td>
-            <td>
-                  <code><span title="src.schemas.auth.SignupRequest">SignupRequest</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Signup payload with user details and password.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="src.schemas.auth.SignupResponse">SignupResponse</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Created user summary.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="fastapi.HTTPException">HTTPException</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>400 if invalid or duplicate signup data.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div><h3 id="usage">Usage</h3>
-<pre><code class="language-python">resp = requests.post(
-    f&quot;{BASE_URL}/signup&quot;,
-    json={
-        &quot;email&quot;: &quot;astro.user@example.com&quot;,
-        &quot;password&quot;: &quot;StrongPassword123!&quot;,
-        &quot;first_name&quot;: &quot;Astro&quot;,
-        &quot;last_name&quot;: &quot;User&quot;,
-    },
-    timeout=30,
-)
-resp.raise_for_status()
-print(resp.json())
+<h2 id="programmatic-access-without-an-identity-provider-session">Programmatic access without an identity-provider session</h2>
+<p>For scripts, CI and other machine callers, create an <code>eve_</code> API key from an authenticated
+session (or from another key) and use it as the bearer credential instead of a provider
+access token. See <a href="../api-keys/">API keys</a> for the create/list/revoke contract and a curl
+walkthrough.</p>
+<pre><code class="language-bash">curl -s &quot;$BASE_URL/users/me&quot; -H &quot;Authorization: Bearer $EVE_API_KEY&quot;
 </code></pre>
-<h3 id="explanation">Explanation</h3>
-<p>Creates an inactive user account and triggers an activation email.</p>
-<h3 id="notes">Notes</h3>
-<ul>
-<li>Verification is required before login.</li>
-<li>Email must be unique.</li>
-</ul>
-<h2 id="verify-account">Verify account</h2>
-<p><code>POST /verify</code></p>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<a id="routers.auth.verify"></a>
-    <div class="doc doc-contents first">
-
-        <p>Verify account activation using the activation code.</p>
-<p>Marks the user as active if the provided code matches and clears the code.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>request</code>
-            </td>
-            <td>
-                  <code><span title="src.schemas.auth.VerifyRequest">VerifyRequest</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Verification payload with email and activation code.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="dict">dict</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Confirmation message.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="fastapi.HTTPException">HTTPException</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>404 if user not found; 400 if activation code is invalid.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div><h3 id="usage_1">Usage</h3>
-<pre><code class="language-python">resp = requests.post(
-    f&quot;{BASE_URL}/verify&quot;,
-    json={
-        &quot;email&quot;: &quot;astro.user@example.com&quot;,
-        &quot;activation_code&quot;: &quot;123456&quot;,
-    },
-    timeout=30,
-)
-resp.raise_for_status()
-print(resp.json())
-</code></pre>
-<h3 id="explanation_1">Explanation</h3>
-<p>Activates the account using the code sent by email.</p>
-<h3 id="notes_1">Notes</h3>
-<ul>
-<li>Call this before <code>POST /login</code>.</li>
-<li>Use <code>POST /resend-activation</code> if the code is missing/expired.</li>
-</ul>
-<h2 id="login">Login</h2>
-<p><code>POST /login</code></p>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<a id="routers.auth.login"></a>
-    <div class="doc doc-contents first">
-
-        <p>Authenticate a user and issue JWT tokens.</p>
-<p>Validates the provided credentials, ensures the account is active, and returns an access and refresh token.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>request</code>
-            </td>
-            <td>
-                  <code><span title="src.schemas.auth.LoginRequest">LoginRequest</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Login credentials payload.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="src.schemas.auth.LoginResponse">LoginResponse</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Access and refresh tokens.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="fastapi.HTTPException">HTTPException</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>401 if invalid credentials or user not found; 403 if account not activated.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div><h3 id="usage_2">Usage</h3>
-<pre><code class="language-python">resp = requests.post(
-    f&quot;{BASE_URL}/login&quot;,
-    json={
-        &quot;email&quot;: &quot;astro.user@example.com&quot;,
-        &quot;password&quot;: &quot;StrongPassword123!&quot;,
-    },
-    timeout=30,
-)
-resp.raise_for_status()
-tokens = resp.json()
-ACCESS_TOKEN = tokens[&quot;access_token&quot;]
-REFRESH_TOKEN = tokens[&quot;refresh_token&quot;]
-print(tokens)
-</code></pre>
-<h3 id="explanation_2">Explanation</h3>
-<p>Returns JWT tokens used by all protected APIs.</p>
-<h3 id="notes_2">Notes</h3>
-<ul>
-<li>Add <code>Authorization: Bearer &lt;access_token&gt;</code> to protected requests.</li>
-<li>Keep <code>refresh_token</code> for access token renewal.</li>
-</ul>
-<h2 id="refresh-access-token">Refresh access token</h2>
-<p><code>POST /refresh</code></p>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<a id="routers.auth.refresh"></a>
-    <div class="doc doc-contents first">
-
-        <p>Exchange a refresh token for a new access token.</p>
-<p>Decodes and validates the provided refresh token and returns a new access token if the token and user are valid.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>request</code>
-            </td>
-            <td>
-                  <code><span title="src.schemas.auth.RefreshRequest">RefreshRequest</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Refresh token payload.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="src.schemas.auth.RefreshResponse">RefreshResponse</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Fresh access token.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="fastapi.HTTPException">HTTPException</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>401 if invalid refresh token or user not found.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div><h3 id="usage_3">Usage</h3>
-<pre><code class="language-python">resp = requests.post(
-    f&quot;{BASE_URL}/refresh&quot;,
-    json={&quot;refresh_token&quot;: REFRESH_TOKEN},
-    timeout=30,
-)
-resp.raise_for_status()
-ACCESS_TOKEN = resp.json()[&quot;access_token&quot;]
-print(resp.json())
-</code></pre>
-<h3 id="explanation_3">Explanation</h3>
-<p>Issues a new access token without re-entering credentials.</p>
-<h3 id="notes_3">Notes</h3>
-<ul>
-<li>Keep using the same header format with the new token.</li>
-<li>Use when protected endpoints return auth-expired errors.</li>
-</ul>
-<h2 id="resend-activation-email">Resend activation email</h2>
-<p><code>POST /resend-activation</code></p>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<a id="routers.auth.resend_activation"></a>
-    <div class="doc doc-contents first">
-
-        <p>Resend the account activation email.</p>
-<p>Generates a new activation code (if the account is not yet active) and sends the activation email again.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>request</code>
-            </td>
-            <td>
-                  <code><span title="src.schemas.auth.ResendActivationRequest">ResendActivationRequest</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Email address for the account.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="dict">dict</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Confirmation message.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="fastapi.HTTPException">HTTPException</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>404 if user is not found.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div><h3 id="usage_4">Usage</h3>
-<pre><code class="language-python">resp = requests.post(
-    f&quot;{BASE_URL}/resend-activation&quot;,
-    json={&quot;email&quot;: &quot;astro.user@example.com&quot;},
-    timeout=30,
-)
-resp.raise_for_status()
-print(resp.json())
-</code></pre>
-<h3 id="explanation_4">Explanation</h3>
-<p>Sends a new activation code for unverified accounts.</p>
-<h3 id="notes_4">Notes</h3>
-<ul>
-<li>Use only before successful verification.</li>
-</ul>
-<h2 id="token-usage-helper">Token usage helper</h2>
-<pre><code class="language-python">headers = {&quot;Authorization&quot;: f&quot;Bearer {ACCESS_TOKEN}&quot;}
-</code></pre>
+<h2 id="why">Why</h2>
+<p>The identity-provider migration is documented in
+<a href="https://github.com/eve-esa/backend/blob/main/docs/adr/identity-provider-architecture.md"><code>adr/identity-provider-architecture.md</code></a>. In short:
+the app only verifies issuer, audience and JWT signature; which product issues the token
+(Keycloak locally, Cognito in the cloud) is not the backend's concern.</p>
 <h2 id="full-api-reference">Full API reference</h2>
-<p>For exhaustive schema details, use <a href="../swagger-api/">Swagger API</a>.</p>
+<p>For exhaustive schema details, use <a href="https://eve-esa.github.io/eve-guide/backend-swagger/">Swagger API</a>.</p>
 
 
 

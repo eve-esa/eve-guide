@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://example.com/backend/docs/api/routers-forgot_password/">
+        <link rel="canonical" href="https://eve-esa.github.io/eve-guide/backend/docs/api/openai-gateway/">
       
       
-        <link rel="prev" href="../routers-document/">
+        <link rel="prev" href="../api-keys/">
       
       
-        <link rel="next" href="../routers-health_check/">
+        <link rel="next" href="../bug-reports/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Forget Password - EVE GUIDE</title>
+        <title>OpenAI-compatible Gateway - EVE GUIDE</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#forgot-password-api" class="md-skip">
+        <a href="#openai-compatible-gateway-v1" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Forget Password
+              OpenAI-compatible Gateway
             
           </span>
         </div>
@@ -518,6 +518,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/features/api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -805,14 +833,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-collection/" class="md-nav__link">
+      <a href="../routers-user/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Collection
+    User
   
 
     
@@ -861,14 +889,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-document/" class="md-nav__link">
+      <a href="../routers-message/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Document
+    Message
   
 
     
@@ -886,44 +914,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Forget Password
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../generation-errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Forget Password
+    Generation Failures
   
 
     
@@ -932,170 +933,62 @@
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+              
+            
+              
+                
   
   
   
+  
+    <li class="md-nav__item">
+      <a href="../routers-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
+    Collection
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api-call-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API call order
-      
-    </span>
-  </a>
+
+    
+  </span>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#send-reset-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Send reset code
-      
-    </span>
-  </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routers.forgot_password.send_forgot_password_code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        send_forgot_password_code
-      
-    </span>
-  </a>
+
+      </a>
+    </li>
   
-    <nav class="md-nav" aria-label="send_forgot_password_code">
-      <ul class="md-nav__list">
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-document/" class="md-nav__link">
         
-          <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
+  <span class="md-ellipsis">
+    
   
-</li>
-        
-      </ul>
-    </nav>
+    Document
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#confirm-new-password" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Confirm new password
-      
-    </span>
-  </a>
+
+    
+  </span>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routers.forgot_password.confirm_new_password" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        confirm_new_password
-      
-    </span>
-  </a>
   
-    <nav class="md-nav" aria-label="confirm_new_password">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#full-api-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Full API reference
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+
+      </a>
     </li>
   
 
@@ -1136,14 +1029,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-message/" class="md-nav__link">
+      <a href="../api-keys/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Message
+    API Keys
   
 
     
@@ -1161,17 +1054,180 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../routers-user/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    User
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowed-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allowed paths
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model routing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#budget-charging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budget charging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-budgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token budgets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#429-budget-exceeded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        429: budget exceeded
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openai-sdk-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI SDK example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full API reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bug-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reports
   
 
     
@@ -1220,7 +1276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../swagger-api/" class="md-nav__link">
+      <a href="../../../../backend-swagger/" class="md-nav__link">
         
   
   
@@ -2421,10 +2477,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#api-call-order" class="md-nav__link">
+  <a href="#auth" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API call order
+        Auth
       
     </span>
   </a>
@@ -2432,10 +2488,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#send-reset-code" class="md-nav__link">
+  <a href="#allowed-paths" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Send reset code
+        Allowed paths
       
     </span>
   </a>
@@ -2443,60 +2499,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.forgot_password.send_forgot_password_code" class="md-nav__link">
+  <a href="#model-routing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        send_forgot_password_code
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="send_forgot_password_code">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#confirm-new-password" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Confirm new password
+        Model routing
       
     </span>
   </a>
@@ -2504,52 +2510,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routers.forgot_password.confirm_new_password" class="md-nav__link">
+  <a href="#budget-charging" class="md-nav__link">
     <span class="md-ellipsis">
       
-        confirm_new_password
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="confirm_new_password">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
+        Budget charging
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation_1" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#token-budgets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Explanation
+        Token budgets
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#notes_1" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#429-budget-exceeded" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        429: budget exceeded
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#openai-sdk-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI SDK example
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2584,251 +2584,151 @@
   
 
 
-<h1 id="forgot-password-api">Forgot Password API</h1>
-<p>Forgot-password routes reset credentials without requiring login.</p>
-<h2 id="api-call-order">API call order</h2>
+<h1 id="openai-compatible-gateway-v1">OpenAI-compatible gateway (<code>/v1/*</code>)</h1>
+<p><code>src/routers/openai_proxy.py</code>. Lets any EVE-authenticated caller use an OpenAI SDK against
+<code>https://eve-chat.chat/api/v1</code> instead of the app's own conversation endpoints. Traffic
+here is metered and charged against the caller's monthly token budget, same budget as chat.</p>
+<h2 id="auth">Auth</h2>
+<p><code>Authorization: Bearer</code> with either an <code>eve_</code> API key (see <a href="../api-keys/">API keys</a>) or a
+provider access token. That credential is never relayed upstream: the proxy replaces it
+with its own configured upstream key before forwarding.</p>
+<h2 id="allowed-paths">Allowed paths</h2>
+<p>Only these three, and only <code>POST</code>:</p>
+<ul>
+<li><code>/v1/chat/completions</code></li>
+<li><code>/v1/completions</code></li>
+<li><code>/v1/embeddings</code></li>
+</ul>
+<p><code>GET /v1/models</code> is answered locally (not proxied) with the providers that are actually
+configured; it lists <code>eve/&lt;model&gt;</code> and, where <code>EVE_JSC_API_KEY</code>/<code>EVE_JSC_BASE_URL</code> are set,
+<code>jsc/&lt;model&gt;</code> too. Any other path or method under <code>/v1/*</code> answers <code>404</code> before any upstream
+call is made; the match is exact, so a path that is not in canonical form is refused too.</p>
+<h2 id="model-routing">Model routing</h2>
+<p>Model names may carry a LiteLLM-style <code>&lt;provider&gt;/&lt;model-id&gt;</code> prefix:</p>
+<ul>
+<li><code>eve/...</code> or <code>runpod/...</code> or a bare model id -&gt; the RunPod upstream (default).</li>
+<li><code>jsc/...</code> -&gt; the Jülich upstream.</li>
+</ul>
+<p>Only the recognised provider segment is stripped; the rest of the model id is forwarded
+unchanged, e.g. <code>eve/eve-esa/EVE-Instruct</code> -&gt; <code>eve-esa/EVE-Instruct</code> upstream.</p>
+<p>Models in production (<code>GET /v1/models</code> lists them):</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Upstream</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>jsc/alias-eve</code></td>
+<td>JSC Blablador</td>
+<td>the model the web app uses by default</td>
+</tr>
+<tr>
+<td><code>eve/eve-esa/EVE-Instruct</code></td>
+<td>RunPod serverless</td>
+<td>a cold start can take 1 to 3 minutes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="budget-charging">Budget charging</h2>
+<p>Every call to the three billable paths counts against the caller's token budget
+(<code>src.services.token_rate_limiter</code>), the same budget the chat UI uses:</p>
 <ol>
-<li><code>POST /forgot-password/code</code> with the user email.</li>
-<li>User receives code/reset link by email.</li>
-<li><code>POST /forgot-password/confirm</code> with code and new password fields.</li>
-<li>Login again through <code>POST /login</code> with the new password.</li>
+<li>Before any upstream call, a rough estimate of the request is reserved against the cap
+   with one atomic increment. Concurrent requests cannot all read the same stale usage and
+   all get admitted past the cap.</li>
+<li>The reservation is settled once the response is in (in a <code>finally</code>): the real charge
+   replaces the estimate. A stream that is aborted mid-way is charged for what it already
+   produced; a request that never got a response is refunded in full.</li>
+<li>Non-streaming: charge from the upstream <code>usage</code> block, or an estimate if the upstream
+   omits it. Streaming: usage is parsed out of the SSE chunks; <code>stream_options</code> is forced to
+   include usage. A response status of 400 or above is not charged, only tracked.</li>
 </ol>
-<p>Shared request setup is documented once in <a href="https://eve-esa.github.io/eve-guide/backend/docs/">API index</a>.</p>
-<h2 id="send-reset-code">Send reset code</h2>
-<p><code>POST /forgot-password/code</code></p>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<a id="routers.forgot_password.send_forgot_password_code"></a>
-    <div class="doc doc-contents first">
-
-        <p>Send a password reset code to the user's email.</p>
-<p>Generates a one-time code, stores it with an expiry, and emails a reset link.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>request</code>
-            </td>
-            <td>
-                  <code><span title="src.schemas.forgot_password.ForgotPasswordRequest">ForgotPasswordRequest</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Request containing the user's email.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Dict[str, str]: Confirmation message.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="fastapi.HTTPException">HTTPException</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>404 if user not found.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div><h3 id="usage">Usage</h3>
-<pre><code class="language-python">resp = requests.post(
-    f&quot;{BASE_URL}/forgot-password/code&quot;,
-    json={&quot;email&quot;: &quot;astro.user@example.com&quot;},
-    timeout=30,
-)
-resp.raise_for_status()
-print(resp.json())
+<h2 id="token-budgets">Token budgets</h2>
+<p>The budget depends on the user's plan. The period is one month from the first charged
+request, then rolls. Production values:</p>
+<table>
+<thead>
+<tr>
+<th>Plan</th>
+<th>Tokens per period</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>free</code> (default)</td>
+<td>500,000</td>
+</tr>
+<tr>
+<td><code>pro</code></td>
+<td>2,000,000</td>
+</tr>
+<tr>
+<td><code>pro_plus</code></td>
+<td>10,000,000</td>
+</tr>
+<tr>
+<td><code>ultra</code></td>
+<td>10,000,000,000</td>
+</tr>
+<tr>
+<td><code>unlimited</code></td>
+<td>no cap</td>
+</tr>
+</tbody>
+</table>
+<p><code>GET /users/me/token-usage</code> returns the caller's plan, <code>used_tokens</code>, <code>max_tokens</code> and
+<code>period_end</code>.</p>
+<h2 id="429-budget-exceeded">429: budget exceeded</h2>
+<p>Checked before the upstream call (a 429 cannot follow <code>http.response.start</code>), so it never
+costs an upstream request:</p>
+<pre><code class="language-json">{
+  &quot;detail&quot;: &quot;Token budget exceeded for group 'free'. Limit is 500000 tokens per period. Resets at 2026-11-14T09:30:12+00:00.&quot;,
+  &quot;error&quot;: {
+    &quot;message&quot;: &quot;Token budget exceeded for group 'free'. Limit is 500000 tokens per period. Resets at 2026-11-14T09:30:12+00:00.&quot;,
+    &quot;type&quot;: &quot;insufficient_quota&quot;,
+    &quot;code&quot;: &quot;token_budget_exceeded&quot;,
+    &quot;param&quot;: null
+  }
+}
 </code></pre>
-<h3 id="explanation">Explanation</h3>
-<p>Generates a one-time reset code and emails the reset link.</p>
-<h3 id="notes">Notes</h3>
-<ul>
-<li>No authentication token is required.</li>
-<li>Fails if the email does not exist.</li>
-</ul>
-<h2 id="confirm-new-password">Confirm new password</h2>
-<p><code>POST /forgot-password/confirm</code></p>
+<p>Headers: <code>Retry-After</code> (seconds to the period reset) and <code>x-should-retry: false</code>, so an
+OpenAI SDK's own retry logic backs off instead of hammering the gateway.</p>
+<h2 id="openai-sdk-example">OpenAI SDK example</h2>
+<pre><code class="language-python">from openai import OpenAI
 
-
-<div class="doc doc-object doc-function">
-
-
-
-<a id="routers.forgot_password.confirm_new_password"></a>
-    <div class="doc doc-contents first">
-
-        <p>Confirm a password reset with the provided code and new password.</p>
-<p>Validates the reset code and its expiry, ensures password confirmation
-matches, updates the user's password, and invalidates the code.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>request</code>
-            </td>
-            <td>
-                  <code><span title="src.schemas.forgot_password.ForgotPasswordConfirmation">ForgotPasswordConfirmation</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Confirmation payload with code and new password.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Dict[str, str]: Confirmation message.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="fastapi.HTTPException">HTTPException</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>404 if code is invalid or expired, or user not found.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="fastapi.HTTPException">HTTPException</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>400 if passwords do not match.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div><h3 id="usage_1">Usage</h3>
-<pre><code class="language-python">resp = requests.post(
-    f&quot;{BASE_URL}/forgot-password/confirm&quot;,
-    json={
-        &quot;code&quot;: &quot;ABC123&quot;,
-        &quot;new_password&quot;: &quot;StrongPassword123!&quot;,
-        &quot;confirm_password&quot;: &quot;StrongPassword123!&quot;,
-    },
-    timeout=30,
+client = OpenAI(
+    api_key=&quot;eve_...&quot;,  # an eve_ API key, or a provider access token
+    base_url=&quot;https://eve-chat.chat/api/v1&quot;,
 )
-resp.raise_for_status()
-print(resp.json())
+
+resp = client.chat.completions.create(
+    model=&quot;jsc/alias-eve&quot;,
+    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;hi&quot;}],
+)
+print(resp.choices[0].message.content)
+
+# Streaming
+stream = client.chat.completions.create(
+    model=&quot;jsc/alias-eve&quot;,
+    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;hi&quot;}],
+    stream=True,
+)
+for chunk in stream:
+    if chunk.choices[0].delta.content:
+        print(chunk.choices[0].delta.content, end=&quot;&quot;)
+
+# RunPod provider (may cold start)
+resp = client.chat.completions.create(
+    model=&quot;eve/eve-esa/EVE-Instruct&quot;,
+    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;hi&quot;}],
+)
 </code></pre>
-<h3 id="explanation_1">Explanation</h3>
-<p>Validates code and expiry, then updates the user's password.</p>
-<h3 id="notes_1">Notes</h3>
-<ul>
-<li><code>new_password</code> and <code>confirm_password</code> must match.</li>
-<li>Code must be valid and not expired.</li>
-</ul>
 <h2 id="full-api-reference">Full API reference</h2>
-<p>For exhaustive schema details, use <a href="../swagger-api/">Swagger API</a>.</p>
+<p>For exhaustive schema details, use <a href="https://eve-esa.github.io/eve-guide/backend-swagger/">Swagger API</a>.</p>
 
 
 

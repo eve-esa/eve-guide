@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://example.com/backend/docs/api/routers-document/">
+        <link rel="canonical" href="https://eve-esa.github.io/eve-guide/backend/docs/api/routers-document/">
       
       
-        <link rel="prev" href="../routers-conversation/">
+        <link rel="prev" href="../routers-collection/">
       
       
-        <link rel="next" href="../routers-forgot_password/">
+        <link rel="next" href="../routers-health_check/">
       
       
         
@@ -518,6 +518,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/features/api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -805,14 +833,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-collection/" class="md-nav__link">
+      <a href="../routers-user/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Collection
+    User
   
 
     
@@ -841,6 +869,90 @@
     
   
     Conversation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-message/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Message
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generation-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generation Failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collection
   
 
     
@@ -1202,34 +1314,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-forgot_password/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Forget Password
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../routers-health_check/" class="md-nav__link">
         
   
@@ -1258,14 +1342,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-message/" class="md-nav__link">
+      <a href="../api-keys/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Message
+    API Keys
   
 
     
@@ -1286,14 +1370,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-user/" class="md-nav__link">
+      <a href="../openai-gateway/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bug-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reports
   
 
     
@@ -1342,7 +1454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../swagger-api/" class="md-nav__link">
+      <a href="../../../../backend-swagger/" class="md-nav__link">
         
   
   
@@ -3033,7 +3145,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>404 if collection is not found; 403 if access is forbidden; 500 for processing errors.</p>
+                <p>404 if collection is not found; 403 if access is forbidden; 400 if the private document limit is exceeded; 500 for processing errors.</p>
               </div>
             </td>
           </tr>
@@ -3501,7 +3613,7 @@ print(resp.json())
 <li>Destructive operation; retrieval quality may change.</li>
 </ul>
 <h2 id="full-api-reference">Full API reference</h2>
-<p>For exhaustive schema details, use <a href="../swagger-api/">Swagger API</a>.</p>
+<p>For exhaustive schema details, use <a href="https://eve-esa.github.io/eve-guide/backend-swagger/">Swagger API</a>.</p>
 
 
 

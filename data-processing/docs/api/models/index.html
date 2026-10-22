@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/data-processing/docs/api/models/">
+        <link rel="canonical" href="https://eve-esa.github.io/eve-guide/data-processing/docs/api/models/">
       
       
         <link rel="prev" href="../utilities/">
@@ -518,6 +518,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/features/api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -801,14 +829,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/routers-collection/" class="md-nav__link">
+      <a href="../../../../backend/docs/api/routers-user/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Collection
+    User
   
 
     
@@ -857,14 +885,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/routers-document/" class="md-nav__link">
+      <a href="../../../../backend/docs/api/routers-message/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Document
+    Message
   
 
     
@@ -885,14 +913,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/routers-forgot_password/" class="md-nav__link">
+      <a href="../../../../backend/docs/api/generation-errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Forget Password
+    Generation Failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../backend/docs/api/routers-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../backend/docs/api/routers-document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document
   
 
     
@@ -941,14 +1025,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/routers-message/" class="md-nav__link">
+      <a href="../../../../backend/docs/api/api-keys/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Message
+    API Keys
   
 
     
@@ -969,14 +1053,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/routers-user/" class="md-nav__link">
+      <a href="../../../../backend/docs/api/openai-gateway/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../backend/docs/api/bug-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reports
   
 
     
@@ -1025,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/docs/api/swagger-api/" class="md-nav__link">
+      <a href="../../../../backend-swagger/" class="md-nav__link">
         
   
   
@@ -2889,7 +3001,7 @@ interface for document handling across all pipeline stages.</p>
 
 
               <details class="mkdocstrings-source">
-                <summary>Source code in <code>eve/model/document.py</code></summary>
+                <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
                 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  8</span>
 <span class="normal">  9</span>
 <span class="normal"> 10</span>
@@ -3222,7 +3334,7 @@ interface for document handling across all pipeline stages.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>eve/model/document.py</code></summary>
+              <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">123</span>
 <span class="normal">124</span>
 <span class="normal">125</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -3249,7 +3361,7 @@ interface for document handling across all pipeline stages.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>eve/model/document.py</code></summary>
+              <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">119</span>
 <span class="normal">120</span>
 <span class="normal">121</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -3276,7 +3388,7 @@ interface for document handling across all pipeline stages.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>eve/model/document.py</code></summary>
+              <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">69</span>
 <span class="normal">70</span>
 <span class="normal">71</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -3303,7 +3415,7 @@ interface for document handling across all pipeline stages.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>eve/model/document.py</code></summary>
+              <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">77</span>
 <span class="normal">78</span>
 <span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_pipeline_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -3334,7 +3446,7 @@ interface for document handling across all pipeline stages.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>eve/model/document.py</code></summary>
+              <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">102</span>
 <span class="normal">103</span>
 <span class="normal">104</span>
@@ -3371,7 +3483,7 @@ interface for document handling across all pipeline stages.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>eve/model/document.py</code></summary>
+              <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">109</span>
 <span class="normal">110</span>
 <span class="normal">111</span>
@@ -3402,7 +3514,7 @@ interface for document handling across all pipeline stages.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>eve/model/document.py</code></summary>
+              <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">73</span>
 <span class="normal">74</span>
 <span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
@@ -3429,7 +3541,7 @@ interface for document handling across all pipeline stages.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>eve/model/document.py</code></summary>
+              <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">81</span>
 <span class="normal">82</span>
 <span class="normal">83</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_pipeline_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
@@ -3456,7 +3568,7 @@ interface for document handling across all pipeline stages.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>eve/model/document.py</code></summary>
+              <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">65</span>
 <span class="normal">66</span>
 <span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
@@ -3483,7 +3595,7 @@ interface for document handling across all pipeline stages.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>eve/model/document.py</code></summary>
+              <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">115</span>
 <span class="normal">116</span>
 <span class="normal">117</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">to_tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
@@ -3510,7 +3622,7 @@ interface for document handling across all pipeline stages.</p>
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>eve/model/document.py</code></summary>
+              <summary>Source code in <code>data-processing/eve/model/document.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 85</span>
 <span class="normal"> 86</span>
 <span class="normal"> 87</span>
@@ -3578,7 +3690,7 @@ interface for document handling across all pipeline stages.</p>
 
 
               <details class="mkdocstrings-source">
-                <summary>Source code in <code>eve/config.py</code></summary>
+                <summary>Source code in <code>data-processing/eve/config.py</code></summary>
                 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
@@ -3654,7 +3766,7 @@ interface for document handling across all pipeline stages.</p>
 
 
               <details class="mkdocstrings-source">
-                <summary>Source code in <code>eve/config.py</code></summary>
+                <summary>Source code in <code>data-processing/eve/config.py</code></summary>
                 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>

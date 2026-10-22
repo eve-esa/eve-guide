@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/backend/docs/local_setup/">
+        <link rel="canonical" href="https://eve-esa.github.io/eve-guide/backend/docs/local_setup/">
       
       
         <link rel="prev" href="../">
@@ -518,6 +518,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../frontend/docs/features/api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -981,14 +1009,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/routers-collection/" class="md-nav__link">
+      <a href="../api/routers-user/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Collection
+    User
   
 
     
@@ -1037,14 +1065,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/routers-document/" class="md-nav__link">
+      <a href="../api/routers-message/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Document
+    Message
   
 
     
@@ -1065,14 +1093,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/routers-forgot_password/" class="md-nav__link">
+      <a href="../api/generation-errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Forget Password
+    Generation Failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/routers-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/routers-document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document
   
 
     
@@ -1121,14 +1205,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/routers-message/" class="md-nav__link">
+      <a href="../api/api-keys/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Message
+    API Keys
   
 
     
@@ -1149,14 +1233,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/routers-user/" class="md-nav__link">
+      <a href="../api/openai-gateway/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/bug-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reports
   
 
     
@@ -1205,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/swagger-api/" class="md-nav__link">
+      <a href="../../../backend-swagger/" class="md-nav__link">
         
   
   
@@ -2564,7 +2676,7 @@
 <ul>
 <li>Python 3.12+</li>
 <li>MongoDB</li>
-<li>(Optional) Docker &amp; Docker Compose for containerized setup — see <a href="../docker_setup/">Docker setup</a> for install instructions</li>
+<li>(Optional) Docker &amp; Docker Compose for containerized setup: see <a href="../docker_setup/">Docker setup</a> for install instructions</li>
 </ul>
 <p>If you need help installing Python or MongoDB, see the <strong>Detailed installation commands for prerequisites</strong> section at the bottom of this page.</p>
 <h3 id="1-clone-the-repository">1. Clone the repository</h3>
@@ -2602,16 +2714,23 @@ cp .env.example .env</code></p>
     - `MONGO_HOST` (usually `localhost`)
     - `MONGO_PORT` (usually `27017`)
     - `MONGO_DATABASE` (for example `eve-backend`)
-- **Auth**
-    - `JWT_SECRET_KEY`
+- **Auth (OIDC)**
+    - `AUTH_ISSUER` (`http://localhost:8080/realms/eve`)
+    - `AUTH_CLIENT_ID` (`eve-frontend`)
+    - `AUTH_DISCOVERY_URL` (only when the backend reaches the provider at another address than the issuer)
+    - `AUTH_ALLOW_INSECURE_HTTP=true` (local only, the realm is served over plain http)
 </code></pre>
 </li>
 </ol>
+<p><code>QDRANT_URL</code>, <code>QDRANT_API_KEY</code>, <code>AUTH_ISSUER</code> and <code>AUTH_CLIENT_ID</code> are read at import: the names must exist in <code>.env</code>, or the backend fails to start. An empty value is allowed for <code>QDRANT_API_KEY</code>.</p>
+<p>Sign-in goes through an OIDC provider; the backend has no login endpoint of its own. Locally the provider is Keycloak, started by <code>docker compose up -d keycloak</code> with the realm <code>eve</code> from <code>infra/identity/keycloak/realm/eve-realm.json</code> (client <code>eve-frontend</code>). Sign in at the frontend as <code>dev@eve.example.com</code> / <code>eve-dev-password</code>.</p>
 <p>Other variables in the table in the <strong>Environment variable reference</strong> section below are <strong>optional</strong> for basic local development and can be configured later as you enable more features (SMTP, Satcom, external rerankers, etc.).</p>
 <h3 id="4-install-dependencies">4. Install dependencies</h3>
 <p>With the virtual environment activated:</p>
-<pre><code class="language-bash">pip install -r requirements.txt
+<pre><code class="language-bash">pip install -r requirements-dev.txt
 </code></pre>
+<p><code>requirements-dev.txt</code> adds the test suite and the docs toolchain to <code>requirements.txt</code>, which is
+all the production image installs.</p>
 <h3 id="5-run-mongodb-local">5. Run MongoDB (local)</h3>
 <p>Make sure MongoDB is running:</p>
 <ul>
@@ -2627,11 +2746,15 @@ cp .env.example .env</code></p>
 <ul>
 <li><code>http://localhost:8000/docs</code></li>
 </ul>
+<p>To run the test suite, give the free tier a token budget, otherwise the rate limit tests fail and reach the real model:</p>
+<pre><code class="language-bash">FREE_TOKENS=100 FREE_PERIOD_MONTHS=1 pytest -m &quot;not e2e&quot;
+</code></pre>
+<p>In the Docker setup: <code>docker compose exec -T -e FREE_TOKENS=100 -e FREE_PERIOD_MONTHS=1 backend pytest -m "not e2e"</code>.</p>
 <hr />
 <h3 id="7-environment-variable-reference">7. Environment variable reference</h3>
 <p>Below is a more complete example of <code>.env</code> and a description of the most important variables. This applies to both local development and Docker-based setups.</p>
 <pre><code class="language-env">PORT=8000 # for docker
-WORDER=2 # for docker
+WORKERS=2 # for docker
 # QDRANT Configuration
 QDRANT_URL=
 QDRANT_API_KEY=
@@ -2651,9 +2774,6 @@ MODEL_TIMEOUT=13
 EMBEDDING_URL=https://api.deepinfra.com/v1/openai
 EMBEDDING_API_KEY=
 
-EMBEDDING_FALLBACK_URL=https://api.siliconflow.com/v1
-EMBEDDING_FALLBACK_API_KEY=
-
 # MongoDB Configuration
 MONGO_HOST=localhost
 MONGO_PORT=27017
@@ -2662,25 +2782,24 @@ MONGO_PASSWORD=
 MONGO_DATABASE=eve-backend
 MONGO_PARAMS=
 
-# JWT Configuration
-JWT_SECRET_KEY=
-JWT_ALGORITHM=HS256
-JWT_ACCESS_TOKEN_EXPIRE_MINUTES=15
-JWT_REFRESH_TOKEN_EXPIRE_DAYS=7
+# Identity provider (local Keycloak, realm &quot;eve&quot;)
+AUTH_ISSUER=http://localhost:8080/realms/eve
+AUTH_DISCOVERY_URL=http://keycloak:8080/realms/eve/.well-known/openid-configuration
+AUTH_CLIENT_ID=eve-frontend
+AUTH_ALLOW_INSECURE_HTTP=true
 
 # SMTP
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USERNAME=
 SMTP_PASSWORD=
-EMAIL_FROM_ADDRESS=noreply@eve-esa.com
+EMAIL_FROM_ADDRESS=
 EMAIL_FROM_NAME=EVE
 
 # CORS (comma separated list)
 CORS_ALLOWED_ORIGINS=http://localhost:5173
 
 DEEPINFRA_API_TOKEN=
-SILICONFLOW_API_TOKEN=
 
 SCRAPING_DOG_API_KEY=
 
@@ -2690,12 +2809,13 @@ SATCOM_LARGE_BASE_URL=https://api.runpod.ai/v2/zyy9iu4i7vmcxc/openai/v1
 SATCOM_SMALL_BASE_URL=https://api.runpod.ai/v2/ucttr8up9sxh0k/openai/v1
 SATCOM_RUNPOD_API_KEY=
 
-SATCOM_QDRANT_URL=
-SATCOM_QDRANT_API_KEY=
-
 REDIS_URL=redis://127.0.0.1:6379/0
 
-IS_PROD=false
+APP_ENVIRONMENT=dev
+
+# Test gate only: a token budget for the free tier
+# FREE_TOKENS=100
+# FREE_PERIOD_MONTHS=1
 </code></pre>
 <table>
 <thead>
@@ -2712,9 +2832,9 @@ IS_PROD=false
 <td>Backend PORT (default: <code>8000</code>)</td>
 </tr>
 <tr>
-<td><code>WORKDER</code></td>
+<td><code>WORKERS</code></td>
 <td>Yes (for docker)</td>
-<td>Backend uvicon worker counts <code>2</code></td>
+<td>Gunicorn worker count (default <code>2</code>).</td>
 </tr>
 <tr>
 <td><code>QDRANT_URL</code></td>
@@ -2725,16 +2845,6 @@ IS_PROD=false
 <td><code>QDRANT_API_KEY</code></td>
 <td>Yes</td>
 <td>API key for the primary Qdrant instance.</td>
-</tr>
-<tr>
-<td><code>SATCOM_QDRANT_URL</code></td>
-<td>No</td>
-<td>Base URL for the Satcom-specific Qdrant instance that is used when SatcomLLM is selected on staging.</td>
-</tr>
-<tr>
-<td><code>SATCOM_QDRANT_API_KEY</code></td>
-<td>No</td>
-<td>API key for the Satcom-specific Qdrant instance that is used when SatcomLLM is selected on staging.</td>
 </tr>
 <tr>
 <td><code>MAIN_MODEL_URL</code></td>
@@ -2759,17 +2869,17 @@ IS_PROD=false
 <tr>
 <td><code>MAIN_MODEL_API_KEY</code></td>
 <td>No</td>
-<td>API key for the main model (falls back to <code>RUNPOD_API_KEY</code> if not set).</td>
+<td>API key for the main model.</td>
 </tr>
 <tr>
 <td><code>FALLBACK_MODEL_API_KEY</code></td>
 <td>No</td>
-<td>API key for the fallback model (falls back to <code>MISTRAL_API_KEY</code> if not set).</td>
+<td>API key for the fallback model.</td>
 </tr>
 <tr>
 <td><code>MODEL_TIMEOUT</code></td>
-<td>Yes</td>
-<td>Timeout for OpenAI setting</td>
+<td>No</td>
+<td>Timeout in seconds for model calls (default <code>13</code>).</td>
 </tr>
 <tr>
 <td><code>EMBEDDING_URL</code></td>
@@ -2782,29 +2892,9 @@ IS_PROD=false
 <td>Main Embedding Model provider API token</td>
 </tr>
 <tr>
-<td><code>EMBEDDING_FALLBACK_URL</code></td>
-<td>Yes</td>
-<td>Fallback Embedding Model provider url, OpenAI capatible (e.g., https://api.siliconflow.com/v1)</td>
-</tr>
-<tr>
-<td><code>EMBEDDING_FALLBACK_API_KEY</code></td>
-<td>Yes</td>
-<td>Fallback Embedding Model provider API token</td>
-</tr>
-<tr>
 <td><code>DEEPINFRA_API_TOKEN</code></td>
 <td>Yes</td>
 <td>DeepInfra API token for embedding and reranking retrieved documents (recommended for best retrieval quality, but backend still works without it).</td>
-</tr>
-<tr>
-<td><code>SILICONFLOW_API_TOKEN</code></td>
-<td>Yes</td>
-<td>SiliconFlow API token for reranking, used as a fallback only.</td>
-</tr>
-<tr>
-<td><code>SATCOM_RUNPOD_API_KEY</code></td>
-<td>No</td>
-<td>Runpod key dedicated to Satcom workloads.</td>
 </tr>
 <tr>
 <td><code>MONGO_HOST</code></td>
@@ -2837,24 +2927,29 @@ IS_PROD=false
 <td>Extra Mongo connection params (default <code>?authSource=admin</code>).</td>
 </tr>
 <tr>
-<td><code>JWT_SECRET_KEY</code></td>
+<td><code>AUTH_ISSUER</code></td>
 <td>Yes</td>
-<td>Secret for signing JWTs.</td>
+<td>OIDC issuer, exactly as it appears in the token <code>iss</code> claim. Locally <code>http://localhost:8080/realms/eve</code>.</td>
 </tr>
 <tr>
-<td><code>JWT_ALGORITHM</code></td>
-<td>No</td>
-<td>JWT algorithm (default <code>HS256</code>).</td>
+<td><code>AUTH_CLIENT_ID</code></td>
+<td>Yes</td>
+<td>OIDC client the frontend signs in with. Locally <code>eve-frontend</code>.</td>
 </tr>
 <tr>
-<td><code>JWT_ACCESS_TOKEN_EXPIRE_MINUTES</code></td>
+<td><code>AUTH_DISCOVERY_URL</code></td>
 <td>No</td>
-<td>Access token lifetime in minutes (default <code>15</code>).</td>
+<td>Discovery document URL when the backend reaches the provider at another address than the issuer (in compose: <code>http://keycloak:8080/realms/eve/.well-known/openid-configuration</code>). Defaults to the issuer's discovery URL.</td>
 </tr>
 <tr>
-<td><code>JWT_REFRESH_TOKEN_EXPIRE_DAYS</code></td>
+<td><code>AUTH_ALLOW_INSECURE_HTTP</code></td>
 <td>No</td>
-<td>Refresh token lifetime in days (default <code>7</code>).</td>
+<td><code>true</code> accepts an <code>http</code> issuer. Local only; every deployed environment uses https.</td>
+</tr>
+<tr>
+<td><code>AUTH_AUDIENCE</code></td>
+<td>No</td>
+<td>Expected token audience (default <code>AUTH_CLIENT_ID</code>).</td>
 </tr>
 <tr>
 <td><code>SMTP_HOST</code></td>
@@ -2877,14 +2972,29 @@ IS_PROD=false
 <td>SMTP password.</td>
 </tr>
 <tr>
+<td><code>SMTP_FROM_ADDRESS</code></td>
+<td>No</td>
+<td>From header on the SMTP path only; blank falls back to <code>EMAIL_FROM_ADDRESS</code>.</td>
+</tr>
+<tr>
+<td><code>MAIL_CANARY_TAG</code></td>
+<td>No</td>
+<td>With <code>MAIL_TRANSPORT=ses</code>, recipients whose local part contains this tag go through SMTP; blank matches nobody.</td>
+</tr>
+<tr>
+<td><code>MAIL_FALLBACK_TRANSPORT</code></td>
+<td>No</td>
+<td><code>ses</code> resends through SES, from <code>EMAIL_FROM_ADDRESS</code>, a message the SMTP path failed on; blank (default) means no fallback.</td>
+</tr>
+<tr>
 <td><code>EMAIL_FROM_ADDRESS</code></td>
 <td>No</td>
-<td>Sender email address (default <code>noreply@eve-ai.com</code>).</td>
+<td>Sender email address.</td>
 </tr>
 <tr>
 <td><code>EMAIL_FROM_NAME</code></td>
 <td>No</td>
-<td>Sender display name (default <code>EVE AI</code>).</td>
+<td>Sender display name (default <code>EVE</code>).</td>
 </tr>
 <tr>
 <td><code>CORS_ALLOWED_ORIGINS</code></td>
@@ -2907,9 +3017,39 @@ IS_PROD=false
 <td>Model name for Satcom large LLM.</td>
 </tr>
 <tr>
+<td><code>SATCOM_SMALL_BASE_URL</code> / <code>SATCOM_LARGE_BASE_URL</code></td>
+<td>No</td>
+<td>OpenAI-compatible URLs of the Satcom small and large endpoints.</td>
+</tr>
+<tr>
 <td><code>SATCOM_RUNPOD_API_KEY</code></td>
 <td>No</td>
 <td>API key for Satcom Runpod workloads.</td>
+</tr>
+<tr>
+<td><code>EVE_JSC_BASE_URL</code></td>
+<td>No</td>
+<td>OpenAI-compatible URL for the EVE-JSC model (required when <code>llm_type</code> is <code>eve_jsc</code>).</td>
+</tr>
+<tr>
+<td><code>EVE_JSC_MODEL_NAME</code></td>
+<td>No</td>
+<td>Model name for EVE-JSC (default <code>alias-eve</code>).</td>
+</tr>
+<tr>
+<td><code>EVE_JSC_API_KEY</code></td>
+<td>No</td>
+<td>API key for EVE-JSC, issued by Jülich (required when <code>llm_type</code> is <code>eve_jsc</code> or a model is called with the <code>jsc/</code> prefix; a blank value counts as unset).</td>
+</tr>
+<tr>
+<td><code>OPENAI_PROXY_UPSTREAM_URL</code></td>
+<td>No</td>
+<td>OpenAI-compatible URL the <code>/v1/*</code> proxy forwards <code>eve</code>/<code>runpod</code> models to. Setting this or <code>EVE_JSC_BASE_URL</code> enables the proxy.</td>
+</tr>
+<tr>
+<td><code>OPENAI_PROXY_API_KEY</code></td>
+<td>No</td>
+<td>API key for that upstream (falls back to <code>MAIN_MODEL_API_KEY</code>, which is the same RunPod endpoint).</td>
 </tr>
 <tr>
 <td><code>REDIS_URL</code></td>
@@ -2917,9 +3057,99 @@ IS_PROD=false
 <td>Redis connection string for pub/sub and cancellations (optional; if not set, in-process cancellation is used)(default <code>redis://127.0.0.1:6379/0</code>).</td>
 </tr>
 <tr>
-<td><code>IS_PROD</code></td>
+<td><code>APP_ENVIRONMENT</code></td>
 <td>No</td>
-<td>Set to <code>true</code> to enable production mode toggles.</td>
+<td><code>dev</code>, <code>staging</code> or <code>prod</code>. Selects the public collections, the default model and the private collection name; anything else reads as non-production.</td>
+</tr>
+<tr>
+<td><code>LOG_LEVEL</code></td>
+<td>No</td>
+<td>Root log level: <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code> or <code>ERROR</code> (default <code>INFO</code>). <code>DEBUG</code> gives the verbose output the server used to run with. <code>httpx</code>, <code>httpcore</code>, <code>urllib3</code>, <code>pymongo</code>, <code>botocore</code>, <code>boto3</code>, <code>openai</code> and <code>mcp</code> stay at <code>WARNING</code> at every level, since they log request URLs and query bodies.</td>
+</tr>
+<tr>
+<td><code>OTEL_EXPORTER_OTLP_ENDPOINT</code></td>
+<td>No</td>
+<td>OTLP HTTP collector base URL, e.g. <code>http://otel-collector:4318</code> with the stack <code>clickstack</code> profile. Unset or empty keeps telemetry off: no SDK import, no exporter thread, no middleware.</td>
+</tr>
+<tr>
+<td><code>OTEL_EXPORTER_OTLP_HEADERS</code></td>
+<td>No</td>
+<td>Secret. Headers for the collector, <code>authorization=&lt;ingest key&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>OTEL_EXPORTER_OTLP_PROTOCOL</code></td>
+<td>No</td>
+<td><code>http/protobuf</code>, the only protocol shipped.</td>
+</tr>
+<tr>
+<td><code>OTEL_RESOURCE_ATTRIBUTES</code></td>
+<td>No</td>
+<td>Extra resource attributes; <code>deployment.environment.name=&lt;env&gt;</code> names the environment, otherwise <code>APP_ENVIRONMENT</code> is used. <code>service.name</code> is always <code>eve-backend</code>.</td>
+</tr>
+<tr>
+<td><code>OTEL_TRACES_SAMPLER</code> / <code>OTEL_TRACES_SAMPLER_ARG</code></td>
+<td>No</td>
+<td>Sampler, e.g. <code>parentbased_traceidratio</code> and <code>1.0</code>. SDK default <code>parentbased_always_on</code>.</td>
+</tr>
+<tr>
+<td><code>OTEL_SDK_DISABLED</code></td>
+<td>No</td>
+<td><code>true</code> turns telemetry off even with an endpoint set.</td>
+</tr>
+<tr>
+<td><code>OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT</code></td>
+<td>No</td>
+<td>Longest span attribute value (default <code>4096</code>).</td>
+</tr>
+<tr>
+<td><code>EVE_OTEL_CAPTURE_CONTENT</code></td>
+<td>No</td>
+<td>Prompts, answers and tool arguments on GenAI spans. <code>true</code> only on dev and local.</td>
+</tr>
+<tr>
+<td><code>FEATURE_LANGFUSE_SCORES</code></td>
+<td>No</td>
+<td><code>true</code> posts thumbs feedback to Langfuse as scores on the message trace (<code>thumbs-&lt;message_id&gt;</code>, <code>hallucination-&lt;message_id&gt;</code>). Default <code>false</code>. Needs the three variables below and a message with <code>trace_id</code>.</td>
+</tr>
+<tr>
+<td><code>LANGFUSE_HOST</code></td>
+<td>No</td>
+<td>Langfuse base URL for <code>POST /api/public/scores</code>, e.g. <code>http://langfuse-web:3000</code> inside the stack compose.</td>
+</tr>
+<tr>
+<td><code>LANGFUSE_PUBLIC_KEY</code> / <code>LANGFUSE_SECRET_KEY</code></td>
+<td>No</td>
+<td>Secret. Langfuse project keys, sent as Basic auth. Only used for scores; traces reach Langfuse through the collector.</td>
+</tr>
+<tr>
+<td><code>API_KEY_MAX_ACTIVE_PER_USER</code></td>
+<td>No</td>
+<td>Max active self-service API keys per user (default <code>10</code>). <code>0</code> disables key creation.</td>
+</tr>
+<tr>
+<td><code>API_KEY_DEFAULT_EXPIRES_IN_DAYS</code></td>
+<td>No</td>
+<td>Expiry applied when a create request omits it (default <code>90</code>).</td>
+</tr>
+<tr>
+<td><code>API_KEY_CREATE_MAX_PER_HOUR</code></td>
+<td>No</td>
+<td>Rolling-hour cap on key creations per user (default <code>30</code>); <code>0</code> disables the throttle.</td>
+</tr>
+<tr>
+<td><code>FEATURE_BUG_REPORT_RATE_LIMIT</code></td>
+<td>No</td>
+<td>Bug report rate limit (default <code>true</code>). <code>false</code> or <code>0</code> lets <code>POST /bug-reports</code> take any number of reports and ignores <code>BUG_REPORT_MAX_PER_HOUR</code>; local compose and dev set it to <code>false</code>.</td>
+</tr>
+<tr>
+<td><code>BUG_REPORT_MAX_PER_HOUR</code></td>
+<td>No</td>
+<td>Rolling-hour cap on bug reports per user while <code>FEATURE_BUG_REPORT_RATE_LIMIT</code> is on (default <code>5</code>); <code>0</code> or negative means unlimited.</td>
+</tr>
+<tr>
+<td><code>FREE_TOKENS</code> / <code>FREE_PERIOD_MONTHS</code></td>
+<td>No</td>
+<td>Token budget and period of the free tier, overriding <code>config.yaml</code>. The test gate sets <code>100</code> and <code>1</code>.</td>
 </tr>
 </tbody>
 </table>

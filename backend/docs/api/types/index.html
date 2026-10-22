@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://example.com/backend/docs/api/types/">
+        <link rel="canonical" href="https://eve-esa.github.io/eve-guide/backend/docs/api/types/">
       
       
-        <link rel="prev" href="../routers-user/">
+        <link rel="prev" href="../bug-reports/">
       
       
-        <link rel="next" href="../swagger-api/">
+        <link rel="next" href="../../../../backend-swagger/">
       
       
         
@@ -518,6 +518,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/features/api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -805,14 +833,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-collection/" class="md-nav__link">
+      <a href="../routers-user/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Collection
+    User
   
 
     
@@ -861,14 +889,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-document/" class="md-nav__link">
+      <a href="../routers-message/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Document
+    Message
   
 
     
@@ -889,14 +917,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-forgot_password/" class="md-nav__link">
+      <a href="../generation-errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Forget Password
+    Generation Failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document
   
 
     
@@ -945,14 +1029,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-message/" class="md-nav__link">
+      <a href="../api-keys/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Message
+    API Keys
   
 
     
@@ -973,14 +1057,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-user/" class="md-nav__link">
+      <a href="../openai-gateway/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bug-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reports
   
 
     
@@ -1654,7 +1766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../swagger-api/" class="md-nav__link">
+      <a href="../../../../backend-swagger/" class="md-nav__link">
         
   
   
@@ -3521,6 +3633,8 @@
 <ul>
 <li><strong>first_name</strong>: string</li>
 <li><strong>last_name</strong>: string</li>
+<li><strong>country</strong>: string | null, optional, max 100 after stripping; omitted keeps, empty or null clears</li>
+<li><strong>institution</strong>: string | null, optional, max 200 after stripping; omitted keeps, empty or null clears</li>
 </ul>
 <h3 id="user-response-model">User (response model)</h3>
 <ul>
@@ -3529,6 +3643,8 @@
 <li><strong>password_hash</strong>: string</li>
 <li><strong>first_name</strong>: string | null</li>
 <li><strong>last_name</strong>: string | null</li>
+<li><strong>country</strong>: string | null</li>
+<li><strong>institution</strong>: string | null</li>
 <li><strong>is_active</strong>: bool</li>
 <li><strong>activation_code</strong>: string | null</li>
 </ul>
@@ -3609,13 +3725,14 @@
 <li><strong>query</strong>: string</li>
 <li><strong>year</strong>: list[int] | null</li>
 <li><strong>filters</strong>: dict | null</li>
-<li><strong>llm_type</strong>: string | null (one of 'main', 'fallback', 'runpod', 'mistral', 'satcom_small', 'satcom_large', 'ship', 'eve_v05')</li>
+<li><strong>llm_type</strong>: string | null (one of 'main', 'fallback', 'runpod', 'mistral', 'satcom_small', 'satcom_large', 'eve_jsc')</li>
 <li><strong>embeddings_model</strong>: string</li>
 <li><strong>k</strong>: int</li>
 <li><strong>temperature</strong>: float</li>
 <li><strong>score_threshold</strong>: float</li>
 <li><strong>max_new_tokens</strong>: int</li>
 <li><strong>public_collections</strong>: list[string]</li>
+<li><strong>private_collections</strong>: list[string]</li>
 <li>Note: server populates private <code>collection_ids</code> and <code>private_collections_map</code>.</li>
 </ul>
 <h3 id="createmessageresponse">CreateMessageResponse</h3>

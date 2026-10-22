@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://example.com/backend/docs/api/routers-health_check/">
+        <link rel="canonical" href="https://eve-esa.github.io/eve-guide/backend/docs/api/routers-health_check/">
       
       
-        <link rel="prev" href="../routers-forgot_password/">
+        <link rel="prev" href="../routers-document/">
       
       
-        <link rel="next" href="../routers-message/">
+        <link rel="next" href="../api-keys/">
       
       
         
@@ -518,6 +518,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../frontend/docs/features/api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -805,14 +833,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-collection/" class="md-nav__link">
+      <a href="../routers-user/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Collection
+    User
   
 
     
@@ -861,14 +889,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-document/" class="md-nav__link">
+      <a href="../routers-message/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Document
+    Message
   
 
     
@@ -889,14 +917,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-forgot_password/" class="md-nav__link">
+      <a href="../generation-errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Forget Password
+    Generation Failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routers-document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document
   
 
     
@@ -1075,14 +1159,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-message/" class="md-nav__link">
+      <a href="../api-keys/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Message
+    API Keys
   
 
     
@@ -1103,14 +1187,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../routers-user/" class="md-nav__link">
+      <a href="../openai-gateway/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User
+    OpenAI-compatible Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bug-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reports
   
 
     
@@ -1159,7 +1271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../swagger-api/" class="md-nav__link">
+      <a href="../../../../backend-swagger/" class="md-nav__link">
         
   
   
@@ -2479,6 +2591,10 @@
     <div class="doc doc-contents first">
 
         <p>Liveness probe endpoint.</p>
+<p>"status" keeps its exact value and shape: the ALB target group health check and the
+post-deploy verification both read it. The build identity is additive, and every value
+falls back to "unknown" rather than raising when the variable is not set.
+"agents_ref" is the eve-esa-agents git ref baked into the image.</p>
 
 
     <p><span class="doc-section-title">Returns:</span></p>
@@ -2495,7 +2611,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Static status payload indicating service health.</p>
+                <p>Service health plus the identity of the running build.</p>
               </div>
             </td>
           </tr>
@@ -2514,14 +2630,28 @@ resp.raise_for_status()
 print(resp.json())
 </code></pre>
 <h3 id="explanation">Explanation</h3>
-<p>Returns a simple status payload for liveness checks.</p>
+<p>Returns a status payload for liveness checks, plus the identity of the running build:</p>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;healthy&quot;,
+  &quot;version&quot;: &quot;v0.1.0&quot;,
+  &quot;commit&quot;: &quot;1a2b3c4&quot;,
+  &quot;environment&quot;: &quot;prod&quot;,
+  &quot;agents_ref&quot;: &quot;v0.5.4&quot;
+}
+</code></pre>
 <h3 id="notes">Notes</h3>
 <ul>
 <li>Commonly used by load balancers and uptime monitors.</li>
 <li>Does not require authentication.</li>
+<li><code>status</code> is the only field the ALB health check and the deploy verification read, and its
+  value never changes.</li>
+<li><code>commit</code> is baked into the image at build time, <code>version</code> is injected at deploy time. Either
+  reads <code>unknown</code> when the corresponding variable is not set, for example in local development.</li>
+<li><code>agents_ref</code> is the eve-esa-agents git ref baked into the image at build time. Dev reports a
+  commit SHA of agents <code>main</code>. Staging and prod report the tag from <code>agents.ref</code>.</li>
 </ul>
 <h2 id="full-api-reference">Full API reference</h2>
-<p>For exhaustive schema details, use <a href="../swagger-api/">Swagger API</a>.</p>
+<p>For exhaustive schema details, use <a href="https://eve-esa.github.io/eve-guide/backend-swagger/">Swagger API</a>.</p>
 
 
 
