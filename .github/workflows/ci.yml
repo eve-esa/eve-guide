@@ -53,5 +53,9 @@ jobs:
       # A pull request only proves the site builds; publishing happens on main.
       - if: github.event_name == 'pull_request'
         run: uv run mkdocs build
+      # gh-pages accepts fast-forward pushes only (repository ruleset), so the new site commit
+      # must sit on top of the published one: the checkout does not fetch that branch.
       - if: github.event_name != 'pull_request'
-        run: uv run mkdocs gh-deploy --force
+        run: git fetch --depth=1 origin gh-pages:gh-pages
+      - if: github.event_name != 'pull_request'
+        run: uv run mkdocs gh-deploy
