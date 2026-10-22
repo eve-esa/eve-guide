@@ -1,5 +1,5 @@
 site_name: EVE GUIDE
-site_url: https://example.com
+site_url: https://eve-esa.github.io/eve-guide/
 theme:
   font:
     text: Arial
@@ -28,13 +28,13 @@ plugins:
             docs/features/private_collection.md,
             docs/features/profile.md,
             docs/features/shared_collection.md,
+            docs/features/api-keys.md,
             docs/assets/chat_1.png,
             docs/assets/chat_2.png,
             docs/assets/control_panel.png,
             docs/assets/private_collection.png,
             docs/assets/private_collection_1.png,
-            docs/assets/shared_collection.png,
-            docs/assets/chat_answer.png
+            docs/assets/shared_collection.png
           ]
         - name: backend
           import_url: 'https://github.com/eve-esa/backend.git?branch=main'
@@ -100,6 +100,11 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
+          # Docstring style is each component's choice: the guide renders it without linting it.
+          options:
+            docstring_options:
+              warn_unknown_params: false
+              warn_missing_types: false
           paths:
             - data-scraping
             - backend/src
@@ -125,6 +130,7 @@ nav:
         - Private Collection: frontend/docs/features/private_collection.md
         - Shared Collection: frontend/docs/features/shared_collection.md
         - Profile: frontend/docs/features/profile.md
+        - API Keys: frontend/docs/features/api-keys.md
   - Backend:
       - Home: backend/docs/index.md
       - Getting Started:
@@ -139,6 +145,9 @@ nav:
         - Collection: backend/docs/api/routers-collection.md
         - Document: backend/docs/api/routers-document.md
         - Health Check: backend/docs/api/routers-health_check.md
+        - API Keys: backend/docs/api/api-keys.md
+        - OpenAI-compatible Gateway: backend/docs/api/openai-gateway.md
+        - Bug Reports: backend/docs/api/bug-reports.md
         - Types: backend/docs/api/types.md
         - Swagger API: backend-swagger.md
   - Evalkit:
